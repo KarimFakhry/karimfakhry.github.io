@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Karim Fakhry — Product Design Portfolio",
   description:
-    "Selected product design case studies by Karim Fakhry, Product Design Manager.",
+    "Evidence-led product design and leadership case studies by Karim Fakhry, Product Design Manager.",
   openGraph: {
     title: "Karim Fakhry — Product Design Portfolio",
-    description: "Product design leadership across healthcare, education and digital platforms.",
+    description: "Product design leadership across healthcare, education, design systems and team operations.",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Karim Fakhry — Product Design Portfolio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Karim Fakhry — Product Design Portfolio",
-    description: "Product design leadership across healthcare, education and digital platforms.",
+    description: "Product design leadership across healthcare, education, design systems and team operations.",
     images: ["/og.png"],
   },
   icons: {

@@ -26,7 +26,7 @@ export default function FullCaseStudy({
       </button>
       <img
         src={image}
-        alt={`${title} complete product design case study`}
+        alt={`${title} original editorial presentation. The case-study narrative and evidence are available as accessible text above.`}
         decoding="async"
       />
     </div>
