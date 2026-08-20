@@ -1,4 +1,5 @@
 import { projects } from "./data/projects";
+import KpiProjectPreview from "./components/KpiProjectPreview";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#work">Selected work</a>
           <a href="#about">About</a>
+          <a href="mailto:kja2001@gmail.com">Contact</a>
         </nav>
       </header>
 
@@ -21,15 +23,14 @@ export default function Home() {
               I design <em>clarity</em> for complex digital products.
             </h1>
             <p className="hero-intro">
-              I lead product design across healthcare and education—connecting
-              research, systems and craft to turn complexity into useful,
-              coherent experiences.
+              I lead a 13-person design team across healthcare and education,
+              connecting product strategy, systems and craft to turn complex
+              services into coherent experiences.
             </p>
             <div className="hero-actions">
               <a href="#work">View selected work <span aria-hidden="true">↓</span></a>
-              <a href="https://www.linkedin.com/in/karimfakhry/" target="_blank" rel="noreferrer">
-                LinkedIn ↗
-              </a>
+              <a href="/resume/Karim-Fakhry-Resume-2026.pdf" target="_blank">Résumé ↗</a>
+              <a href="mailto:kja2001@gmail.com">Email</a>
             </div>
           </div>
 
@@ -42,7 +43,11 @@ export default function Home() {
               <a className={`hero-project ${project.theme}`} href={`/work/${project.slug}`} key={project.id}>
                 <span className="hero-project-number">{project.number}</span>
                 <span className="hero-project-image" aria-hidden="true">
-                  <img src={project.thumbnail} alt="" decoding="async" />
+                  {project.visual === "kpi" ? (
+                    <span className="kpi-mini"><b>87.4</b><i>Team score</i></span>
+                  ) : (
+                    <img src={project.thumbnail} alt="" decoding="async" />
+                  )}
                 </span>
                 <span className="hero-project-name">
                   <strong>{project.title}</strong>
@@ -56,17 +61,17 @@ export default function Home() {
 
         <div className="hero-footer">
           <p>Alexandria, Egypt · Available internationally</p>
-          <p>Strategy · Systems · Design leadership</p>
+          <p>22 years in digital products · 9+ years leading teams</p>
         </div>
       </section>
 
       <section className="work-section" id="work">
         <div className="section-heading">
           <p className="eyebrow">Selected work · 2026</p>
-          <h2>Three redesigns.<br />One principle: clarity.</h2>
+          <h2>Three redesigns.<br />One leadership system.</h2>
           <p>
-            End-to-end case studies spanning discovery, product thinking,
-            interface systems and the details that make an experience work.
+            Evidence-led case studies spanning discovery, product strategy,
+            scalable systems and the operating model behind a design team.
           </p>
         </div>
 
@@ -78,14 +83,18 @@ export default function Home() {
                 href={`/work/${project.slug}`}
                 aria-label={`Explore ${project.title} project`}
               >
-                <span className="project-image-window">
-                  <img
-                    src={project.thumbnail}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </span>
+                {project.visual === "kpi" ? (
+                  <KpiProjectPreview compact />
+                ) : (
+                  <span className="project-image-window">
+                    <img
+                      src={project.thumbnail}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                )}
                 <span className="open-label">
                   Explore project <span aria-hidden="true">↗</span>
                 </span>
@@ -109,23 +118,23 @@ export default function Home() {
       <section className="about-section" id="about">
         <div className="about-lead">
           <p className="eyebrow">How I work</p>
-          <h2>Direction when it’s complex. Detail where it matters.</h2>
+          <h2>I build the conditions for strong design—not only the screens.</h2>
         </div>
         <div className="about-grid">
           <div>
             <span>01</span>
-            <h3>Strategy & research</h3>
-            <p>I turn evidence, constraints and business goals into a focused product direction.</p>
+            <h3>Product direction</h3>
+            <p>I turn evidence, service constraints and business goals into a focused direction teams can execute.</p>
           </div>
           <div>
             <span>02</span>
-            <h3>Systems & craft</h3>
-            <p>I design coherent experiences that scale across products, platforms and teams.</p>
+            <h3>Systems that scale</h3>
+            <p>I built and own the design system used across patient-facing products and hospital operations.</p>
           </div>
           <div>
             <span>03</span>
-            <h3>Design leadership</h3>
-            <p>I help teams make stronger decisions, raise quality and connect design to outcomes.</p>
+            <h3>Team leadership</h3>
+            <p>I grew the team from four to thirteen designers, with clearer governance, critique, QA and handoff standards.</p>
           </div>
         </div>
       </section>
@@ -143,6 +152,8 @@ export default function Home() {
           >
             LinkedIn ↗
           </a>
+          <a href="mailto:kja2001@gmail.com">Email ↗</a>
+          <a href="/resume/Karim-Fakhry-Resume-2026.pdf" target="_blank">Résumé ↗</a>
           <a href="#top">Back to top ↑</a>
         </div>
       </footer>
