@@ -45,6 +45,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const projectIndex = projects.findIndex((item) => item.slug === project.slug);
   const nextProject = projects[(projectIndex + 1) % projects.length];
+  const isOriginalProduct = project.caseStudyMode === "product";
+  const isManagerialSolution = project.caseStudyMode === "managerial";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -83,21 +85,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">Executive summary</p>
-          <h2>The project in three points.</h2>
+          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : "The project in three points."}</h2>
           <p>{project.method}</p>
         </div>
         <div className="executive-grid">
           <article><span>01</span><h3>Problem</h3><p>{project.executiveSummary.problem}</p></article>
           <article><span>02</span><h3>Approach</h3><p>{project.executiveSummary.approach}</p></article>
-          <article><span>03</span><h3>Design outcome</h3><p>{project.executiveSummary.result}</p></article>
+          <article><span>03</span><h3>{isManagerialSolution ? "Managerial outcome" : "Design outcome"}</h3><p>{project.executiveSummary.result}</p></article>
         </div>
       </section>
 
       <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">What I found</p>
-          <h2>The signals that shaped the redesign.</h2>
-          <p>Key facts from the live product, its content and the working team process.</p>
+          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : "What I found"}</p>
+          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : "The signals that shaped the redesign."}</h2>
+          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : "Key facts from the live product, its content and the working team process."}</p>
         </div>
         <div className="evidence-grid">
           {project.evidence.map((item) => (
@@ -109,7 +111,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
         <div className="user-context">
-          <p className="eyebrow">Key journeys</p>
+          <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : "Key journeys"}</p>
           <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
         </div>
       </section>
@@ -137,15 +139,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="decision-section" id="decisions">
         <div className="case-study-intro">
           <p className="eyebrow">Key product decisions</p>
-          <h2>The decisions that changed the experience.</h2>
+          <h2>{isOriginalProduct ? "How we made complex hospital work easier to follow." : isManagerialSolution ? "How the product supports better performance management." : "The decisions that changed the experience."}</h2>
         </div>
         <div className="decision-list">
           {project.chapters.map((chapter) => (
             <article key={chapter.number}>
               <span>{chapter.number}</span>
               <h3>{chapter.title}</h3>
-              <div><small>Before</small><p>{chapter.problem}</p></div>
-              <div><small>Design response</small><p>{chapter.response}</p></div>
+              <div><small>{isOriginalProduct ? "Operational need" : isManagerialSolution ? "Managerial challenge" : "Before"}</small><p>{chapter.problem}</p></div>
+              <div><small>{isOriginalProduct ? "Design decision" : isManagerialSolution ? "Product response" : "Design response"}</small><p>{chapter.response}</p></div>
             </article>
           ))}
         </div>
@@ -154,25 +156,42 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {project.visual === "kpi" ? (
         <section className="kpi-showcase" id="product">
           <div className="case-study-intro">
-            <p className="eyebrow">The operational product</p>
-            <h2>A leadership process turned into a working product.</h2>
-            <p>Daily input, sprint review and private employee reports now sit in one role-based system.</p>
+            <p className="eyebrow">The role-based product</p>
+            <h2>One performance process. Two clear points of view.</h2>
+            <p>The manager gets a workspace for action and follow-up. Each employee gets a private report they can understand and use.</p>
           </div>
-          <KpiProjectPreview />
-          <a className="showcase-link" href={project.liveUrl} target="_blank" rel="noreferrer">Open the live KPI Performance Hub <span>↗</span></a>
+          <div className="kpi-role-grid">
+            <article className="kpi-role-card kpi-role-featured">
+              <div className="kpi-role-copy"><p className="eyebrow">Manager view</p><h3>See the process, not just a final score.</h3><p>The overview keeps daily capture, sprint review and employee reports connected, so the manager can see what needs attention and move directly to it.</p></div>
+              <KpiProjectPreview view="manager" compact />
+            </article>
+            <article className="kpi-role-card">
+              <div className="kpi-role-copy"><p className="eyebrow">Manager · Daily input</p><h3>Record signals while the context is clear.</h3><p>A focused input flow reduces end-of-sprint reconstruction and keeps the reason beside the entry.</p></div>
+              <KpiProjectPreview view="daily" compact />
+            </article>
+            <article className="kpi-role-card">
+              <div className="kpi-role-copy"><p className="eyebrow">Manager · Sprint review</p><h3>Close the sprint with the evidence already in place.</h3><p>Sprint-level decisions are separated from daily tracking, giving the manager the right context at the right time.</p></div>
+              <KpiProjectPreview view="review" compact />
+            </article>
+            <article className="kpi-role-card kpi-role-featured">
+              <div className="kpi-role-copy"><p className="eyebrow">Employee view</p><h3>Make performance private, clear and discussable.</h3><p>Employees see only their own report, the KPI breakdown and previous context—enough to prepare for a useful one-to-one.</p></div>
+              <KpiProjectPreview view="employee" compact />
+            </article>
+          </div>
         </section>
       ) : (
         <>
           <section className="screen-section" id="redesign-screens">
             <div className="screen-heading">
-              <p className="eyebrow">Selected redesign screens</p>
-              <h2>The product, not just the process.</h2>
-              <p>Open any screen to inspect the responsive product work.</p>
+              <p className="eyebrow">{isOriginalProduct ? "Selected product screens" : "Selected redesign screens"}</p>
+              <h2>{isOriginalProduct ? "The strongest workflows from DotCare." : "The product, not just the process."}</h2>
+              <p>{isOriginalProduct ? "OPD and Pharmacy screens showing the design decisions in context. Open any screen for the full-resolution view." : "Open any screen to inspect the responsive product work."}</p>
             </div>
             <ScreenGallery
               projectTitle={project.title}
               screens={project.screens}
               isApp={project.id === "health-app"}
+              isProduct={isOriginalProduct}
             />
           </section>
 

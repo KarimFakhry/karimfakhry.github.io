@@ -7,10 +7,12 @@ export default function ScreenGallery({
   projectTitle,
   screens,
   isApp,
+  isProduct = false,
 }: {
   projectTitle: string;
   screens: ProjectScreen[];
   isApp: boolean;
+  isProduct?: boolean;
 }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -45,7 +47,7 @@ export default function ScreenGallery({
 
   return (
     <>
-      <div className={`screen-grid ${isApp ? "app-grid" : ""}`}>
+      <div className={`screen-grid ${isApp ? "app-grid" : ""} ${isProduct ? "product-grid" : ""}`}>
         {screens.map((screen, index) => (
           <button
             className={`screen-card ${screen.device} ${index === 0 ? "featured" : ""}`}

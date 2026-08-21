@@ -53,13 +53,12 @@ export function KpiEditorialPreview() {
   return (
     <div className="editorial-project-preview kpi-editorial" aria-hidden="true">
       <div className="editorial-preview-copy">
-        <i>Design leadership system · 2026</i>
+        <i>Performance management product · 2026</i>
         <b>Performance,<br />made visible.</b>
       </div>
       <div className="kpi-editorial-metrics">
-        <span><b>52</b><i>Sprints</i></span>
-        <span><b>10</b><i>KPIs</i></span>
-        <span><b>2</b><i>Roles</i></span>
+        <span><b>Manager</b><i>Monitor the team</i></span>
+        <span><b>Employee</b><i>Private report</i></span>
       </div>
       <span className="kpi-grid-lines" />
       <div className="kpi-editorial-window"><KpiProjectPreview compact /></div>
@@ -68,3 +67,24 @@ export function KpiEditorialPreview() {
   );
 }
 
+export function DotCareProjectPreview() {
+  return (
+    <div className="editorial-project-preview dotcare-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Hospital management system · Original product</i>
+        <b>One patient.<br />Every team in context.</b>
+      </div>
+      <span className="dotcare-grid" />
+      <span className="editorial-browser dotcare-browser-back">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/dotcare/appointment-week.webp" alt="" />
+      </span>
+      <span className="editorial-browser dotcare-browser-main">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/dotcare/physician-orders.webp" alt="" />
+      </span>
+      <span className="dotcare-module-mark">OPD <i>+</i> Pharmacy</span>
+      <span className="editorial-flow"><i>Schedule</i><em>→</em><i>Treat</i><em>→</em><i>Fulfil</i></span>
+    </div>
+  );
+}

@@ -2,6 +2,7 @@ import { projects } from "./data/projects";
 import HealthAppProjectPreview from "./components/HealthAppProjectPreview";
 import {
   AcademyProjectPreview,
+  DotCareProjectPreview,
   HealthWebsiteProjectPreview,
   KpiEditorialPreview,
 } from "./components/EditorialProjectPreviews";
@@ -49,7 +50,23 @@ export default function Home() {
                 <span className="hero-project-number">{project.number}</span>
                 <span className="hero-project-image" aria-hidden="true">
                   {project.visual === "kpi" ? (
-                    <span className="kpi-mini"><b>52</b><i>Sprints · 10 KPIs</i></span>
+                    <span className="kpi-mini">
+                      <span className="kpi-mini-manager">
+                        <span className="kpi-mini-bar"><i /><i /><i /></span>
+                        <span className="kpi-mini-body">
+                          <span className="kpi-mini-sidebar"><i className="active" /><i /><i /></span>
+                          <span className="kpi-mini-content">
+                            <b />
+                            <span className="kpi-mini-cards"><i /><i /><i /></span>
+                            <span className="kpi-mini-lines"><i /><i /><i /></span>
+                          </span>
+                        </span>
+                      </span>
+                      <span className="kpi-mini-employee">
+                        <span className="kpi-mini-bar"><i /><i /></span>
+                        <span className="kpi-mini-report"><b /><i /><i /><i /></span>
+                      </span>
+                    </span>
                   ) : project.id === "health-app" ? (
                     <span className="health-app-mini">
                       <img src="/screens/health-app/home.png" alt="" />
@@ -64,6 +81,11 @@ export default function Home() {
                     <span className="health-web-mini">
                       <img src="/screens/health-website/doctors-listing.webp" alt="" />
                       <img src="/screens/health-website/booking-confirmation-mobile.webp" alt="" />
+                    </span>
+                  ) : project.id === "dotcare" ? (
+                    <span className="dotcare-mini">
+                      <img src="/screens/dotcare/appointment-week.webp" alt="" />
+                      <img src="/screens/dotcare/physician-orders.webp" alt="" />
                     </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
@@ -88,10 +110,10 @@ export default function Home() {
       <section className="work-section" id="work">
         <div className="section-heading">
           <p className="eyebrow">Selected work · 2026</p>
-          <h2>Three redesigns.<br />One leadership system.</h2>
+          <h2>Patient journeys.<br />Clinical operations. Leadership.</h2>
           <p>
-            Evidence-led case studies spanning discovery, product strategy,
-            scalable systems and the operating model behind a design team.
+            Five evidence-led case studies spanning discovery, product strategy,
+            enterprise systems and the operating model behind a design team.
           </p>
         </div>
 
@@ -111,6 +133,8 @@ export default function Home() {
                   <AcademyProjectPreview />
                 ) : project.id === "health-web" ? (
                   <HealthWebsiteProjectPreview />
+                ) : project.id === "dotcare" ? (
+                  <DotCareProjectPreview />
                 ) : (
                   <span className="project-image-window">
                     <img
