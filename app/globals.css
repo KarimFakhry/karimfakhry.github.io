@@ -461,13 +461,11 @@ button { font: inherit; }
 .health-web-editorial .editorial-preview-copy {
   z-index: 9;
   width: min(33%, 420px);
-  padding: clamp(18px, 2.1vw, 30px);
-  border: 1px solid rgba(35,31,27,.11);
-  border-radius: clamp(12px, 1.5vw, 21px);
-  box-shadow: 0 22px 55px rgba(35,27,22,.12);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
-.academy-editorial .editorial-preview-copy { background: #f1e4d7; }
-.health-web-editorial .editorial-preview-copy { background: #e4efe9; }
 .academy-editorial .editorial-preview-copy > b,
 .health-web-editorial .editorial-preview-copy > b {
   font-size: clamp(28px, 3.6vw, 56px);
@@ -1093,7 +1091,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .editorial-preview-copy { top: 36px; left: 34px; }
   .editorial-preview-copy > i { margin-bottom: 12px; }
   .academy-editorial .editorial-preview-copy,
-  .health-web-editorial .editorial-preview-copy { width: calc(100% - 68px); padding: 18px 20px; }
+  .health-web-editorial .editorial-preview-copy { width: calc(100% - 68px); padding: 0; }
   .academy-editorial .editorial-preview-copy > b,
   .health-web-editorial .editorial-preview-copy > b { font-size: clamp(27px, 8vw, 38px); }
   .editorial-project-preview .editorial-flow { display: none; }
