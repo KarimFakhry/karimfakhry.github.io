@@ -85,9 +85,12 @@ export default function ScreenGallery({
               <strong>{activeScreen.title}</strong>
               <span>{activeIndex + 1} / {screens.length}</span>
             </div>
-            <button type="button" onClick={() => setActiveIndex(null)} autoFocus>
-              Close <span aria-hidden="true">×</span>
-            </button>
+            <div className="lightbox-actions">
+              <a href={activeScreen.image} target="_blank" rel="noreferrer">Original size ↗</a>
+              <button type="button" onClick={() => setActiveIndex(null)} autoFocus>
+                Close <span aria-hidden="true">×</span>
+              </button>
+            </div>
           </div>
 
           <div className={`lightbox-image ${activeScreen.device}`}>

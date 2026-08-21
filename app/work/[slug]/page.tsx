@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p className="project-summary-lead">{project.summary}</p>
           <div className="project-actions">
             <a className="project-primary-action" href="#executive-summary">
-              Read executive summary <span aria-hidden="true">↓</span>
+              Read the case study <span aria-hidden="true">↓</span>
             </a>
             {project.liveUrl && (
               <a href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveLabel ?? "Open live project"} ↗</a>
@@ -83,21 +83,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">Executive summary</p>
-          <h2>Problem, approach and result—in two minutes.</h2>
+          <h2>The project in three points.</h2>
           <p>{project.method}</p>
         </div>
         <div className="executive-grid">
           <article><span>01</span><h3>Problem</h3><p>{project.executiveSummary.problem}</p></article>
           <article><span>02</span><h3>Approach</h3><p>{project.executiveSummary.approach}</p></article>
-          <article><span>03</span><h3>Result</h3><p>{project.executiveSummary.result}</p></article>
+          <article><span>03</span><h3>Design outcome</h3><p>{project.executiveSummary.result}</p></article>
         </div>
       </section>
 
       <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">Evidence from the project</p>
-          <h2>Observed facts, not invented research.</h2>
-          <p>These findings come from the source product, screen inventory, operating model or implemented system.</p>
+          <p className="eyebrow">What I found</p>
+          <h2>The signals that shaped the redesign.</h2>
+          <p>Key facts from the live product, its content and the working team process.</p>
         </div>
         <div className="evidence-grid">
           {project.evidence.map((item) => (
@@ -109,22 +109,42 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
         <div className="user-context">
-          <p className="eyebrow">Primary decision contexts</p>
+          <p className="eyebrow">Key journeys</p>
           <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
         </div>
       </section>
 
+      {project.journey && (
+        <section className="journey-section" id="journey-map">
+          <div className="case-study-intro">
+            <p className="eyebrow">Journey comparison</p>
+            <h2>One visit, fewer disconnected moments.</h2>
+            <p>A screen-by-screen comparison of the existing flow and the redesign. No assumed tap counts or post-launch claims.</p>
+          </div>
+          <div className="journey-map" aria-label="Existing and redesigned patient journey">
+            <div className="journey-map-head"><span>Stage</span><span>Existing app</span><span>Redesign</span></div>
+            {project.journey.map((step, index) => (
+              <article key={step.stage}>
+                <div className="journey-stage"><small>{String(index + 1).padStart(2, "0")}</small><strong>{step.stage}</strong></div>
+                <p className="journey-before">{step.before}</p>
+                <p className="journey-after">{step.after}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="decision-section" id="decisions">
         <div className="case-study-intro">
           <p className="eyebrow">Key product decisions</p>
-          <h2>How the evidence changed the experience.</h2>
+          <h2>The decisions that changed the experience.</h2>
         </div>
         <div className="decision-list">
           {project.chapters.map((chapter) => (
             <article key={chapter.number}>
               <span>{chapter.number}</span>
               <h3>{chapter.title}</h3>
-              <div><small>Observed problem</small><p>{chapter.problem}</p></div>
+              <div><small>Before</small><p>{chapter.problem}</p></div>
               <div><small>Design response</small><p>{chapter.response}</p></div>
             </article>
           ))}
@@ -135,8 +155,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <section className="kpi-showcase" id="product">
           <div className="case-study-intro">
             <p className="eyebrow">The operational product</p>
-            <h2>Designed to be used, not only presented.</h2>
-            <p>The interface separates quick daily work from deeper sprint review, while role-based access protects employee reports.</p>
+            <h2>A leadership process turned into a working product.</h2>
+            <p>Daily input, sprint review and private employee reports now sit in one role-based system.</p>
           </div>
           <KpiProjectPreview />
           <a className="showcase-link" href={project.liveUrl} target="_blank" rel="noreferrer">Open the live KPI Performance Hub <span>↗</span></a>
@@ -184,7 +204,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
         <div className="footer-links">
           <a href="https://www.linkedin.com/in/karimfakhry/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="mailto:kja2001@gmail.com">Email ↗</a>
+          <a href="mailto:kia2001@gmail.com">Email ↗</a>
           <a href="/resume/Karim-Fakhry-Resume-2026.pdf" target="_blank">Résumé ↗</a>
           <Link href="/">Portfolio home ↑</Link>
         </div>

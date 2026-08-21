@@ -21,9 +21,12 @@ export default function FullCaseStudy({
 
   return (
     <div className="project-case-study">
-      <button type="button" onClick={() => setIsOpen(false)}>
-        Close complete case study <span aria-hidden="true">↑</span>
-      </button>
+      <div className="case-study-toolbar">
+        <button type="button" onClick={() => setIsOpen(false)}>
+          Close case study <span aria-hidden="true">↑</span>
+        </button>
+        <a href={image} target="_blank" rel="noreferrer">Open full resolution ↗</a>
+      </div>
       <img
         src={image}
         alt={`${title} original editorial presentation. The case-study narrative and evidence are available as accessible text above.`}
