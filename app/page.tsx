@@ -1,6 +1,10 @@
 import { projects } from "./data/projects";
-import KpiProjectPreview from "./components/KpiProjectPreview";
 import HealthAppProjectPreview from "./components/HealthAppProjectPreview";
+import {
+  AcademyProjectPreview,
+  HealthWebsiteProjectPreview,
+  KpiEditorialPreview,
+} from "./components/EditorialProjectPreviews";
 
 export default function Home() {
   return (
@@ -51,6 +55,16 @@ export default function Home() {
                       <img src="/screens/health-app/home.png" alt="" />
                       <img src="/screens/health-app/booking-summary.png" alt="" />
                     </span>
+                  ) : project.id === "academy" ? (
+                    <span className="academy-mini">
+                      <img src="/screens/academy/course-listing.webp" alt="" />
+                      <img src="/screens/academy/course-detail-mobile.webp" alt="" />
+                    </span>
+                  ) : project.id === "health-web" ? (
+                    <span className="health-web-mini">
+                      <img src="/screens/health-website/doctors-listing.webp" alt="" />
+                      <img src="/screens/health-website/booking-confirmation-mobile.webp" alt="" />
+                    </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
                   )}
@@ -90,9 +104,13 @@ export default function Home() {
                 aria-label={`Explore ${project.title} project`}
               >
                 {project.visual === "kpi" ? (
-                  <KpiProjectPreview compact />
+                  <KpiEditorialPreview />
                 ) : project.id === "health-app" ? (
                   <HealthAppProjectPreview />
+                ) : project.id === "academy" ? (
+                  <AcademyProjectPreview />
+                ) : project.id === "health-web" ? (
+                  <HealthWebsiteProjectPreview />
                 ) : (
                   <span className="project-image-window">
                     <img
