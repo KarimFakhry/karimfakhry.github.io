@@ -11,7 +11,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#work">Selected work</a>
           <a href="#about">About</a>
-          <a href="mailto:kja2001@gmail.com">Contact</a>
+          <a href="mailto:kia2001@gmail.com">Contact</a>
         </nav>
       </header>
 
@@ -30,7 +30,7 @@ export default function Home() {
             <div className="hero-actions">
               <a href="#work">View selected work <span aria-hidden="true">↓</span></a>
               <a href="/resume/Karim-Fakhry-Resume-2026.pdf" target="_blank">Résumé ↗</a>
-              <a href="mailto:kja2001@gmail.com">Email</a>
+              <a href="mailto:kia2001@gmail.com">Email</a>
             </div>
           </div>
 
@@ -44,7 +44,7 @@ export default function Home() {
                 <span className="hero-project-number">{project.number}</span>
                 <span className="hero-project-image" aria-hidden="true">
                   {project.visual === "kpi" ? (
-                    <span className="kpi-mini"><b>87.4</b><i>Team score</i></span>
+                    <span className="kpi-mini"><b>52</b><i>Sprints · 10 KPIs</i></span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
                   )}
@@ -152,7 +152,7 @@ export default function Home() {
           >
             LinkedIn ↗
           </a>
-          <a href="mailto:kja2001@gmail.com">Email ↗</a>
+          <a href="mailto:kia2001@gmail.com">Email ↗</a>
           <a href="/resume/Karim-Fakhry-Resume-2026.pdf" target="_blank">Résumé ↗</a>
           <a href="#top">Back to top ↑</a>
         </div>
