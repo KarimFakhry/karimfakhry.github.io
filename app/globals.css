@@ -165,6 +165,16 @@ button { font: inherit; }
 }
 .kpi-mini b { color: #ff9b6c; font-size: 19px; font-style: normal; letter-spacing: -.04em; }
 .kpi-mini i { margin-top: 2px; color: #aaa19d; font-size: 7px; font-style: normal; letter-spacing: .08em; text-transform: uppercase; }
+.health-app-mini {
+  width: 100%; height: 100%; position: relative; display: block; overflow: hidden;
+  background: radial-gradient(circle at 72% 20%, rgba(214,226,122,.22), transparent 32%), #0d2f27;
+}
+.hero-project-image .health-app-mini img {
+  position: absolute; width: 52%; height: auto; min-height: 0; border: 2px solid #0a201b;
+  border-radius: 7px 7px 0 0; box-shadow: 0 8px 20px rgba(0,0,0,.32);
+}
+.hero-project-image .health-app-mini img:first-child { left: 11%; top: 14%; z-index: 2; }
+.hero-project-image .health-app-mini img:last-child { right: 7%; top: 28%; }
 .hero-project-name { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
 .hero-project-name strong { font-size: 15px; font-weight: 500; letter-spacing: -.02em; }
 .hero-project-name small { overflow: hidden; color: #82837d; font-size: 9px; letter-spacing: .08em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
@@ -238,6 +248,94 @@ button { font: inherit; }
 .project-image-window img { width: 100%; height: auto; display: block; }
 .project-visual:hover .project-image-window,
 .project-visual:focus-visible .project-image-window { transform: translateY(0); box-shadow: 0 40px 90px rgba(20,25,19,.3); }
+.health-app-preview {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 77% 16%, rgba(219, 232, 133, .2), transparent 24%),
+    radial-gradient(circle at 12% 85%, rgba(105, 164, 144, .2), transparent 31%),
+    linear-gradient(135deg, #174b3d 0%, #0b2d26 52%, #071d19 100%);
+}
+.health-app-preview::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255,255,255,.11);
+  pointer-events: none;
+}
+.health-app-preview-copy {
+  position: absolute;
+  z-index: 6;
+  top: clamp(34px, 5vw, 72px);
+  left: clamp(34px, 6vw, 86px);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.health-app-preview-copy i {
+  margin-bottom: 18px;
+  color: #dce885;
+  font-size: clamp(8px, .8vw, 11px);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.health-app-preview-copy b {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 62px);
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+.health-app-orbit {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  border: 1px solid rgba(220,232,133,.2);
+  border-radius: 50%;
+}
+.health-app-orbit-one { width: 53vw; height: 53vw; max-width: 720px; max-height: 720px; right: -8%; top: -25%; }
+.health-app-orbit-two { width: 30vw; height: 30vw; max-width: 430px; max-height: 430px; right: 13%; top: 3%; }
+.health-app-phone {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 390 / 844;
+  border: clamp(4px, .55vw, 8px) solid #081f1a;
+  border-radius: clamp(18px, 2.2vw, 36px);
+  background: #f7f4ee;
+  box-shadow: 0 32px 68px rgba(0,0,0,.4);
+  transition: transform 520ms cubic-bezier(.22,1,.36,1), box-shadow 520ms ease;
+}
+.health-app-phone img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.health-app-phone-left { height: 70%; left: 43%; top: 20%; transform: rotate(-7deg) translateY(3%); }
+.health-app-phone-main { z-index: 5; height: 84%; left: 57%; top: 8%; transform: translateX(-12%); }
+.health-app-phone-right { height: 70%; right: 5%; top: 20%; transform: rotate(7deg) translateY(3%); }
+.project-visual:hover .health-app-phone-left,
+.project-visual:focus-visible .health-app-phone-left { transform: rotate(-9deg) translate(-2%, -1%); }
+.project-visual:hover .health-app-phone-main,
+.project-visual:focus-visible .health-app-phone-main { transform: translate(-12%, -2%); box-shadow: 0 42px 84px rgba(0,0,0,.5); }
+.project-visual:hover .health-app-phone-right,
+.project-visual:focus-visible .health-app-phone-right { transform: rotate(9deg) translate(2%, -1%); }
+.health-app-flow {
+  position: absolute;
+  z-index: 6;
+  left: clamp(34px, 6vw, 86px);
+  bottom: clamp(34px, 5vw, 66px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.65);
+  font-size: clamp(8px, .8vw, 11px);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.health-app-flow i { font-style: normal; }
+.health-app-flow em { color: #dce885; font-style: normal; }
 .open-label {
   position: absolute;
   right: 26px;
@@ -781,6 +879,12 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .projects-grid { gap: 76px; }
   .project-visual { height: 470px; padding: 38px 22px; }
   .project-image-window { width: 87%; }
+  .health-app-preview-copy { top: 36px; left: 34px; }
+  .health-app-preview-copy i { margin-bottom: 12px; }
+  .health-app-phone-left { height: 58%; left: 17%; top: 38%; }
+  .health-app-phone-main { height: 72%; left: 47%; top: 24%; }
+  .health-app-phone-right { height: 58%; right: -5%; top: 38%; }
+  .health-app-flow { display: none; }
   .project-meta { grid-template-columns: 38px 1fr; gap: 12px; }
   .project-summary { font-size: 15px; }
   .about-section { margin: 8px; }

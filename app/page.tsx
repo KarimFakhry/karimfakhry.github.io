@@ -1,5 +1,6 @@
 import { projects } from "./data/projects";
 import KpiProjectPreview from "./components/KpiProjectPreview";
+import HealthAppProjectPreview from "./components/HealthAppProjectPreview";
 
 export default function Home() {
   return (
@@ -45,6 +46,11 @@ export default function Home() {
                 <span className="hero-project-image" aria-hidden="true">
                   {project.visual === "kpi" ? (
                     <span className="kpi-mini"><b>52</b><i>Sprints · 10 KPIs</i></span>
+                  ) : project.id === "health-app" ? (
+                    <span className="health-app-mini">
+                      <img src="/screens/health-app/home.png" alt="" />
+                      <img src="/screens/health-app/booking-summary.png" alt="" />
+                    </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
                   )}
@@ -85,6 +91,8 @@ export default function Home() {
               >
                 {project.visual === "kpi" ? (
                   <KpiProjectPreview compact />
+                ) : project.id === "health-app" ? (
+                  <HealthAppProjectPreview />
                 ) : (
                   <span className="project-image-window">
                     <img
