@@ -205,16 +205,15 @@ export default function DotCareCaseStudy() {
               playsInline
               preload="metadata"
               poster="/screens/dotcare-redesign/worklist.png"
-              aria-label="DotCare Pharmacy interaction-state prototype walkthrough"
+              aria-label="DotCare Pharmacy golden-path prototype walkthrough from Worklist to clinical provenance"
             >
               <source src="/video/dotcare-interaction-walkthrough.mp4" type="video/mp4" />
-              <source src="/video/dotcare-interaction-walkthrough.webm" type="video/webm" />
               Your browser does not support embedded video. <a href="/video/dotcare-interaction-walkthrough.mp4">Open the walkthrough video.</a>
             </video>
             <figcaption>
-              <span>Interaction-state walkthrough · 17 sec</span>
-              <strong>Loading → ready → read-only recovery.</strong>
-              <p>Built from the prototype states shown here. This is redesign evidence—not deployed-product footage.</p>
+              <span>Golden-path walkthrough · 50 sec</span>
+              <strong>Worklist → verify → resolve → fulfil → charge → dispense → trace.</strong>
+              <p>Cursor-guided walkthrough composed from the frozen finished prototype. This is redesign evidence—not deployed-product footage.</p>
             </figcaption>
           </figure>
         </div>
