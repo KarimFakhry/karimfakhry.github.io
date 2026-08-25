@@ -897,8 +897,8 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .evidence-media-label.product { background: #b95735; }
 .evidence-media-action { position: absolute; z-index: 2; right: 14px; bottom: 14px; padding: 9px 11px; background: rgba(7,26,34,.92); color: #fff; font-size: 8px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: 0; transform: translateY(5px); transition: opacity 180ms ease, transform 180ms ease; }
 .evidence-media:hover .evidence-media-action, .evidence-media:focus-visible .evidence-media-action { opacity: 1; transform: none; }
-.dotcare-feature-block > .evidence-media,
-.dotcare-provenance-block > .evidence-media { max-width: 1320px; margin: 0 auto clamp(44px, 6vw, 78px); }
+.dotcare-feature-block > .evidence-media { max-width: 1320px; margin: 0 auto clamp(44px, 6vw, 78px); }
+.dotcare-provenance-block > .evidence-media { max-width: 1320px; margin: clamp(56px, 6vw, 88px) auto 0; }
 .dotcare-feature-block > .dotcare-detail-grid { margin-top: clamp(44px, 6vw, 78px); }
 .dotcare-state-strip { max-width: 1320px; margin: 0 auto clamp(42px, 6vw, 72px); display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 22px; align-items: center; }
 .dotcare-state-strip div { min-height: 150px; padding: 24px; border-top: 1px solid #64ddd5; display: flex; flex-direction: column; justify-content: space-between; }
@@ -908,10 +908,12 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .dotcare-state-block > .evidence-media { max-width: 1040px; margin: 0 auto; }
 .dotcare-behaviour-sequence { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .dotcare-behaviour-sequence > * { min-width: 0; }
-.prototype-media-slot { min-width: 0; aspect-ratio: 16 / 9; min-height: 0; padding: 26px; border: 1px dashed rgba(100,221,213,.5); background: #0d3039; display: flex; flex-direction: column; justify-content: flex-end; }
-.prototype-media-slot span { color: #64ddd5; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.prototype-media-slot strong { margin-top: 16px; font-family: Georgia, serif; font-size: clamp(22px, 2.3vw, 34px); font-weight: 400; line-height: 1.1; }
-.prototype-media-slot p { margin: 15px 0 0; color: #9db2b7; font-size: 12px; line-height: 1.6; }
+.prototype-walkthrough { min-width: 0; margin: 0; border: 1px solid rgba(100,221,213,.38); background: #0d3039; overflow: hidden; }
+.prototype-walkthrough video { width: 100%; aspect-ratio: 16 / 9; display: block; background: #06171e; object-fit: cover; }
+.prototype-walkthrough figcaption { padding: 20px 22px 22px; }
+.prototype-walkthrough span { color: #64ddd5; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.prototype-walkthrough strong { margin-top: 12px; display: block; font-family: Georgia, serif; font-size: clamp(21px, 2vw, 30px); font-weight: 400; line-height: 1.12; }
+.prototype-walkthrough p { margin: 12px 0 0; color: #9db2b7; font-size: 12px; line-height: 1.6; }
 .dotcare-system-block { border-top: 1px solid rgba(255,255,255,.1); background: #102f38; display: grid; grid-template-columns: 1fr 1.2fr; gap: 8vw; }
 .dotcare-system-block > div { margin: 0; }
 .dotcare-system-block > div > p:last-child { max-width: 60ch; margin: 24px 0 0; color: #9db2b7; line-height: 1.7; }
@@ -1323,7 +1325,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .dotcare-story-block > header { grid-template-columns: .45fr 1.35fr; }
   .dotcare-story-block > header > p:last-child { grid-column: 2; }
   .dotcare-behaviour-sequence { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .prototype-media-slot { grid-column: 1 / -1; min-height: 300px; }
+  .prototype-walkthrough { width: min(100%, 720px); grid-column: 1 / -1; justify-self: center; }
 }
 
 @media (max-width: 760px) {
@@ -1419,7 +1421,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .dotcare-state-strip { grid-template-columns: 1fr; gap: 12px; }
   .dotcare-state-strip > b { justify-self: center; }
   .dotcare-state-strip div { min-height: 120px; }
-  .prototype-media-slot { grid-column: 1; min-height: 260px; aspect-ratio: auto; }
+  .prototype-walkthrough { width: 100%; grid-column: 1; }
   .dotcare-system-block { grid-template-columns: 1fr; }
   .dotcare-system-block dl div { grid-template-columns: 1fr; gap: 10px; }
   .dotcare-outcomes li { grid-template-columns: 1fr auto; gap: 10px 16px; }

@@ -38,7 +38,7 @@ export const projects: Project[] = ([
   {
     id: "academy",
     slug: "andalusia-academy",
-    number: "05",
+    number: "02",
     title: "Andalusia Academy",
     type: "Education platform",
     year: "2026",
@@ -194,7 +194,7 @@ export const projects: Project[] = ([
   {
     id: "kpi-hub",
     slug: "kpi-performance-hub",
-    number: "02",
+    number: "05",
     title: "KPI Performance Hub",
     type: "Performance management product",
     year: "2026",

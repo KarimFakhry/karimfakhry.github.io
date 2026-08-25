@@ -199,11 +199,24 @@ export default function DotCareCaseStudy() {
             alt="DotCare Pharmacy Worklist in a read-only recovery state after connection loss"
             label="REDESIGN"
           />
-          <div className="prototype-media-slot">
-            <span>Walkthrough media slot</span>
-            <strong>Ready for a professional prototype recording.</strong>
-            <p>No public Figma link is exposed and no video is fabricated. A future recording can drop into this reserved 16:9 area.</p>
-          </div>
+          <figure className="prototype-walkthrough">
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              poster="/screens/dotcare-redesign/worklist.png"
+              aria-label="DotCare Pharmacy interaction-state prototype walkthrough"
+            >
+              <source src="/video/dotcare-interaction-walkthrough.mp4" type="video/mp4" />
+              <source src="/video/dotcare-interaction-walkthrough.webm" type="video/webm" />
+              Your browser does not support embedded video. <a href="/video/dotcare-interaction-walkthrough.mp4">Open the walkthrough video.</a>
+            </video>
+            <figcaption>
+              <span>Interaction-state walkthrough · 17 sec</span>
+              <strong>Loading → ready → read-only recovery.</strong>
+              <p>Built from the prototype states shown here. This is redesign evidence—not deployed-product footage.</p>
+            </figcaption>
+          </figure>
         </div>
       </article>
 
