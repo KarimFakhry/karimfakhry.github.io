@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { getProject, projects } from "../../data/projects";
 import FullCaseStudy from "./FullCaseStudy";
 import ScreenGallery from "./ScreenGallery";
-import KpiProjectPreview from "../../components/KpiProjectPreview";
+import DotCareCaseStudy from "./DotCareCaseStudy";
+import EvidenceMedia from "./EvidenceMedia";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const nextProject = projects[(projectIndex + 1) % projects.length];
   const isOriginalProduct = project.caseStudyMode === "product";
   const isManagerialSolution = project.caseStudyMode === "managerial";
+  const isPharmacyRedesign = project.caseStudyMode === "pharmacy-redesign";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -85,7 +87,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">Executive summary</p>
-          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : "The project in three points."}</h2>
+          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : "The project in three points."}</h2>
           <p>{project.method}</p>
         </div>
         <div className="executive-grid">
@@ -97,9 +99,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : "What I found"}</p>
-          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : "The signals that shaped the redesign."}</h2>
-          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : "Key facts from the live product, its content and the working team process."}</p>
+          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : "What I found"}</p>
+          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : "The signals that shaped the redesign."}</h2>
+          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : "Key facts from the live product, its content and the working team process."}</p>
         </div>
         <div className="evidence-grid">
           {project.evidence.map((item) => (
@@ -111,7 +113,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
         <div className="user-context">
-          <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : "Key journeys"}</p>
+          <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : isPharmacyRedesign ? "People in the workflow" : "Key journeys"}</p>
           <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
         </div>
       </section>
@@ -136,22 +138,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      <section className="decision-section" id="decisions">
-        <div className="case-study-intro">
-          <p className="eyebrow">Key product decisions</p>
-          <h2>{isOriginalProduct ? "How we made complex hospital work easier to follow." : isManagerialSolution ? "How the product supports better performance management." : "The decisions that changed the experience."}</h2>
-        </div>
-        <div className="decision-list">
-          {project.chapters.map((chapter) => (
-            <article key={chapter.number}>
-              <span>{chapter.number}</span>
-              <h3>{chapter.title}</h3>
-              <div><small>{isOriginalProduct ? "Operational need" : isManagerialSolution ? "Managerial challenge" : "Before"}</small><p>{chapter.problem}</p></div>
-              <div><small>{isOriginalProduct ? "Design decision" : isManagerialSolution ? "Product response" : "Design response"}</small><p>{chapter.response}</p></div>
-            </article>
-          ))}
-        </div>
-      </section>
+      {!isPharmacyRedesign && (
+        <section className="decision-section" id="decisions">
+          <div className="case-study-intro">
+            <p className="eyebrow">Key product decisions</p>
+            <h2>{isOriginalProduct ? "How we made complex hospital work easier to follow." : isManagerialSolution ? "How the product supports better performance management." : "The decisions that changed the experience."}</h2>
+          </div>
+          <div className="decision-list">
+            {project.chapters.map((chapter) => (
+              <article key={chapter.number}>
+                <span>{chapter.number}</span>
+                <h3>{chapter.title}</h3>
+                <div><small>{isOriginalProduct ? "Operational need" : isManagerialSolution ? "Managerial challenge" : "Before"}</small><p>{chapter.problem}</p></div>
+                <div><small>{isOriginalProduct ? "Design decision" : isManagerialSolution ? "Product response" : "Design response"}</small><p>{chapter.response}</p></div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {isPharmacyRedesign && <DotCareCaseStudy />}
 
       {project.visual === "kpi" ? (
         <section className="kpi-showcase" id="product">
@@ -160,26 +166,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <h2>One performance process. Two clear points of view.</h2>
             <p>The manager gets a workspace for action and follow-up. Each employee gets a private report they can understand and use.</p>
           </div>
-          <div className="kpi-role-grid">
+          <div className="kpi-role-grid kpi-evidence-grid">
             <article className="kpi-role-card kpi-role-featured">
-              <div className="kpi-role-copy"><p className="eyebrow">Manager view</p><h3>See the process, not just a final score.</h3><p>The overview keeps daily capture, sprint review and employee reports connected, so the manager can see what needs attention and move directly to it.</p></div>
-              <KpiProjectPreview view="manager" compact />
-            </article>
-            <article className="kpi-role-card">
-              <div className="kpi-role-copy"><p className="eyebrow">Manager · Daily input</p><h3>Record signals while the context is clear.</h3><p>A focused input flow reduces end-of-sprint reconstruction and keeps the reason beside the entry.</p></div>
-              <KpiProjectPreview view="daily" compact />
-            </article>
-            <article className="kpi-role-card">
-              <div className="kpi-role-copy"><p className="eyebrow">Manager · Sprint review</p><h3>Close the sprint with the evidence already in place.</h3><p>Sprint-level decisions are separated from daily tracking, giving the manager the right context at the right time.</p></div>
-              <KpiProjectPreview view="review" compact />
+              <div className="kpi-role-copy"><p className="eyebrow">Manager view</p><h3>Monitor the team and see where attention is needed.</h3><p>The manager overview connects overall performance, employee status and the active sprint so a problem can be identified before opening the individual report.</p></div>
+              <EvidenceMedia src="/screens/kpi-performance/manager-overview.png" title="Manager overview" alt="KPI Performance Hub Manager overview showing team performance, sprint status and employees needing attention" label="PRODUCT" eager />
             </article>
             <article className="kpi-role-card kpi-role-featured">
-              <div className="kpi-role-copy"><p className="eyebrow">Employee view</p><h3>Make performance private, clear and discussable.</h3><p>Employees see only their own report, the KPI breakdown and previous context—enough to prepare for a useful one-to-one.</p></div>
-              <KpiProjectPreview view="employee" compact />
+              <div className="kpi-role-copy"><p className="eyebrow">Employee view</p><h3>Understand personal performance without exposing the team.</h3><p>Each employee sees their own KPI breakdown, latest sprint, trend and team-level context—enough for self-awareness and a useful one-to-one.</p></div>
+              <EvidenceMedia src="/screens/kpi-performance/employee-overview.png" title="Employee overview" alt="KPI Performance Hub Employee overview showing private performance and KPI context" label="PRODUCT" />
+            </article>
+            <article className="kpi-role-card">
+              <div className="kpi-role-copy"><p className="eyebrow">Manager drill-down</p><h3>Move from a team signal to the individual detail.</h3><p>The report keeps KPI breakdown, previous-sprint context and employee status together for managerial follow-up.</p></div>
+              <EvidenceMedia src="/screens/kpi-performance/manager-employee-report.png" title="Manager employee report" alt="Manager view of an individual employee KPI report" label="PRODUCT" />
+            </article>
+            <article className="kpi-role-card">
+              <div className="kpi-role-copy"><p className="eyebrow">Employee history</p><h3>See performance across reporting periods.</h3><p>Sprint history gives the employee a consistent view of change over time without turning the portfolio story into dashboard vanity metrics.</p></div>
+              <EvidenceMedia src="/screens/kpi-performance/employee-sprints.png" title="Employee sprint history" alt="Employee view of periodic KPI reports and sprint history" label="PRODUCT" />
             </article>
           </div>
         </section>
-      ) : (
+      ) : !isPharmacyRedesign ? (
         <>
           <section className="screen-section" id="redesign-screens">
             <div className="screen-heading">
@@ -208,6 +214,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </section>
           )}
         </>
+      ) : null}
+
+      {isPharmacyRedesign && project.image && (
+        <section className="complete-section" id="source-presentation">
+          <div>
+            <p className="eyebrow">Source presentation</p>
+            <h2>The complete 15-scene evidence set.</h2>
+          </div>
+          <p>The web case study above adapts its strongest arguments for browser reading. The original long-form artefact remains available at full resolution.</p>
+          <FullCaseStudy image={project.image} title={project.title} />
+        </section>
       )}
 
       <a className="next-project" href={`/work/${nextProject.slug}`}>

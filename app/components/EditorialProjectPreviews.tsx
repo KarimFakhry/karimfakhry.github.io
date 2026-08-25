@@ -1,5 +1,3 @@
-import KpiProjectPreview from "./KpiProjectPreview";
-
 export function AcademyProjectPreview() {
   return (
     <div className="editorial-project-preview academy-editorial" aria-hidden="true">
@@ -61,7 +59,14 @@ export function KpiEditorialPreview() {
         <span><b>Employee</b><i>Private report</i></span>
       </div>
       <span className="kpi-grid-lines" />
-      <div className="kpi-editorial-window"><KpiProjectPreview compact /></div>
+      <span className="editorial-browser kpi-browser-manager">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/kpi-performance/manager-overview.png" alt="" />
+      </span>
+      <span className="editorial-browser kpi-browser-employee">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/kpi-performance/employee-overview.png" alt="" />
+      </span>
       <span className="editorial-flow"><i>Daily input</i><em>→</em><i>Sprint review</i><em>→</em><i>Private report</i></span>
     </div>
   );
@@ -71,20 +76,20 @@ export function DotCareProjectPreview() {
   return (
     <div className="editorial-project-preview dotcare-editorial" aria-hidden="true">
       <div className="editorial-preview-copy">
-        <i>Hospital management system · Original product</i>
-        <b>One patient.<br />Every team in context.</b>
+        <i>Enterprise Pharmacy workflow · Redesign prototype</i>
+        <b>Verification<br />becomes a state.</b>
       </div>
       <span className="dotcare-grid" />
       <span className="editorial-browser dotcare-browser-back">
         <span className="browser-chrome"><i /><i /><i /></span>
-        <img src="/screens/dotcare/appointment-week.webp" alt="" />
+        <img src="/screens/dotcare-redesign/verification.png" alt="" />
       </span>
       <span className="editorial-browser dotcare-browser-main">
         <span className="browser-chrome"><i /><i /><i /></span>
-        <img src="/screens/dotcare/physician-orders.webp" alt="" />
+        <img src="/screens/dotcare-redesign/worklist.png" alt="" />
       </span>
-      <span className="dotcare-module-mark">OPD <i>+</i> Pharmacy</span>
-      <span className="editorial-flow"><i>Schedule</i><em>→</em><i>Treat</i><em>→</em><i>Fulfil</i></span>
+      <span className="dotcare-module-mark">LIVE <i>→</i> REDESIGN</span>
+      <span className="editorial-flow"><i>Worklist</i><em>→</em><i>Verify</i><em>→</em><i>Dispense</i></span>
     </div>
   );
 }

@@ -28,17 +28,17 @@ export type Project = {
   thumbnail?: string;
   theme: "sand" | "mint" | "forest" | "copper" | "signal";
   visual?: "image" | "kpi" | "dotcare";
-  caseStudyMode?: "redesign" | "product" | "managerial";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
 };
 
-export const projects: Project[] = [
+export const projects: Project[] = ([
   {
     id: "academy",
     slug: "andalusia-academy",
-    number: "01",
+    number: "05",
     title: "Andalusia Academy",
     type: "Education platform",
     year: "2026",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     id: "health-web",
     slug: "andalusia-health",
-    number: "02",
+    number: "04",
     title: "Andalusia Health",
     type: "Healthcare ecosystem",
     year: "2026",
@@ -194,7 +194,7 @@ export const projects: Project[] = [
   {
     id: "kpi-hub",
     slug: "kpi-performance-hub",
-    number: "04",
+    number: "02",
     title: "KPI Performance Hub",
     type: "Performance management product",
     year: "2026",
@@ -229,63 +229,67 @@ export const projects: Project[] = [
     theme: "copper",
     visual: "kpi",
     caseStudyMode: "managerial",
-    screens: [],
+    thumbnail: "/screens/kpi-performance/manager-overview.png",
+    screens: [
+      { title: "Manager overview — team performance and attention areas", image: "/screens/kpi-performance/manager-overview.png", device: "desktop" },
+      { title: "Employee overview — private KPI performance", image: "/screens/kpi-performance/employee-overview.png", device: "desktop" },
+      { title: "Manager drill-down — individual performance report", image: "/screens/kpi-performance/manager-employee-report.png", device: "desktop" },
+      { title: "Employee sprint history — periodic performance context", image: "/screens/kpi-performance/employee-sprints.png", device: "desktop" },
+    ],
   },
   {
     id: "dotcare",
     slug: "dotcare-hmis",
-    number: "05",
-    title: "DotCare",
-    type: "Hospital management system",
-    year: "Original product",
-    summary: "DotCare was built with my team to help hospital staff move through appointments, clinical decisions and pharmacy work without losing the patient context between them.",
-    challenge: "A hospital visit changes by the minute. Staff need to respond to schedule changes, clinical risk, insurance rules and medication availability while staying anchored to the same patient and encounter.",
-    outcome: "A shared way of working that keeps the patient, the current state and the next safe action visible across modules.",
-    role: "Product design leadership · team delivery",
-    scope: "HMIS platform · OPD & Pharmacy focus",
+    number: "01",
+    title: "DotCare Pharmacy",
+    type: "Enterprise pharmacy workflow",
+    year: "2026",
+    summary: "Redesigning DotCare Pharmacy’s core medication workflow — from order intake to verified dispensing and clinical traceability.",
+    challenge: "The live Pharmacy product gives charging an explicit state, while the pharmacist’s professional act of verifying medication is weak or absent from the product model.",
+    outcome: "An evidence-based redesign prototype that makes verification, safety resolution, fulfilment, charging, dispensing and provenance distinct parts of one medication lifecycle.",
+    role: "Product design · IA · interaction · design system",
+    scope: "Phase 1 · safety-critical Pharmacy core",
     platform: "Enterprise web application",
-    status: "Original product · selected modules",
-    method: "Operational workflow mapping · interaction design · team critique · shared product patterns",
+    status: "Redesign prototype · not deployed",
+    method: "Live-product audit · workflow modelling · clinical state design · interactive prototype",
     primaryUsers: [
-      "Appointment and front-desk teams coordinating patient access",
-      "Clinicians reviewing visits, orders and medication risk",
-      "Pharmacy teams charging, dispensing and tracing fulfilment",
+      "Pharmacists reviewing and verifying medication orders",
+      "Pharmacy teams resolving safety, stock and approval exceptions",
+      "Clinicians and operations teams who depend on an auditable medication record",
     ],
     executiveSummary: {
-      problem: "A hospital visit is not one clean flow. Appointments move, coverage changes and medication orders can trigger safety or availability issues. When context disappears, staff have to rebuild the patient story before they can act.",
-      approach: "We designed around the patient encounter rather than treating every module as a separate product. The patient, visit and clinical context stay visible while the task changes underneath.",
-      result: "The selected OPD and Pharmacy work shows the same logic carrying staff from capacity planning and booking to prescribing, fulfilment and follow-up actions.",
+      problem: "The live module is strong at recording system and financial transactions, but it does not clearly model the pharmacist’s clinical verification before medication reaches the patient.",
+      approach: "Redefine the product around a seven-state medication lifecycle, with an owner and record at every safety-critical transition.",
+      result: "The prototype separates clinical approval, financial charging and physical dispensing, then preserves who acted, for which patient, from which lot and when.",
     },
     evidence: [
-      { value: "Context", label: "before action", detail: "Patient, visit, allergy, diagnosis, coverage and status stay visible before staff make a decision." },
-      { value: "States", label: "built into the workflow", detail: "Available, booked, arrived, frozen and rescheduled states are distinct and actionable." },
-      { value: "Safety", label: "at the decision point", detail: "Medication risk appears before continuation, with severity, cause and a required override reason." },
-      { value: "Handoffs", label: "across the visit", detail: "Appointments, orders, prescriptions, dispensing and returns use the same interaction language." },
+      { value: "LIVE", label: "production evidence", detail: "Current DotCare screens establish the real transaction-led Pharmacy model the redesign began from." },
+      { value: "7 states", label: "one medication lifecycle", detail: "Worklist, verification, safety resolution, fulfilment, charging, dispensing and history are explicitly separated." },
+      { value: "Clinical", label: "verification becomes a state", detail: "The pharmacist’s decision gains an author, timestamp, signature and structural effect on what follows." },
+      { value: "Prototype", label: "behaviour is specified", detail: "Loading, contention, blocked, failure and recovery states are defined without claiming deployment outcomes." },
     ],
     chapters: [
-      { number: "01", title: "Don’t make staff rebuild the patient story", problem: "A booking agent or pharmacist cannot act from a row alone. They need to know which visit they are handling, how it is funded and what clinical risks already exist.", response: "We kept patient identity, visit type, coverage, allergies and status in a persistent context bar above the active task." },
-      { number: "02", title: "Turn the schedule into an operations board", problem: "A clinic day changes constantly: physicians move, slots freeze and patients shift from booked to arrived while teams still need a clear view of capacity.", response: "The week view explains capacity; the day view supports the live queue. Colour and labels communicate state without forcing staff into each appointment." },
-      { number: "03", title: "Treat exceptions as normal work", problem: "Overbooking, waiting lists, rescheduling and speciality changes happen every day. Hiding them behind generic actions creates uncertainty and inconsistent handling.", response: "Each exception has its own path with the relevant patient, slot, reason and confirmation kept together." },
-      { number: "04", title: "Stop unsafe orders before fulfilment", problem: "A warning is only useful if staff can understand the risk, identify its cause and record why they chose to continue.", response: "Interaction checks appear at the decision point, grouped by severity with the clinical message and override reason required before continuation." },
-      { number: "05", title: "Carry responsibility through pharmacy", problem: "The medication journey does not end when a physician places an order. Pharmacy still has to check stock, approval, charge, quantity, dispensing and possible return.", response: "We carried the order details through each pharmacy action so the team can see what was ordered, approved, dispensed and still outstanding." },
+      { number: "01", title: "Start from work, not a patient search", problem: "The live module expects the pharmacist to know which patient to find before the shift’s workload is visible.", response: "A worklist ranks medication orders by urgency, clinical risk, waiting time and exception state." },
+      { number: "02", title: "Make verification the professional act", problem: "Charging is recorded; clinical verification is not.", response: "Verification becomes an explicit state with an author, timestamp, signature and the clinical picture visible at the decision point." },
+      { number: "03", title: "Resolve safety and operational exceptions", problem: "A warning or stock problem can become a dismissible interruption or a dead end.", response: "Severity, acknowledgement, prescriber queries, stock resolution and approval remain within the medication workflow." },
+      { number: "04", title: "Separate verification, charging and dispensing", problem: "One transaction cannot truthfully represent clinical responsibility, payment and physical release.", response: "Each event becomes a distinct state owned by the person or system responsible for it." },
+      { number: "05", title: "Preserve clinical provenance", problem: "A financial ledger cannot answer who dispensed a medication, to whom, from which lot and at what time.", response: "Clinical history and the financial record become complementary views with full dispenser, recipient, lot and timestamp traceability." },
     ],
-    tags: ["Enterprise UX", "Healthcare operations", "Design systems"],
-    thumbnail: "/screens/dotcare/appointment-week.webp",
+    tags: ["Enterprise UX", "Clinical workflow", "Design systems"],
+    thumbnail: "/screens/dotcare-redesign/worklist.png",
     theme: "signal",
     visual: "dotcare",
-    caseStudyMode: "product",
+    caseStudyMode: "pharmacy-redesign",
     screens: [
-      { title: "Weekly appointment operations", image: "/screens/dotcare/appointment-week.webp", device: "desktop" },
-      { title: "Daily slot and patient states", image: "/screens/dotcare/appointment-day.webp", device: "desktop" },
-      { title: "Physician suggestions", image: "/screens/dotcare/physician-suggestions.webp", device: "desktop" },
-      { title: "Operational criteria setup", image: "/screens/dotcare/criteria-setup.webp", device: "desktop" },
-      { title: "Physician medication orders", image: "/screens/dotcare/physician-orders.webp", device: "desktop" },
-      { title: "Guided prescription workflow", image: "/screens/dotcare/prescription-flow.webp", device: "desktop" },
-      { title: "Pharmacy fulfilment", image: "/screens/dotcare/pharmacy-fulfilment.webp", device: "desktop" },
-      { title: "Payment receipt and return", image: "/screens/dotcare/payment-return.webp", device: "desktop" },
+      { title: "Pharmacy Worklist", image: "/screens/dotcare-redesign/worklist.png", device: "desktop" },
+      { title: "Medication Verification", image: "/screens/dotcare-redesign/verification.png", device: "desktop" },
+      { title: "Clinical Safety Review", image: "/screens/dotcare-redesign/safety-review.png", device: "desktop" },
+      { title: "Controlled Dispensing", image: "/screens/dotcare-redesign/dispensing.png", device: "desktop" },
+      { title: "Medication History", image: "/screens/dotcare-redesign/medication-history.png", device: "desktop" },
+      { title: "Dispense Record — Full Provenance", image: "/screens/dotcare-redesign/dispense-provenance.png", device: "desktop" },
     ],
   },
-];
+] as Project[]).sort((a, b) => a.number.localeCompare(b.number));
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

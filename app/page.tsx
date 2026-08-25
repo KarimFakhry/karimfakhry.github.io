@@ -6,6 +6,7 @@ import {
   HealthWebsiteProjectPreview,
   KpiEditorialPreview,
 } from "./components/EditorialProjectPreviews";
+import LegacyWorkArchive from "./components/LegacyWorkArchive";
 
 export default function Home() {
   return (
@@ -84,8 +85,8 @@ export default function Home() {
                     </span>
                   ) : project.id === "dotcare" ? (
                     <span className="dotcare-mini">
-                      <img src="/screens/dotcare/appointment-week.webp" alt="" />
-                      <img src="/screens/dotcare/physician-orders.webp" alt="" />
+                      <img src="/screens/dotcare-redesign/worklist.png" alt="" />
+                      <img src="/screens/dotcare-redesign/verification.png" alt="" />
                     </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
@@ -187,6 +188,17 @@ export default function Home() {
             <p>I grew the team from four to thirteen designers, with clearer governance, critique, QA and handoff standards.</p>
           </div>
         </div>
+      </section>
+
+      <section className="legacy-section" id="earlier-web-design">
+        <div className="legacy-heading">
+          <div>
+            <p className="eyebrow">Earlier web design · 2018–2020</p>
+            <h2>Visual craft from an earlier chapter.</h2>
+          </div>
+          <p>A selective archive—not modern UX case studies. These four projects show the visual and web-design foundation that preceded my product and systems work.</p>
+        </div>
+        <LegacyWorkArchive />
       </section>
 
       <footer>
