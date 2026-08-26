@@ -914,6 +914,10 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .prototype-walkthrough span { color: #64ddd5; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .prototype-walkthrough strong { margin-top: 12px; display: block; font-family: Georgia, serif; font-size: clamp(21px, 2vw, 30px); font-weight: 400; line-height: 1.12; }
 .prototype-walkthrough p { margin: 12px 0 0; color: #9db2b7; font-size: 12px; line-height: 1.6; }
+.health-app-prototype-walkthrough { border-color: rgba(213,173,88,.42); background: #0b2c23; }
+.health-app-prototype-walkthrough video { background: #071b16; }
+.health-app-prototype-walkthrough span { color: #d5ad58; }
+.health-app-prototype-walkthrough p { color: #bdcbc4; }
 .dotcare-system-block { border-top: 1px solid rgba(255,255,255,.1); background: #102f38; display: grid; grid-template-columns: 1fr 1.2fr; gap: 8vw; }
 .dotcare-system-block > div { margin: 0; }
 .dotcare-system-block > div > p:last-child { max-width: 60ch; margin: 24px 0 0; color: #9db2b7; line-height: 1.7; }

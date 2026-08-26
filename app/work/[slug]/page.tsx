@@ -6,6 +6,7 @@ import FullCaseStudy from "./FullCaseStudy";
 import ScreenGallery from "./ScreenGallery";
 import DotCareCaseStudy from "./DotCareCaseStudy";
 import EvidenceMedia from "./EvidenceMedia";
+import HealthAppWalkthrough from "./HealthAppWalkthrough";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -156,6 +157,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
       )}
+
+      {project.id === "health-app" && <HealthAppWalkthrough />}
 
       {isPharmacyRedesign && <DotCareCaseStudy />}
 
