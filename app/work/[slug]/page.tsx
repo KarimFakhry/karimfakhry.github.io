@@ -158,7 +158,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {project.id === "health-app" && <HealthAppWalkthrough />}
+      {(["academy", "health-web", "health-app", "kpi-hub"] as const).includes(project.id as "academy" | "health-web" | "health-app" | "kpi-hub") && (
+        <HealthAppWalkthrough projectId={project.id as "academy" | "health-web" | "health-app" | "kpi-hub"} />
+      )}
 
       {isPharmacyRedesign && <DotCareCaseStudy />}
 

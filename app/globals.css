@@ -918,6 +918,15 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .health-app-prototype-walkthrough video { background: #071b16; }
 .health-app-prototype-walkthrough span { color: #d5ad58; }
 .health-app-prototype-walkthrough p { color: #bdcbc4; }
+.academy-prototype-walkthrough { border-color: rgba(240,164,75,.42); background: #0c2730; }
+.academy-prototype-walkthrough video { background: #07171c; }
+.academy-prototype-walkthrough span { color: #f0a44b; }
+.health-web-prototype-walkthrough { border-color: rgba(66,185,231,.42); background: #0a2b38; }
+.health-web-prototype-walkthrough video { background: #071923; }
+.health-web-prototype-walkthrough span { color: #42b9e7; }
+.kpi-prototype-walkthrough { border-color: rgba(99,196,239,.42); background: #10283a; }
+.kpi-prototype-walkthrough video { background: #0a1723; }
+.kpi-prototype-walkthrough span { color: #63c4ef; }
 .dotcare-system-block { border-top: 1px solid rgba(255,255,255,.1); background: #102f38; display: grid; grid-template-columns: 1fr 1.2fr; gap: 8vw; }
 .dotcare-system-block > div { margin: 0; }
 .dotcare-system-block > div > p:last-child { max-width: 60ch; margin: 24px 0 0; color: #9db2b7; line-height: 1.7; }

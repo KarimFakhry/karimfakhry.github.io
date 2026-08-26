@@ -1,26 +1,87 @@
-export default function HealthAppWalkthrough() {
+type WalkthroughProject = "academy" | "health-web" | "health-app" | "kpi-hub";
+
+const walkthroughs: Record<WalkthroughProject, {
+  heading: string;
+  intro: string;
+  video: string;
+  poster: string;
+  ariaLabel: string;
+  duration: string;
+  path: string;
+  note: string;
+  className: string;
+}> = {
+  academy: {
+    heading: "One course, carried from discovery to My Courses.",
+    intro: "A cursor-guided walkthrough of the wired learning journey, using the finished desktop prototype and its real scroll positions.",
+    video: "/video/andalusia-academy-golden-path.mp4",
+    poster: "/video/andalusia-academy-golden-path-poster.jpg",
+    ariaLabel: "Andalusia Academy golden-path walkthrough from course discovery and filtering through enrolment, payment confirmation and My Courses",
+    duration: "40 seconds",
+    path: "Discover → filter → evaluate → enrol → confirm → learn.",
+    note: "The path follows the prototype's actual connected screens and representative enrolment state. It is a design proposal, not a deployed-product recording.",
+    className: "academy-prototype-walkthrough",
+  },
+  "health-web": {
+    heading: "One appointment, carried from doctor discovery to its full record.",
+    intro: "A cursor-guided walkthrough of the finished desktop prototype, including its complete booking and appointment-management path.",
+    video: "/video/andalusia-health-website-golden-path.mp4",
+    poster: "/video/andalusia-health-website-golden-path-poster.jpg",
+    ariaLabel: "Andalusia Health website golden-path walkthrough from doctor discovery through booking confirmation, appointments and appointment details",
+    duration: "41 seconds",
+    path: "Find care → choose → evaluate → book → confirm → manage.",
+    note: "The path uses the prototype's wired doctor, booking and appointment states. It is a design proposal, not a deployed-product recording.",
+    className: "health-web-prototype-walkthrough",
+  },
+  "health-app": {
+    heading: "One appointment, carried from discovery to secure follow-up.",
+    intro: "A cursor-guided recording of the finished light-mode prototype, following the product's wired interactions and states.",
+    video: "/video/andalusia-health-app-golden-path.mp4",
+    poster: "/video/andalusia-health-app-golden-path-poster.jpg",
+    ariaLabel: "Andalusia Health App golden-path walkthrough from doctor discovery through booking, queue status and secure lab follow-up",
+    duration: "51 seconds",
+    path: "Find care → choose a time → confirm → arrive → follow up.",
+    note: "The path uses the prototype's actual navigation, processing state, live queue context, biometric gate and clinical follow-up record. It is a design proposal, not a deployed-product recording.",
+    className: "health-app-prototype-walkthrough",
+  },
+  "kpi-hub": {
+    heading: "One performance cycle, seen from both sides of the management system.",
+    intro: "A cursor-guided walkthrough of the Manager and Employee workspaces, using the finished role-based prototype and its connected states.",
+    video: "/video/kpi-performance-hub-golden-path.mp4",
+    poster: "/video/kpi-performance-hub-golden-path-poster.jpg",
+    ariaLabel: "KPI Performance Hub golden-path walkthrough from manager overview and employee drill-down through daily KPI entry and the employee performance view",
+    duration: "54 seconds",
+    path: "Monitor → drill down → update → save → self-monitor.",
+    note: "The path demonstrates the product's Manager and Employee role model without implying deployment or measured business outcomes.",
+    className: "kpi-prototype-walkthrough",
+  },
+};
+
+export default function HealthAppWalkthrough({ projectId = "health-app" }: { projectId?: WalkthroughProject }) {
+  const walkthrough = walkthroughs[projectId];
+
   return (
     <section className="screen-section health-app-walkthrough-section" id="prototype-walkthrough">
       <div className="screen-heading">
         <p className="eyebrow">Golden-path walkthrough</p>
-        <h2>One appointment, carried from discovery to secure follow-up.</h2>
-        <p>A cursor-guided recording of the finished light-mode prototype, following the product&apos;s wired interactions and states.</p>
+        <h2>{walkthrough.heading}</h2>
+        <p>{walkthrough.intro}</p>
       </div>
-      <figure className="prototype-walkthrough health-app-prototype-walkthrough">
+      <figure className={`prototype-walkthrough ${walkthrough.className}`}>
         <video
           controls
           playsInline
           preload="metadata"
-          poster="/video/andalusia-health-app-golden-path-poster.jpg"
-          aria-label="Andalusia Health App golden-path walkthrough from doctor discovery through booking, queue status and secure lab follow-up"
+          poster={walkthrough.poster}
+          aria-label={walkthrough.ariaLabel}
         >
-          <source src="/video/andalusia-health-app-golden-path.mp4" type="video/mp4" />
-          Your browser does not support embedded video. <a href="/video/andalusia-health-app-golden-path.mp4">Open the walkthrough video.</a>
+          <source src={walkthrough.video} type="video/mp4" />
+          Your browser does not support embedded video. <a href={walkthrough.video}>Open the walkthrough video.</a>
         </video>
         <figcaption>
-          <span>Interactive prototype · 49 seconds</span>
-          <strong>Find care → choose a time → confirm → arrive → follow up.</strong>
-          <p>The path uses the prototype&apos;s actual navigation, bottom sheets, processing state, live queue context, biometric gate and clinical follow-up record. It is a design proposal, not a deployed-product recording.</p>
+          <span>Interactive prototype · {walkthrough.duration}</span>
+          <strong>{walkthrough.path}</strong>
+          <p>{walkthrough.note}</p>
         </figcaption>
       </figure>
     </section>
