@@ -36,8 +36,8 @@ const walkthroughs: Record<WalkthroughProject, {
   "health-app": {
     heading: "One appointment, carried from discovery to secure follow-up.",
     intro: "A cursor-guided recording of the finished light-mode prototype, following the product's wired interactions and states.",
-    video: "/video/andalusia-health-app-golden-path.mp4",
-    poster: "/video/andalusia-health-app-golden-path-poster.jpg",
+    video: "/video/andalusia-health-app-golden-path.mp4?v=20260826-fix",
+    poster: "/video/andalusia-health-app-golden-path-poster.jpg?v=20260826-fix",
     ariaLabel: "Andalusia Health App golden-path walkthrough from doctor discovery through booking, queue status and secure lab follow-up",
     duration: "51 seconds",
     path: "Find care → choose a time → confirm → arrive → follow up.",
