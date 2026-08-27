@@ -3,7 +3,7 @@ import "./globals.css";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://karim-fakhry-portfolio.kia0481.chatgpt.site";
+  "https://karimfakhry.github.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
