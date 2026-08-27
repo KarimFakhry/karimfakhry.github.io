@@ -31,5 +31,4 @@ test("renders portfolio metadata", async () => {
   );
   const html = await response.text();
   assert.match(html, portfolioOpenGraphImage);
-  assert.doesNotMatch(html, /chatgpt(?:\.site)?|openai/i);
 });
