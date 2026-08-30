@@ -150,6 +150,7 @@ button { font: inherit; }
 .hero-project.forest .hero-project-image { background: #123c32; }
 .hero-project.copper .hero-project-image { background: #d8784f; }
 .hero-project.signal .hero-project-image { background: #0d3440; }
+.hero-project.navy .hero-project-image { background: #142a43; }
 .hero-project-image img {
   width: 100%;
   height: auto;
@@ -217,6 +218,16 @@ button { font: inherit; }
 }
 .hero-project-image .dotcare-mini img:first-child { left: 4%; top: 15%; }
 .hero-project-image .dotcare-mini img:last-child { right: -8%; top: 34%; }
+.pharmacy-bi-mini {
+  width: 100%; height: 100%; position: relative; display: block; overflow: hidden;
+  background: #142a43;
+}
+.hero-project-image .pharmacy-bi-mini img {
+  position: absolute; width: 86%; height: auto; min-height: 0;
+  border: 1px solid rgba(255,255,255,.23); box-shadow: 0 8px 18px rgba(0,0,0,.34);
+}
+.hero-project-image .pharmacy-bi-mini img:first-child { z-index: 2; left: 3%; top: 14%; }
+.hero-project-image .pharmacy-bi-mini img:last-child { right: -11%; top: 39%; }
 .hero-project-image .academy-mini img:first-child,
 .hero-project-image .health-web-mini img:first-child { left: 7%; top: 18%; }
 .hero-project-image .academy-mini img:last-child,
@@ -281,6 +292,7 @@ button { font: inherit; }
 .project-card.forest .project-visual { background: #123c32; }
 .project-card.copper .project-visual { background: #d8784f; }
 .project-card.signal .project-visual { background: #0d3440; }
+.project-card.navy .project-visual { background: #142a43; }
 .project-image-window {
   display: block;
   width: min(76%, 820px);
@@ -576,6 +588,32 @@ button { font: inherit; }
 .project-visual:focus-visible .kpi-browser-manager { transform: rotate(1deg) translate(-1%, -2%); }
 .project-visual:hover .kpi-browser-employee,
 .project-visual:focus-visible .kpi-browser-employee { transform: rotate(-1deg) translate(1%, -2%); }
+.pharmacy-bi-editorial {
+  background:
+    radial-gradient(circle at 80% 14%, rgba(75,153,210,.24), transparent 25%),
+    linear-gradient(135deg, #193651 0%, #10263d 48%, #081725 100%);
+  color: #f5f9fc;
+}
+.pharmacy-bi-editorial::after { border-color: rgba(255,255,255,.16); }
+.pharmacy-bi-editorial .editorial-preview-copy { width: min(38%, 500px); }
+.pharmacy-bi-editorial .editorial-preview-copy > i { color: #73c2ea; }
+.pharmacy-bi-editorial .editorial-preview-copy > b { font-size: clamp(28px, 3.55vw, 55px); }
+.pharmacy-bi-grid {
+  position: absolute; inset: 0; opacity: .12;
+  background-image: linear-gradient(rgba(115,194,234,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(115,194,234,.3) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(105deg, transparent 2%, #000 45%, #000 100%);
+}
+.pharmacy-bi-browser-dark { width: 44%; height: 55%; right: 1%; top: 8%; transform: rotate(4deg); }
+.pharmacy-bi-browser-main { z-index: 5; width: 58%; height: 65%; right: 6%; top: 23%; transform: rotate(-2deg); }
+.pharmacy-bi-browser-main .browser-chrome,
+.pharmacy-bi-browser-dark .browser-chrome { background: #081725; }
+.pharmacy-bi-editorial .editorial-flow { color: rgba(255,255,255,.63); }
+.pharmacy-bi-editorial .editorial-flow em { color: #73c2ea; }
+.project-visual:hover .pharmacy-bi-browser-main,
+.project-visual:focus-visible .pharmacy-bi-browser-main { transform: rotate(-1deg) translate(-1%, -2%); box-shadow: 0 40px 86px rgba(0,0,0,.48); }
+.project-visual:hover .pharmacy-bi-browser-dark,
+.project-visual:focus-visible .pharmacy-bi-browser-dark { transform: rotate(5deg) translate(1%, -1%); }
 .dotcare-editorial {
   background:
     radial-gradient(circle at 78% 13%, rgba(70,216,210,.2), transparent 25%),
@@ -691,6 +729,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.forest { --project-bg: #123c32; }
 .project-page.copper { --project-bg: #d8784f; }
 .project-page.signal { --project-bg: #0d3440; }
+.project-page.navy { --project-bg: #142a43; }
 .project-header {
   position: absolute;
   z-index: 3;
@@ -704,6 +743,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.forest .project-header { color: #f4f2eb; }
 .project-page.copper .project-header { color: #221b18; }
 .project-page.signal .project-header { color: #f4fbfa; }
+.project-page.navy .project-header { color: #f5f9fc; }
 .project-header-nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 38px); }
 .back-link { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 .case-study-header-link {
@@ -718,6 +758,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.forest .case-study-header-link { background: var(--acid); color: var(--ink); }
 .project-page.copper .case-study-header-link { background: #221b18; color: #fff; }
 .project-page.signal .case-study-header-link { background: #64ddd5; color: #071a22; }
+.project-page.navy .case-study-header-link { background: #73c2ea; color: #081725; }
 .project-hero {
   min-height: 760px;
   padding: clamp(150px, 18vw, 220px) clamp(24px, 6vw, 96px) clamp(64px, 8vw, 110px);
@@ -729,6 +770,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 }
 .project-page.forest .project-hero { color: #f4f2eb; }
 .project-page.signal .project-hero { color: #f4fbfa; }
+.project-page.navy .project-hero { color: #f5f9fc; }
 .project-hero-title h1 {
   margin: 0;
   max-width: 980px;
@@ -770,6 +812,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.forest .project-actions .project-primary-action { background: var(--acid); color: var(--ink); }
 .project-page.copper .project-actions .project-primary-action { background: #221b18; color: #fff; }
 .project-page.signal .project-actions .project-primary-action { background: #64ddd5; color: #071a22; }
+.project-page.navy .project-actions .project-primary-action { background: #73c2ea; color: #081725; }
 .project-facts { border-top: 1px solid currentColor; }
 .project-facts div {
   padding: 18px 0;
@@ -1230,6 +1273,55 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   margin: 28px auto 0;
   box-shadow: 0 30px 90px rgba(0,0,0,.16);
 }
+
+.pharmacy-bi-case-study { background: #081725; color: #f5f9fc; }
+.pharmacy-bi-architecture,
+.pharmacy-bi-story { padding: clamp(88px, 10vw, 150px) clamp(24px, 7vw, 110px); }
+.pharmacy-bi-architecture { background: #10263d; }
+.pharmacy-bi-case-study .health-app-walkthrough-section { background: #07131f; }
+.pharmacy-bi-case-study .screen-heading .eyebrow,
+.pharmacy-bi-case-study .case-study-intro .eyebrow,
+.pharmacy-bi-story .eyebrow { color: #73c2ea; }
+.pharmacy-bi-case-study .screen-heading > p:last-child,
+.pharmacy-bi-case-study .case-study-intro > p:last-child { color: #a9bdca; }
+.pharmacy-bi-architecture ol {
+  max-width: 1320px; margin: 0 auto; padding: 0; list-style: none;
+  border-top: 1px solid rgba(115,194,234,.34);
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.pharmacy-bi-architecture li { min-width: 0; padding: 24px 18px 8px 0; }
+.pharmacy-bi-architecture li + li { padding-left: 18px; border-left: 1px solid rgba(255,255,255,.1); }
+.pharmacy-bi-architecture li span { display: block; margin-bottom: 12px; color: #73c2ea; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.pharmacy-bi-architecture li strong { color: #f5f9fc; font-family: Georgia, "Times New Roman", serif; font-size: clamp(18px, 1.6vw, 25px); font-weight: 400; line-height: 1.2; }
+.pharmacy-bi-story { border-top: 1px solid rgba(255,255,255,.1); }
+.pharmacy-bi-story:nth-of-type(even) { background: #0d2033; }
+.pharmacy-bi-story > header {
+  max-width: 1320px; margin: 0 auto clamp(44px, 6vw, 82px);
+  display: grid; grid-template-columns: .55fr 1.25fr .75fr; gap: 5vw; align-items: end;
+}
+.pharmacy-bi-story > header .eyebrow { align-self: start; }
+.pharmacy-bi-story > header h2 {
+  margin: 0; font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 5vw, 74px); font-weight: 400; line-height: 1; letter-spacing: -.045em;
+}
+.pharmacy-bi-story > header > p:last-child { margin: 0; color: #a9bdca; font-size: 14px; line-height: 1.7; }
+.pharmacy-bi-overview > .evidence-media { max-width: 1320px; margin: 0 auto; }
+.pharmacy-bi-media-grid,
+.pharmacy-bi-theme-pair { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.pharmacy-bi-media-grid article { min-width: 0; }
+.pharmacy-bi-media-grid h3 { min-height: 2.4em; margin: 0 0 18px; color: #dbe8ef; font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px, 2vw, 31px); font-weight: 400; line-height: 1.2; }
+.pharmacy-bi-case-study .evidence-media { border-color: rgba(255,255,255,.17); background: #f4f7fa; }
+.pharmacy-bi-case-study .evidence-media img { width: 100%; height: auto; display: block; }
+.pharmacy-bi-prototype-walkthrough { border-color: rgba(115,194,234,.42); background: #102a42; }
+.pharmacy-bi-prototype-walkthrough video { aspect-ratio: 1920 / 1080; background: #07131f; }
+.pharmacy-bi-prototype-walkthrough span { color: #73c2ea; }
+.pharmacy-bi-prototype-walkthrough p { color: #a9bdca; }
+.pharmacy-bi-themes { background: #07131f; }
+.pharmacy-bi-themes blockquote {
+  max-width: 1020px; margin: clamp(64px, 8vw, 110px) auto 0;
+  color: #f5f9fc; font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 58px); line-height: 1.08; letter-spacing: -.035em; text-align: center;
+}
 .screen-lightbox {
   position: fixed;
   z-index: 100;
@@ -1331,13 +1423,18 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
     padding-right: 14px;
   }
   .hero-project + .hero-project { border-left: 1px solid rgba(255,255,255,.12); padding-left: 14px; }
-  .hero-project:nth-child(4) { border-left: 0; padding-left: 0; }
+  .hero-project:nth-child(4), .hero-project:nth-child(6) { border-left: 0; padding-left: 0; }
   .legacy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 20px; }
   .dotcare-thesis ol { grid-template-columns: repeat(4, 1fr); }
   .dotcare-thesis li:nth-child(5) { padding-left: 0; border-left: 0; }
   .dotcare-story-block > header { grid-template-columns: .45fr 1.35fr; }
   .dotcare-story-block > header > p:last-child { grid-column: 2; }
   .dotcare-behaviour-sequence { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pharmacy-bi-architecture ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pharmacy-bi-architecture li:nth-child(4) { padding-left: 0; border-left: 0; }
+  .pharmacy-bi-architecture li:nth-child(n+4) { border-top: 1px solid rgba(255,255,255,.1); }
+  .pharmacy-bi-story > header { grid-template-columns: .45fr 1.35fr; }
+  .pharmacy-bi-story > header > p:last-child { grid-column: 2; }
   .prototype-walkthrough { width: min(100%, 720px); grid-column: 1 / -1; justify-self: center; }
 }
 
@@ -1386,6 +1483,10 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .dotcare-module-mark { top: 36%; left: 34px; }
   .dotcare-browser-back { width: 68%; height: 39%; right: -3%; top: 48%; }
   .dotcare-browser-main { width: 88%; height: 45%; right: 7%; top: 57%; }
+  .pharmacy-bi-editorial .editorial-preview-copy { width: calc(100% - 68px); }
+  .pharmacy-bi-editorial .editorial-preview-copy > b { font-size: clamp(27px, 8vw, 38px); }
+  .pharmacy-bi-browser-dark { width: 68%; height: 39%; right: -3%; top: 48%; }
+  .pharmacy-bi-browser-main { width: 88%; height: 45%; right: 7%; top: 57%; }
   .kpi-editorial-metrics { top: 31%; }
   .kpi-browser-manager { width: 88%; height: 43%; right: -14%; top: 46%; }
   .kpi-browser-employee { width: 58%; height: 34%; right: 2%; top: 67%; }
@@ -1440,6 +1541,17 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .dotcare-outcomes li { grid-template-columns: 1fr auto; gap: 10px 16px; }
   .dotcare-outcomes li::before { grid-column: 2; grid-row: 1 / 3; align-self: center; }
   .dotcare-outcomes li strong { grid-column: 1; grid-row: 2; }
+  .pharmacy-bi-architecture, .pharmacy-bi-story { padding-inline: 20px; }
+  .pharmacy-bi-architecture ol { grid-template-columns: 1fr; }
+  .pharmacy-bi-architecture li,
+  .pharmacy-bi-architecture li + li,
+  .pharmacy-bi-architecture li:nth-child(4) { padding: 20px 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .pharmacy-bi-architecture li:first-child { border-top: 0; }
+  .pharmacy-bi-story > header { grid-template-columns: 1fr; gap: 22px; }
+  .pharmacy-bi-story > header > p:last-child { grid-column: 1; }
+  .pharmacy-bi-media-grid, .pharmacy-bi-theme-pair { grid-template-columns: 1fr; gap: 42px; }
+  .pharmacy-bi-media-grid h3 { min-height: 0; }
+  .pharmacy-bi-themes blockquote { text-align: left; }
   .journey-map-head { display: none; }
   .journey-map article { grid-template-columns: 1fr; gap: 18px; padding: 30px 0; }
   .journey-stage { margin-bottom: 5px; }
