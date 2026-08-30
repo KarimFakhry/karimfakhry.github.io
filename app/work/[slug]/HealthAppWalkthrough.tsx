@@ -1,4 +1,4 @@
-type WalkthroughProject = "academy" | "health-web" | "health-app" | "kpi-hub";
+type WalkthroughProject = "academy" | "health-web" | "health-app" | "kpi-hub" | "pharmacy-bi";
 
 const walkthroughs: Record<WalkthroughProject, {
   heading: string;
@@ -54,6 +54,17 @@ const walkthroughs: Record<WalkthroughProject, {
     path: "Monitor → drill down → update → save → self-monitor.",
     note: "The path demonstrates the product's Manager and Employee role model without implying deployment or measured business outcomes.",
     className: "kpi-prototype-walkthrough",
+  },
+  "pharmacy-bi": {
+    heading: "One signal, traced through the Pharmacy decision journey.",
+    intro: "A cursor-guided walkthrough of the finished BI prototype, following connected analytics, drill-down, account and theme states.",
+    video: "/video/pharmacy-bi-golden-path.mp4?v=20260830",
+    poster: "/video/pharmacy-bi-golden-path-poster.jpg?v=20260830",
+    ariaLabel: "BI Dashboards Pharmacy golden-path walkthrough from executive overview through financial trends, inventory risk and item detail, referral performance, account access and Dark Mode",
+    duration: "56 seconds",
+    path: "See the signal → inspect the trend → prioritise risk → drill down → switch context.",
+    note: "The walkthrough uses the prototype’s connected states and representative demo data. It demonstrates the designed product experience without claiming deployed business outcomes.",
+    className: "pharmacy-bi-prototype-walkthrough",
   },
 };
 

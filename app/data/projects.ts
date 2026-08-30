@@ -26,9 +26,9 @@ export type Project = {
   tags: string[];
   image?: string;
   thumbnail?: string;
-  theme: "sand" | "mint" | "forest" | "copper" | "signal";
-  visual?: "image" | "kpi" | "dotcare";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign";
+  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy";
+  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -192,9 +192,61 @@ export const projects: Project[] = ([
     ],
   },
   {
+    id: "pharmacy-bi",
+    slug: "bi-dashboards-pharmacy",
+    number: "05",
+    title: "BI Dashboards — Pharmacy",
+    type: "Enterprise healthcare intelligence",
+    year: "2026",
+    summary: "Designed an enterprise BI workspace that connects pharmacy revenue, operations, inventory exposure and referral performance in one decision journey.",
+    challenge: "Pharmacy leaders need to move from an executive signal to the service, store, item or physician behind it without losing context across separate analytical views.",
+    outcome: "A role-aware analytics product that connects overview, operations, financial trends, inventory risk, item-level detail and referral performance across Light and Dark themes.",
+    role: "Product design · BI architecture · design system",
+    scope: "Pharmacy analytics and decision support",
+    platform: "Enterprise web application",
+    status: "Design complete · interactive prototype",
+    method: "Decision architecture · information hierarchy · data visualisation · interactive prototyping",
+    primaryUsers: [
+      "Executives monitoring pharmacy performance and emerging risks",
+      "Pharmacy managers investigating operational, financial and inventory signals",
+      "Analysts reviewing item, store, specialty and physician-level detail",
+    ],
+    executiveSummary: {
+      problem: "Executive, operational and item-level questions require different analytical depths, but leaders still need to move between them as one investigation.",
+      approach: "Organise the product around a progressive path: overview signals, domain analysis, risk prioritisation and drill-down to the service, store, item or physician.",
+      result: "A coherent enterprise BI prototype that keeps KPI definitions, filters, charts, tables, permissions and Light/Dark themes consistent across the Pharmacy decision journey.",
+    },
+    evidence: [
+      { value: "6 views", label: "one analytical journey", detail: "Overview, operations, finance, risk, item detail and referral performance connect instead of competing for attention." },
+      { value: "Signal → detail", label: "progressive investigation", detail: "High-level metrics lead naturally into the service, store, item or physician behind the pattern." },
+      { value: "3 roles", label: "access matches responsibility", detail: "Administrator, Pharmacy Manager and Viewer / Analyst permissions support enterprise use." },
+      { value: "2 themes", label: "one product system", detail: "Light and Dark modes preserve hierarchy, chart meaning and page context." },
+    ],
+    chapters: [
+      { number: "01", title: "Start with the signal", problem: "Leadership needs a concise view of performance without flattening every domain into the same dashboard.", response: "Use a Pharmacy Overview that pairs executive KPIs and trends with a focused Needs Attention queue." },
+      { number: "02", title: "Keep analysis connected", problem: "Operational, financial, inventory and referral questions require different evidence but belong to the same decision process.", response: "Create a stable application shell and a domain-based information architecture so investigation keeps its context." },
+      { number: "03", title: "Turn inventory exposure into action", problem: "A risk total does not identify which store, expiry window or item requires attention.", response: "Move from expiry and movement risk into grouped, sortable item detail with quantity, unit cost and expandable history." },
+      { number: "04", title: "Make referral performance explorable", problem: "A specialty total cannot explain which physician or target is shaping the result.", response: "Connect specialty comparison to physician-level performance and target visibility within the same analytical view." },
+      { number: "05", title: "Treat access and theme as product architecture", problem: "Enterprise analytics must remain coherent across responsibilities, permissions and working environments.", response: "Use role-aware access and shared Light/Dark tokens so the product preserves meaning across contexts." },
+    ],
+    tags: ["Enterprise BI", "Data visualisation", "Product systems"],
+    theme: "navy",
+    visual: "pharmacy-bi",
+    caseStudyMode: "bi-product",
+    thumbnail: "/screens/pharmacy-bi/overview.png",
+    screens: [
+      { title: "Pharmacy Overview", image: "/screens/pharmacy-bi/overview.png", device: "desktop" },
+      { title: "Operational Performance", image: "/screens/pharmacy-bi/operational-performance.png", device: "desktop" },
+      { title: "Financial & Trends", image: "/screens/pharmacy-bi/financial-trends.png", device: "desktop" },
+      { title: "Inventory Risk", image: "/screens/pharmacy-bi/inventory-risk.png", device: "desktop" },
+      { title: "Inventory Detail", image: "/screens/pharmacy-bi/inventory-detail.png", device: "desktop" },
+      { title: "Referral & Specialty Performance", image: "/screens/pharmacy-bi/referral-specialty.png", device: "desktop" },
+    ],
+  },
+  {
     id: "kpi-hub",
     slug: "kpi-performance-hub",
-    number: "05",
+    number: "06",
     title: "KPI Performance Hub",
     type: "Performance management product",
     year: "2026",

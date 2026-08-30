@@ -72,6 +72,27 @@ export function KpiEditorialPreview() {
   );
 }
 
+export function PharmacyBiProjectPreview() {
+  return (
+    <div className="editorial-project-preview pharmacy-bi-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Enterprise healthcare intelligence · 2026</i>
+        <b>From signal<br />to investigation.</b>
+      </div>
+      <span className="pharmacy-bi-grid" />
+      <span className="editorial-browser pharmacy-bi-browser-dark">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/pharmacy-bi/overview-dark.png" alt="" />
+      </span>
+      <span className="editorial-browser pharmacy-bi-browser-main">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/pharmacy-bi/overview.png" alt="" />
+      </span>
+      <span className="editorial-flow"><i>See the signal</i><em>→</em><i>Find the cause</i><em>→</em><i>Act</i></span>
+    </div>
+  );
+}
+
 export function DotCareProjectPreview() {
   return (
     <div className="editorial-project-preview dotcare-editorial" aria-hidden="true">

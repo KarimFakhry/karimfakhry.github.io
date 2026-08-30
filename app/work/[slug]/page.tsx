@@ -7,6 +7,7 @@ import ScreenGallery from "./ScreenGallery";
 import DotCareCaseStudy from "./DotCareCaseStudy";
 import EvidenceMedia from "./EvidenceMedia";
 import HealthAppWalkthrough from "./HealthAppWalkthrough";
+import PharmacyBiCaseStudy from "./PharmacyBiCaseStudy";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -50,6 +51,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const isOriginalProduct = project.caseStudyMode === "product";
   const isManagerialSolution = project.caseStudyMode === "managerial";
   const isPharmacyRedesign = project.caseStudyMode === "pharmacy-redesign";
+  const isBiProduct = project.caseStudyMode === "bi-product";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -88,21 +90,21 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">Executive summary</p>
-          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : "The project in three points."}</h2>
+          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : "The project in three points."}</h2>
           <p>{project.method}</p>
         </div>
         <div className="executive-grid">
           <article><span>01</span><h3>Problem</h3><p>{project.executiveSummary.problem}</p></article>
           <article><span>02</span><h3>Approach</h3><p>{project.executiveSummary.approach}</p></article>
-          <article><span>03</span><h3>{isManagerialSolution ? "Managerial outcome" : "Design outcome"}</h3><p>{project.executiveSummary.result}</p></article>
+          <article><span>03</span><h3>{isManagerialSolution ? "Managerial outcome" : isBiProduct ? "Product system" : "Design outcome"}</h3><p>{project.executiveSummary.result}</p></article>
         </div>
       </section>
 
       <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : "What I found"}</p>
-          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : "The signals that shaped the redesign."}</h2>
-          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : "Key facts from the live product, its content and the working team process."}</p>
+          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : "What I found"}</p>
+          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : "The signals that shaped the redesign."}</h2>
+          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : "Key facts from the live product, its content and the working team process."}</p>
         </div>
         <div className="evidence-grid">
           {project.evidence.map((item) => (
@@ -114,7 +116,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
         <div className="user-context">
-          <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : isPharmacyRedesign ? "People in the workflow" : "Key journeys"}</p>
+          <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : isPharmacyRedesign ? "People in the workflow" : isBiProduct ? "Decision makers" : "Key journeys"}</p>
           <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
         </div>
       </section>
@@ -139,7 +141,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {!isPharmacyRedesign && (
+      {!isPharmacyRedesign && !isBiProduct && (
         <section className="decision-section" id="decisions">
           <div className="case-study-intro">
             <p className="eyebrow">Key product decisions</p>
@@ -163,6 +165,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       {isPharmacyRedesign && <DotCareCaseStudy />}
+
+      {isBiProduct && <PharmacyBiCaseStudy />}
 
       {project.visual === "kpi" ? (
         <section className="kpi-showcase" id="product">
@@ -190,7 +194,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </article>
           </div>
         </section>
-      ) : !isPharmacyRedesign ? (
+      ) : !isPharmacyRedesign && !isBiProduct ? (
         <>
           <section className="screen-section" id="redesign-screens">
             <div className="screen-heading">

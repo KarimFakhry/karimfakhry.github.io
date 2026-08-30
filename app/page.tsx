@@ -5,6 +5,7 @@ import {
   DotCareProjectPreview,
   HealthWebsiteProjectPreview,
   KpiEditorialPreview,
+  PharmacyBiProjectPreview,
 } from "./components/EditorialProjectPreviews";
 import LegacyWorkArchive from "./components/LegacyWorkArchive";
 
@@ -88,6 +89,11 @@ export default function Home() {
                       <img src="/screens/dotcare-redesign/worklist.png" alt="" />
                       <img src="/screens/dotcare-redesign/verification.png" alt="" />
                     </span>
+                  ) : project.id === "pharmacy-bi" ? (
+                    <span className="pharmacy-bi-mini">
+                      <img src="/screens/pharmacy-bi/overview.png" alt="" />
+                      <img src="/screens/pharmacy-bi/overview-dark.png" alt="" />
+                    </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
                   )}
@@ -113,7 +119,7 @@ export default function Home() {
           <p className="eyebrow">Selected work · 2026</p>
           <h2>Patient journeys.<br />Clinical operations. Leadership.</h2>
           <p>
-            Five evidence-led case studies spanning discovery, product strategy,
+            Six evidence-led case studies spanning discovery, product strategy,
             enterprise systems and the operating model behind a design team.
           </p>
         </div>
@@ -136,6 +142,8 @@ export default function Home() {
                   <HealthWebsiteProjectPreview />
                 ) : project.id === "dotcare" ? (
                   <DotCareProjectPreview />
+                ) : project.id === "pharmacy-bi" ? (
+                  <PharmacyBiProjectPreview />
                 ) : (
                   <span className="project-image-window">
                     <img
