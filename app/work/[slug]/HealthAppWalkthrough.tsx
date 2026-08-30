@@ -58,7 +58,7 @@ const walkthroughs: Record<WalkthroughProject, {
   "pharmacy-bi": {
     heading: "One signal, traced through the Pharmacy decision journey.",
     intro: "A cursor-guided walkthrough of the finished BI prototype, following connected analytics, drill-down, account and theme states.",
-    video: "/video/pharmacy-bi-golden-path.mp4?v=20260830",
+    video: "/video/pharmacy-bi-golden-path.mp4?v=20260830-2",
     poster: "/video/pharmacy-bi-golden-path-poster.jpg?v=20260830",
     ariaLabel: "BI Dashboards Pharmacy golden-path walkthrough from executive overview through financial trends, inventory risk and item detail, referral performance, account access and Dark Mode",
     duration: "56 seconds",
