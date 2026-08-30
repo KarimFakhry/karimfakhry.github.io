@@ -56,7 +56,7 @@ export default function PharmacyBiCaseStudy() {
           <article>
             <h3>Inspect the movement behind the headline.</h3>
             <EvidenceMedia
-              src="/screens/pharmacy-bi/financial-chart-hover.png"
+              src="/screens/pharmacy-bi/financial-chart-hover.png?v=20260830-tooltip"
               title="Financial and Trends chart detail"
               alt="Financial and Trends dashboard with a chart tooltip showing monthly performance detail"
               label="PRODUCT"
