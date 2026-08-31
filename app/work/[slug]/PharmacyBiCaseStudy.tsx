@@ -30,9 +30,11 @@ export default function PharmacyBiCaseStudy() {
         </header>
         <EvidenceMedia
           src="/screens/pharmacy-bi/overview.png"
+          fullSrc="/screens/pharmacy-bi/overview@2x.png"
           title="Pharmacy Overview"
           alt="Pharmacy BI Overview showing executive KPIs, trends, service mix and items needing attention"
           label="PRODUCT"
+          highDensityInline
           eager
         />
       </section>
@@ -53,6 +55,7 @@ export default function PharmacyBiCaseStudy() {
             <figure className="pharmacy-bi-device-frame pharmacy-bi-device-desktop">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/overview.png"
+                fullSrc="/screens/pharmacy-bi/overview@2x.png"
                 title="Pharmacy Overview on Desktop"
                 alt="Desktop Pharmacy Overview with labelled sidebar, dense KPI grid and analytical canvas"
                 label="PRODUCT"
@@ -62,18 +65,22 @@ export default function PharmacyBiCaseStudy() {
             <figure className="pharmacy-bi-device-frame pharmacy-bi-device-tablet">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/overview-tablet-light.png"
+                fullSrc="/screens/pharmacy-bi/overview-tablet-light@2x.png"
                 title="Pharmacy Overview on Tablet"
                 alt="Tablet Pharmacy Overview with icon rail, two-row controls and two-column KPI layout"
                 label="PRODUCT"
+                device="tablet"
               />
               <figcaption><strong>Tablet</strong><span>768 × 1024</span></figcaption>
             </figure>
             <figure className="pharmacy-bi-device-frame pharmacy-bi-device-mobile">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/overview-mobile-light.png"
+                fullSrc="/screens/pharmacy-bi/overview-mobile-light@2x.png"
                 title="Pharmacy Overview on Mobile"
                 alt="Mobile Pharmacy Overview with app bar, compact metrics and vertically prioritised attention items"
                 label="PRODUCT"
+                device="mobile"
               />
               <figcaption><strong>Mobile</strong><span>390 × 844</span></figcaption>
             </figure>
@@ -104,6 +111,7 @@ export default function PharmacyBiCaseStudy() {
             <figure className="pharmacy-bi-device-frame pharmacy-bi-device-desktop">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/inventory-detail.png"
+                fullSrc="/screens/pharmacy-bi/inventory-detail@2x.png"
                 title="Inventory Detail table on Desktop"
                 alt="Desktop Inventory Detail showing grouped item rows and expanded batch detail"
                 label="PRODUCT"
@@ -113,18 +121,22 @@ export default function PharmacyBiCaseStudy() {
             <figure className="pharmacy-bi-device-frame pharmacy-bi-device-tablet">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/inventory-detail-tablet-light.png"
+                fullSrc="/screens/pharmacy-bi/inventory-detail-tablet-light@2x.png"
                 title="Inventory Detail table on Tablet"
                 alt="Tablet Inventory Detail preserving a native-width table inside a local horizontal scroller"
                 label="PRODUCT"
+                device="tablet"
               />
               <figcaption><strong>Local table scroll</strong><span>Tablet</span></figcaption>
             </figure>
             <figure className="pharmacy-bi-device-frame pharmacy-bi-device-mobile">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/inventory-detail-mobile-light.png"
+                fullSrc="/screens/pharmacy-bi/inventory-detail-mobile-light@2x.png"
                 title="Inventory Detail card on Mobile"
                 alt="Mobile Inventory Detail with an expanded item card showing expiry, quantity, unit cost, movement, batch and value at risk"
                 label="PRODUCT"
+                device="mobile"
               />
               <figcaption><strong>Card + details</strong><span>Mobile</span></figcaption>
             </figure>
@@ -140,9 +152,12 @@ export default function PharmacyBiCaseStudy() {
             <figure className="pharmacy-bi-device-frame pharmacy-bi-support-mobile">
               <EvidenceMedia
                 src="/screens/pharmacy-bi/navigation-mobile-light.png"
+                fullSrc="/screens/pharmacy-bi/navigation-mobile-light@2x.png"
                 title="Mobile navigation drawer"
                 alt="Mobile Pharmacy BI navigation drawer with analytics destinations, user context and appearance control"
                 label="PRODUCT"
+                device="mobile"
+                highDensityInline
               />
               <figcaption><strong>Menu open</strong><span>Touch navigation</span></figcaption>
             </figure>
@@ -156,18 +171,24 @@ export default function PharmacyBiCaseStudy() {
               <figure className="pharmacy-bi-device-frame pharmacy-bi-support-tablet">
                 <EvidenceMedia
                   src="/screens/pharmacy-bi/overview-tablet-dark.png"
+                  fullSrc="/screens/pharmacy-bi/overview-tablet-dark@2x.png"
                   title="Dark Pharmacy Overview on Tablet"
                   alt="Dark Tablet Pharmacy Overview with the same responsive hierarchy and analytical context"
                   label="PRODUCT"
+                  device="tablet"
+                  highDensityInline
                 />
                 <figcaption><strong>Tablet</strong><span>Dark</span></figcaption>
               </figure>
               <figure className="pharmacy-bi-device-frame pharmacy-bi-support-mobile">
                 <EvidenceMedia
                   src="/screens/pharmacy-bi/overview-mobile-dark.png"
+                  fullSrc="/screens/pharmacy-bi/overview-mobile-dark@2x.png"
                   title="Dark Pharmacy Overview on Mobile"
                   alt="Dark Mobile Pharmacy Overview preserving the responsive KPI and attention hierarchy"
                   label="PRODUCT"
+                  device="mobile"
+                  highDensityInline
                 />
                 <figcaption><strong>Mobile</strong><span>Dark</span></figcaption>
               </figure>
@@ -187,6 +208,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Compare services against their targets.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/operational-performance.png"
+              fullSrc="/screens/pharmacy-bi/operational-performance@2x.png"
               title="Operational Performance"
               alt="Operational Performance dashboard comparing CIVAS, Inpatient and Clinical pharmacy services"
               label="PRODUCT"
@@ -196,6 +218,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Inspect the movement behind the headline.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/financial-chart-hover.png?v=20260830-tooltip"
+              fullSrc="/screens/pharmacy-bi/financial-chart-hover@2x.png?v=20260831-fidelity"
               title="Financial and Trends chart detail"
               alt="Financial and Trends dashboard with a chart tooltip showing monthly performance detail"
               label="PRODUCT"
@@ -215,6 +238,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Prioritise the exposure.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/inventory-risk.png"
+              fullSrc="/screens/pharmacy-bi/inventory-risk@2x.png"
               title="Inventory Risk"
               alt="Inventory Risk dashboard showing expiry, stagnant and slow-moving inventory exposure"
               label="PRODUCT"
@@ -224,6 +248,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Investigate the item.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/inventory-detail.png"
+              fullSrc="/screens/pharmacy-bi/inventory-detail@2x.png"
               title="Inventory Detail"
               alt="Inventory Detail table showing item quantities, unit cost, movement and expandable detail"
               label="PRODUCT"
@@ -243,6 +268,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Compare specialty performance.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/referral-specialty.png"
+              fullSrc="/screens/pharmacy-bi/referral-specialty@2x.png"
               title="Referral and Specialty Performance"
               alt="Referral and Specialty Performance dashboard comparing specialty targets and results"
               label="PRODUCT"
@@ -252,6 +278,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Select the physician to inspect.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/referral-physician.png"
+              fullSrc="/screens/pharmacy-bi/referral-physician@2x.png"
               title="Physician performance selection"
               alt="Referral dashboard with a representative physician selected for investigation"
               label="PRODUCT"
@@ -271,6 +298,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Personal context and appearance.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/profile-access.png"
+              fullSrc="/screens/pharmacy-bi/profile-access@2x.png"
               title="Profile and appearance"
               alt="Pharmacy BI profile page showing account context and Light or Dark appearance controls"
               label="PRODUCT"
@@ -280,6 +308,7 @@ export default function PharmacyBiCaseStudy() {
             <h3>Roles aligned to responsibility.</h3>
             <EvidenceMedia
               src="/screens/pharmacy-bi/user-management.png"
+              fullSrc="/screens/pharmacy-bi/user-management@2x.png"
               title="User management"
               alt="Pharmacy BI user management showing Administrator, Pharmacy Manager and Viewer or Analyst roles"
               label="PRODUCT"
@@ -297,12 +326,14 @@ export default function PharmacyBiCaseStudy() {
         <div className="pharmacy-bi-theme-pair">
           <EvidenceMedia
             src="/screens/pharmacy-bi/overview.png"
+            fullSrc="/screens/pharmacy-bi/overview@2x.png"
             title="Pharmacy Overview in Light Mode"
             alt="Pharmacy Overview in Light Mode"
             label="PRODUCT"
           />
           <EvidenceMedia
             src="/screens/pharmacy-bi/overview-dark.png"
+            fullSrc="/screens/pharmacy-bi/overview-dark@2x.png"
             title="Pharmacy Overview in Dark Mode"
             alt="Pharmacy Overview in Dark Mode with the same information hierarchy and page context"
             label="PRODUCT"

@@ -1,4 +1,10 @@
-export type ProjectScreen = { title: string; image: string; device: "desktop" | "mobile" };
+export type ProjectScreen = {
+  title: string;
+  image: string;
+  fullImage?: string;
+  device: "desktop" | "mobile";
+  highDensityInline?: boolean;
+};
 export type ProjectEvidence = { value: string; label: string; detail: string };
 export type CaseStudyChapter = { number: string; title: string; problem: string; response: string };
 export type JourneyStep = { stage: string; before: string; after: string };
@@ -80,12 +86,12 @@ export const projects: Project[] = ([
     liveUrl: "https://andalusia-academy.com/",
     liveLabel: "Original website",
     screens: [
-      { title: "Homepage", image: "/screens/academy/home-desktop.webp", device: "desktop" },
-      { title: "Course discovery", image: "/screens/academy/course-listing.webp", device: "desktop" },
-      { title: "Course decision", image: "/screens/academy/course-detail.webp", device: "desktop" },
-      { title: "Conferences", image: "/screens/academy/conferences.webp", device: "desktop" },
-      { title: "Mobile homepage", image: "/screens/academy/home-mobile.webp", device: "mobile" },
-      { title: "Mobile course detail", image: "/screens/academy/course-detail-mobile.webp", device: "mobile" },
+      { title: "Homepage", image: "/screens/academy/home-desktop.webp", fullImage: "/screens/academy/home-desktop@2x.webp", device: "desktop", highDensityInline: true },
+      { title: "Course discovery", image: "/screens/academy/course-listing.webp", fullImage: "/screens/academy/course-listing@2x.webp", device: "desktop" },
+      { title: "Course decision", image: "/screens/academy/course-detail.webp", fullImage: "/screens/academy/course-detail@2x.webp", device: "desktop" },
+      { title: "Conferences", image: "/screens/academy/conferences.webp", fullImage: "/screens/academy/conferences@2x.webp", device: "desktop" },
+      { title: "Mobile homepage", image: "/screens/academy/home-mobile.webp", fullImage: "/screens/academy/home-mobile@2x.webp", device: "mobile", highDensityInline: true },
+      { title: "Mobile course detail", image: "/screens/academy/course-detail-mobile.webp", fullImage: "/screens/academy/course-detail-mobile@2x.webp", device: "mobile", highDensityInline: true },
     ],
   },
   {
@@ -129,12 +135,12 @@ export const projects: Project[] = ([
     liveUrl: "https://andalusiaegypt.com/en",
     liveLabel: "Original website",
     screens: [
-      { title: "Healthcare homepage", image: "/screens/health-website/homepage.webp", device: "desktop" },
-      { title: "Doctor discovery", image: "/screens/health-website/doctors-listing.webp", device: "desktop" },
-      { title: "Doctor profile", image: "/screens/health-website/doctor-profile.webp", device: "desktop" },
-      { title: "Booking flow", image: "/screens/health-website/booking-flow.webp", device: "desktop" },
-      { title: "Mobile homepage", image: "/screens/health-website/homepage-mobile.webp", device: "mobile" },
-      { title: "Booking confirmation", image: "/screens/health-website/booking-confirmation-mobile.webp", device: "mobile" },
+      { title: "Healthcare homepage", image: "/screens/health-website/homepage.webp", fullImage: "/screens/health-website/homepage@2x.webp", device: "desktop", highDensityInline: true },
+      { title: "Doctor discovery", image: "/screens/health-website/doctors-listing.webp", fullImage: "/screens/health-website/doctors-listing@2x.webp", device: "desktop" },
+      { title: "Doctor profile", image: "/screens/health-website/doctor-profile.webp", fullImage: "/screens/health-website/doctor-profile@2x.webp", device: "desktop" },
+      { title: "Booking flow", image: "/screens/health-website/booking-flow.webp", fullImage: "/screens/health-website/booking-flow@2x.webp", device: "desktop" },
+      { title: "Mobile homepage", image: "/screens/health-website/homepage-mobile.webp", fullImage: "/screens/health-website/homepage-mobile@2x.webp", device: "mobile", highDensityInline: true },
+      { title: "Booking confirmation", image: "/screens/health-website/booking-confirmation-mobile.webp", fullImage: "/screens/health-website/booking-confirmation-mobile@2x.webp", device: "mobile", highDensityInline: true },
     ],
   },
   {
@@ -183,12 +189,12 @@ export const projects: Project[] = ([
     theme: "forest",
     visual: "image",
     screens: [
-      { title: "Personalised home", image: "/screens/health-app/home.png", device: "mobile" },
-      { title: "Doctor discovery", image: "/screens/health-app/doctors-list.png", device: "mobile" },
-      { title: "Doctor details", image: "/screens/health-app/doctor-details.png", device: "mobile" },
-      { title: "Booking summary", image: "/screens/health-app/booking-summary.png", device: "mobile" },
-      { title: "Health articles", image: "/screens/health-app/articles-home.png", device: "mobile" },
-      { title: "Lab record details", image: "/screens/health-app/records-lab-details.png", device: "mobile" },
+      { title: "Personalised home", image: "/screens/health-app/home.png", fullImage: "/screens/health-app/home@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Doctor discovery", image: "/screens/health-app/doctors-list.png", fullImage: "/screens/health-app/doctors-list@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Doctor details", image: "/screens/health-app/doctor-details.png", fullImage: "/screens/health-app/doctor-details@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Booking summary", image: "/screens/health-app/booking-summary.png", fullImage: "/screens/health-app/booking-summary@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Health articles", image: "/screens/health-app/articles-home.png", fullImage: "/screens/health-app/articles-home@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Lab record details", image: "/screens/health-app/records-lab-details.png", fullImage: "/screens/health-app/records-lab-details@2x.png", device: "mobile", highDensityInline: true },
     ],
   },
   {

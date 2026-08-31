@@ -43,6 +43,7 @@ export default function DotCareCaseStudy() {
           />
           <EvidenceMedia
             src="/screens/dotcare-redesign/worklist.png"
+            fullSrc="/screens/dotcare/worklist@2x.png"
             title="Redesigned Pharmacy Worklist"
             alt="Redesigned DotCare Pharmacy Worklist showing urgency, risk, waiting time and action states"
             label="REDESIGN"
@@ -59,9 +60,11 @@ export default function DotCareCaseStudy() {
         </header>
         <EvidenceMedia
           src="/screens/dotcare-redesign/verification.png"
+          fullSrc="/screens/dotcare/verification@2x.png"
           title="Medication Verification workspace"
           alt="DotCare medication verification workspace with patient, medication and clinical context"
           label="REDESIGN"
+          highDensityInline
         />
         <div className="dotcare-detail-grid">
           <div>
@@ -69,6 +72,7 @@ export default function DotCareCaseStudy() {
             <p>Risk is expressed in words and structure—not colour alone—and each alert retains its own decision record.</p>
             <EvidenceMedia
               src="/screens/dotcare-redesign/safety-review.png"
+              fullSrc="/screens/dotcare/safety-review@2x.png"
               title="Clinical Safety Review"
               alt="Clinical safety review showing structured alerts and severity"
               label="REDESIGN"
@@ -79,6 +83,7 @@ export default function DotCareCaseStudy() {
             <p>The prototype keeps the alert, justification and resulting state together instead of clearing a list with one generic reason.</p>
             <EvidenceMedia
               src="/screens/dotcare-redesign/interaction-resolution.png"
+              fullSrc="/screens/dotcare/interaction-resolution@2x.png"
               title="Interaction resolution"
               alt="Medication interaction resolution with acknowledgement and justification"
               label="REDESIGN"
@@ -96,12 +101,14 @@ export default function DotCareCaseStudy() {
         <div className="dotcare-detail-grid">
           <EvidenceMedia
             src="/screens/dotcare-redesign/query-prescriber.png"
+            fullSrc="/screens/dotcare/query-prescriber@2x.png"
             title="Query prescriber"
             alt="DotCare prescriber query workflow attached to the medication order"
             label="REDESIGN"
           />
           <EvidenceMedia
             src="/screens/dotcare-redesign/out-of-stock.png"
+            fullSrc="/screens/dotcare/out-of-stock@2x.png"
             title="Out-of-stock resolution"
             alt="DotCare out-of-stock exception with alternative resolution paths"
             label="REDESIGN"
@@ -124,9 +131,11 @@ export default function DotCareCaseStudy() {
         </div>
         <EvidenceMedia
           src="/screens/dotcare-redesign/charging.png"
+          fullSrc="/screens/dotcare/charging@2x.png"
           title="Charging as a distinct state"
           alt="DotCare charging workspace separated from verification and dispensing"
           label="REDESIGN"
+          highDensityInline
         />
       </article>
 
@@ -139,12 +148,14 @@ export default function DotCareCaseStudy() {
         <div className="dotcare-comparison-grid redesign-pair">
           <EvidenceMedia
             src="/screens/dotcare-redesign/dispensing.png"
+            fullSrc="/screens/dotcare/dispensing@2x.png"
             title="Controlled dispensing"
             alt="Controlled dispensing workflow with identity and scan verification"
             label="REDESIGN"
           />
           <EvidenceMedia
             src="/screens/dotcare-redesign/double-check.png"
+            fullSrc="/screens/dotcare/double-check@2x.png"
             title="Independent double-check"
             alt="High-risk medication dispensing after a second clinician countersigns"
             label="REDESIGN"
@@ -167,6 +178,7 @@ export default function DotCareCaseStudy() {
           />
           <EvidenceMedia
             src="/screens/dotcare-redesign/medication-history.png"
+            fullSrc="/screens/dotcare/medication-history@2x.png"
             title="Redesigned medication history"
             alt="Redesigned clinical medication history separated from the billing ledger"
             label="REDESIGN"
@@ -174,9 +186,11 @@ export default function DotCareCaseStudy() {
         </div>
         <EvidenceMedia
           src="/screens/dotcare-redesign/dispense-provenance.png"
+          fullSrc="/screens/dotcare/dispense-provenance@2x.png"
           title="Dispense record with full provenance"
           alt="Dispense record showing pharmacist, recipient, lot and timestamps"
           label="REDESIGN"
+          highDensityInline
         />
       </article>
 
@@ -189,12 +203,14 @@ export default function DotCareCaseStudy() {
         <div className="dotcare-behaviour-sequence">
           <EvidenceMedia
             src="/screens/dotcare-redesign/worklist-loading.png"
+            fullSrc="/screens/dotcare/worklist-loading@2x.png"
             title="Worklist loading state"
             alt="DotCare Pharmacy Worklist loading state"
             label="REDESIGN"
           />
           <EvidenceMedia
             src="/screens/dotcare-redesign/worklist-read-only.png"
+            fullSrc="/screens/dotcare/worklist-read-only@2x.png"
             title="Connection lost — read-only recovery"
             alt="DotCare Pharmacy Worklist in a read-only recovery state after connection loss"
             label="REDESIGN"

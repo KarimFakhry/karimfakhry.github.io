@@ -178,19 +178,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="kpi-role-grid kpi-evidence-grid">
             <article className="kpi-role-card kpi-role-featured">
               <div className="kpi-role-copy"><p className="eyebrow">Manager view</p><h3>Monitor the team and see where attention is needed.</h3><p>The manager overview connects overall performance, employee status and the active sprint so a problem can be identified before opening the individual report.</p></div>
-              <EvidenceMedia src="/screens/kpi-performance/manager-overview.png" title="Manager overview" alt="KPI Performance Hub Manager overview showing team performance, sprint status and employees needing attention" label="PRODUCT" eager />
+              <EvidenceMedia src="/screens/kpi-performance/manager-overview.png" fullSrc="/screens/kpi-performance/manager-overview@2x.png" title="Manager overview" alt="KPI Performance Hub Manager overview showing team performance, sprint status and employees needing attention" label="PRODUCT" highDensityInline eager />
             </article>
             <article className="kpi-role-card kpi-role-featured">
               <div className="kpi-role-copy"><p className="eyebrow">Employee view</p><h3>Understand personal performance without exposing the team.</h3><p>Each employee sees their own KPI breakdown, latest sprint, trend and team-level context—enough for self-awareness and a useful one-to-one.</p></div>
-              <EvidenceMedia src="/screens/kpi-performance/employee-overview.png" title="Employee overview" alt="KPI Performance Hub Employee overview showing private performance and KPI context" label="PRODUCT" />
+              <EvidenceMedia src="/screens/kpi-performance/employee-overview.png" fullSrc="/screens/kpi-performance/employee-overview@2x.png" title="Employee overview" alt="KPI Performance Hub Employee overview showing private performance and KPI context" label="PRODUCT" highDensityInline />
             </article>
             <article className="kpi-role-card">
               <div className="kpi-role-copy"><p className="eyebrow">Manager drill-down</p><h3>Move from a team signal to the individual detail.</h3><p>The report keeps KPI breakdown, previous-sprint context and employee status together for managerial follow-up.</p></div>
-              <EvidenceMedia src="/screens/kpi-performance/manager-employee-report.png" title="Manager employee report" alt="Manager view of an individual employee KPI report" label="PRODUCT" />
+              <EvidenceMedia src="/screens/kpi-performance/manager-employee-report.png" fullSrc="/screens/kpi-performance/manager-employee-report@2x.png" title="Manager employee report" alt="Manager view of an individual employee KPI report" label="PRODUCT" />
             </article>
             <article className="kpi-role-card">
               <div className="kpi-role-copy"><p className="eyebrow">Employee history</p><h3>See performance across reporting periods.</h3><p>Sprint history gives the employee a consistent view of change over time without turning the portfolio story into dashboard vanity metrics.</p></div>
-              <EvidenceMedia src="/screens/kpi-performance/employee-sprints.png" title="Employee sprint history" alt="Employee view of periodic KPI reports and sprint history" label="PRODUCT" />
+              <EvidenceMedia src="/screens/kpi-performance/employee-sprints.png" fullSrc="/screens/kpi-performance/employee-sprints@2x.png" title="Employee sprint history" alt="Employee view of periodic KPI reports and sprint history" label="PRODUCT" />
             </article>
           </div>
         </section>

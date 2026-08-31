@@ -58,7 +58,7 @@ export default function ScreenGallery({
           >
             <span className="screen-frame">
               <img
-                src={screen.image}
+                src={screen.highDensityInline && screen.fullImage ? screen.fullImage : screen.image}
                 alt={`${projectTitle} — ${screen.title}`}
                 loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
@@ -88,7 +88,7 @@ export default function ScreenGallery({
               <span>{activeIndex + 1} / {screens.length}</span>
             </div>
             <div className="lightbox-actions">
-              <a href={activeScreen.image} target="_blank" rel="noreferrer">Original size ↗</a>
+              <a href={activeScreen.fullImage ?? activeScreen.image} target="_blank" rel="noreferrer">Original size ↗</a>
               <button type="button" onClick={() => setActiveIndex(null)} autoFocus>
                 Close <span aria-hidden="true">×</span>
               </button>
@@ -97,7 +97,7 @@ export default function ScreenGallery({
 
           <div className={`lightbox-image ${activeScreen.device}`}>
             <img
-              src={activeScreen.image}
+              src={activeScreen.fullImage ?? activeScreen.image}
               alt={`${projectTitle} — ${activeScreen.title} enlarged`}
             />
           </div>
