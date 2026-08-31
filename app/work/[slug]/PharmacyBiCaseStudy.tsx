@@ -37,6 +37,145 @@ export default function PharmacyBiCaseStudy() {
         />
       </section>
 
+      <section className="pharmacy-bi-story pharmacy-bi-responsive">
+        <header>
+          <p className="eyebrow">Responsive decision system</p>
+          <h2>One decision model, three workspaces.</h2>
+          <p>The questions stay connected as the interface changes shape. Desktop carries density, Tablet protects analytical depth, and Mobile turns wide tables and hover-dependent detail into touch-first disclosure.</p>
+        </header>
+
+        <div className="pharmacy-bi-responsive-block">
+          <div className="pharmacy-bi-responsive-block-copy">
+            <h3>The overview keeps its hierarchy—not its layout.</h3>
+            <p>Executive signal, change, attention and drill-down remain in the same order while navigation, filtering and KPI density adapt to the available workspace.</p>
+          </div>
+          <div className="pharmacy-bi-breakpoint-stage" aria-label="Pharmacy Overview across Desktop, Tablet and Mobile">
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-device-desktop">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/overview.png"
+                title="Pharmacy Overview on Desktop"
+                alt="Desktop Pharmacy Overview with labelled sidebar, dense KPI grid and analytical canvas"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Desktop</strong><span>1440 × 900</span></figcaption>
+            </figure>
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-device-tablet">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/overview-tablet-light.png"
+                title="Pharmacy Overview on Tablet"
+                alt="Tablet Pharmacy Overview with icon rail, two-row controls and two-column KPI layout"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Tablet</strong><span>768 × 1024</span></figcaption>
+            </figure>
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-device-mobile">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/overview-mobile-light.png"
+                title="Pharmacy Overview on Mobile"
+                alt="Mobile Pharmacy Overview with app bar, compact metrics and vertically prioritised attention items"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Mobile</strong><span>390 × 844</span></figcaption>
+            </figure>
+          </div>
+
+          <dl className="pharmacy-bi-breakpoint-notes">
+            <div>
+              <dt>Desktop</dt>
+              <dd>A 240px labelled sidebar, dense analytical canvas, full tables and pointer detail for focused investigation.</dd>
+            </div>
+            <div>
+              <dt>Tablet</dt>
+              <dd>A 72px icon rail, two-row header and filters, two-column KPIs, tap-accessible charts and local table scrolling.</dd>
+            </div>
+            <div>
+              <dt>Mobile</dt>
+              <dd>An App Bar and drawer, bottom-sheet filters, compact metric rows, card-based tables and progressive disclosure.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className="pharmacy-bi-responsive-block pharmacy-bi-responsive-inventory">
+          <div className="pharmacy-bi-responsive-block-copy">
+            <h3>The inventory evidence changes form, not meaning.</h3>
+            <p>The desktop table exposes the full field set. Tablet keeps that native table inside a local horizontal scroller. Mobile recomposes each item as a card, with the same risk, quantity, cost and movement data before revealing batch, value at risk, aging and category.</p>
+          </div>
+          <div className="pharmacy-bi-breakpoint-stage pharmacy-bi-breakpoint-stage-inventory" aria-label="Inventory Detail across Desktop, Tablet and Mobile">
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-device-desktop">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/inventory-detail.png"
+                title="Inventory Detail table on Desktop"
+                alt="Desktop Inventory Detail showing grouped item rows and expanded batch detail"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Full table</strong><span>Desktop</span></figcaption>
+            </figure>
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-device-tablet">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/inventory-detail-tablet-light.png"
+                title="Inventory Detail table on Tablet"
+                alt="Tablet Inventory Detail preserving a native-width table inside a local horizontal scroller"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Local table scroll</strong><span>Tablet</span></figcaption>
+            </figure>
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-device-mobile">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/inventory-detail-mobile-light.png"
+                title="Inventory Detail card on Mobile"
+                alt="Mobile Inventory Detail with an expanded item card showing expiry, quantity, unit cost, movement, batch and value at risk"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Card + details</strong><span>Mobile</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div className="pharmacy-bi-responsive-support">
+          <article>
+            <div>
+              <h3>Touch changes the interaction model.</h3>
+              <p>Primary navigation moves into a drawer, filters into a bottom sheet, and chart detail becomes tap-accessible rather than hover-only.</p>
+            </div>
+            <figure className="pharmacy-bi-device-frame pharmacy-bi-support-mobile">
+              <EvidenceMedia
+                src="/screens/pharmacy-bi/navigation-mobile-light.png"
+                title="Mobile navigation drawer"
+                alt="Mobile Pharmacy BI navigation drawer with analytics destinations, user context and appearance control"
+                label="PRODUCT"
+              />
+              <figcaption><strong>Menu open</strong><span>Touch navigation</span></figcaption>
+            </figure>
+          </article>
+          <article>
+            <div>
+              <h3>Theme parity follows the responsive system.</h3>
+              <p>Light and Dark preserve hierarchy, state meaning and page context at every breakpoint rather than behaving as separate products.</p>
+            </div>
+            <div className="pharmacy-bi-dark-responsive-pair">
+              <figure className="pharmacy-bi-device-frame pharmacy-bi-support-tablet">
+                <EvidenceMedia
+                  src="/screens/pharmacy-bi/overview-tablet-dark.png"
+                  title="Dark Pharmacy Overview on Tablet"
+                  alt="Dark Tablet Pharmacy Overview with the same responsive hierarchy and analytical context"
+                  label="PRODUCT"
+                />
+                <figcaption><strong>Tablet</strong><span>Dark</span></figcaption>
+              </figure>
+              <figure className="pharmacy-bi-device-frame pharmacy-bi-support-mobile">
+                <EvidenceMedia
+                  src="/screens/pharmacy-bi/overview-mobile-dark.png"
+                  title="Dark Pharmacy Overview on Mobile"
+                  alt="Dark Mobile Pharmacy Overview preserving the responsive KPI and attention hierarchy"
+                  label="PRODUCT"
+                />
+                <figcaption><strong>Mobile</strong><span>Dark</span></figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section className="pharmacy-bi-story pharmacy-bi-two-up">
         <header>
           <p className="eyebrow">Operations and finance</p>

@@ -1327,6 +1327,54 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .pharmacy-bi-media-grid h3 { min-height: 2.4em; margin: 0 0 18px; color: #dbe8ef; font-family: Georgia, "Times New Roman", serif; font-size: clamp(22px, 2vw, 31px); font-weight: 400; line-height: 1.2; }
 .pharmacy-bi-case-study .evidence-media { border-color: rgba(255,255,255,.17); background: #f4f7fa; }
 .pharmacy-bi-case-study .evidence-media img { width: 100%; height: auto; display: block; }
+.pharmacy-bi-responsive { background: #0d2033; }
+.pharmacy-bi-responsive-block { max-width: 1320px; margin: 0 auto; }
+.pharmacy-bi-responsive-block + .pharmacy-bi-responsive-block { margin-top: clamp(90px, 10vw, 150px); }
+.pharmacy-bi-responsive-block-copy {
+  max-width: 820px; margin-bottom: clamp(34px, 5vw, 62px);
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr); gap: clamp(24px, 5vw, 72px); align-items: end;
+}
+.pharmacy-bi-responsive-block-copy h3,
+.pharmacy-bi-responsive-support h3 {
+  margin: 0; color: #f5f9fc; font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3vw, 44px); font-weight: 400; line-height: 1.08; letter-spacing: -.035em;
+}
+.pharmacy-bi-responsive-block-copy p,
+.pharmacy-bi-responsive-support p { margin: 0; color: #a9bdca; font-size: 14px; line-height: 1.7; }
+.pharmacy-bi-breakpoint-stage {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) minmax(0, 2fr); gap: clamp(12px, 1.8vw, 24px); align-items: end;
+}
+.pharmacy-bi-device-frame { min-width: 0; margin: 0; }
+.pharmacy-bi-device-frame > .evidence-media { width: 100%; min-height: 0; }
+.pharmacy-bi-device-desktop > .evidence-media { aspect-ratio: 1440 / 900; }
+.pharmacy-bi-device-tablet > .evidence-media,
+.pharmacy-bi-support-tablet > .evidence-media { aspect-ratio: 768 / 1024; }
+.pharmacy-bi-device-mobile > .evidence-media,
+.pharmacy-bi-support-mobile > .evidence-media { aspect-ratio: 390 / 844; }
+.pharmacy-bi-device-frame > .evidence-media > img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: top center;
+}
+.pharmacy-bi-device-frame figcaption {
+  margin-top: 14px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  color: #8fa7b7; font-size: 9px; letter-spacing: .09em; text-transform: uppercase;
+}
+.pharmacy-bi-device-frame figcaption strong { color: #dbe8ef; font-size: 10px; font-weight: 700; }
+.pharmacy-bi-breakpoint-notes {
+  margin: clamp(42px, 5vw, 66px) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(115,194,234,.28);
+}
+.pharmacy-bi-breakpoint-notes div { min-width: 0; padding: 24px 24px 0 0; }
+.pharmacy-bi-breakpoint-notes div + div { padding-left: 24px; border-left: 1px solid rgba(255,255,255,.1); }
+.pharmacy-bi-breakpoint-notes dt { margin-bottom: 10px; color: #73c2ea; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.pharmacy-bi-breakpoint-notes dd { margin: 0; color: #b7c8d2; font-size: 13px; line-height: 1.65; }
+.pharmacy-bi-responsive-inventory { padding-top: clamp(54px, 7vw, 96px); border-top: 1px solid rgba(255,255,255,.1); }
+.pharmacy-bi-responsive-support {
+  max-width: 1320px; margin: clamp(100px, 11vw, 170px) auto 0;
+  display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(40px, 7vw, 96px);
+}
+.pharmacy-bi-responsive-support > article { min-width: 0; padding-top: 30px; border-top: 1px solid rgba(115,194,234,.28); }
+.pharmacy-bi-responsive-support > article > div:first-child { min-height: 190px; display: grid; gap: 18px; align-content: start; }
+.pharmacy-bi-responsive-support > article:first-child .pharmacy-bi-support-mobile { width: min(76%, 330px); margin: 0 auto; }
+.pharmacy-bi-dark-responsive-pair { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); gap: 18px; align-items: end; }
 .pharmacy-bi-prototype-walkthrough { border-color: rgba(115,194,234,.42); background: #102a42; }
 .pharmacy-bi-prototype-walkthrough video { aspect-ratio: 1920 / 1080; background: #07131f; }
 .pharmacy-bi-prototype-walkthrough span { color: #73c2ea; }
@@ -1463,6 +1511,11 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .pharmacy-bi-architecture li:nth-child(n+4) { border-top: 1px solid rgba(255,255,255,.1); }
   .pharmacy-bi-story > header { grid-template-columns: .45fr 1.35fr; }
   .pharmacy-bi-story > header > p:last-child { grid-column: 2; }
+  .pharmacy-bi-responsive-block-copy { max-width: 100%; grid-template-columns: 1fr; gap: 18px; }
+  .pharmacy-bi-breakpoint-stage { grid-template-columns: minmax(0, 1.35fr) minmax(0, .65fr); }
+  .pharmacy-bi-breakpoint-stage .pharmacy-bi-device-desktop { grid-column: 1 / -1; }
+  .pharmacy-bi-responsive-support { grid-template-columns: 1fr; }
+  .pharmacy-bi-responsive-support > article > div:first-child { min-height: 0; margin-bottom: 34px; }
   .prototype-walkthrough { width: min(100%, 720px); grid-column: 1 / -1; justify-self: center; }
 }
 
@@ -1579,6 +1632,17 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .pharmacy-bi-story > header > p:last-child { grid-column: 1; }
   .pharmacy-bi-media-grid, .pharmacy-bi-theme-pair { grid-template-columns: 1fr; gap: 42px; }
   .pharmacy-bi-media-grid h3 { min-height: 0; }
+  .pharmacy-bi-breakpoint-stage { grid-template-columns: 1fr; gap: 34px; }
+  .pharmacy-bi-breakpoint-stage .pharmacy-bi-device-desktop { grid-column: 1; }
+  .pharmacy-bi-breakpoint-stage .pharmacy-bi-device-mobile { width: min(78%, 300px); justify-self: center; }
+  .pharmacy-bi-breakpoint-notes { grid-template-columns: 1fr; }
+  .pharmacy-bi-breakpoint-notes div,
+  .pharmacy-bi-breakpoint-notes div + div { padding: 22px 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .pharmacy-bi-breakpoint-notes div:first-child { border-top: 0; }
+  .pharmacy-bi-responsive-support { margin-top: 90px; gap: 72px; }
+  .pharmacy-bi-responsive-support > article:first-child .pharmacy-bi-support-mobile { width: min(78%, 300px); }
+  .pharmacy-bi-dark-responsive-pair { grid-template-columns: 1fr; gap: 34px; }
+  .pharmacy-bi-dark-responsive-pair .pharmacy-bi-support-mobile { width: min(78%, 300px); justify-self: center; }
   .pharmacy-bi-themes blockquote { text-align: left; }
   .journey-map-head { display: none; }
   .journey-map article { grid-template-columns: 1fr; gap: 18px; padding: 30px 0; }
