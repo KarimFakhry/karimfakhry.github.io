@@ -114,3 +114,22 @@ export function DotCareProjectPreview() {
     </div>
   );
 }
+
+export function DaoudProjectPreview() {
+  return (
+    <div className="editorial-project-preview daoud-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Luxury ecommerce concept · 2026</i>
+        <b>Heritage,<br />made editorial.</b>
+      </div>
+      <span className="daoud-editorial-rule" />
+      <span className="editorial-browser daoud-browser-main">
+        <img src="/screens/daoud-tycoons/hero-desktop.webp" alt="" />
+      </span>
+      <span className="editorial-mobile daoud-mobile">
+        <img src="/screens/daoud-tycoons/mobile-pdp.webp" alt="" />
+      </span>
+      <span className="editorial-flow"><i>Discover</i><em>→</em><i>Select</i><em>→</em><i>Checkout</i></span>
+    </div>
+  );
+}

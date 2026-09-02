@@ -2,6 +2,7 @@ import { projects } from "./data/projects";
 import HealthAppProjectPreview from "./components/HealthAppProjectPreview";
 import {
   AcademyProjectPreview,
+  DaoudProjectPreview,
   DotCareProjectPreview,
   HealthWebsiteProjectPreview,
   KpiEditorialPreview,
@@ -94,6 +95,11 @@ export default function Home() {
                       <img src="/screens/pharmacy-bi/overview.png" alt="" />
                       <img src="/screens/pharmacy-bi/overview-dark.png" alt="" />
                     </span>
+                  ) : project.id === "daoud-tycoons" ? (
+                    <span className="daoud-mini">
+                      <img src="/screens/daoud-tycoons/hero-desktop.webp" alt="" />
+                      <img src="/screens/daoud-tycoons/mobile-pdp.webp" alt="" />
+                    </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />
                   )}
@@ -119,7 +125,7 @@ export default function Home() {
           <p className="eyebrow">Selected work · 2026</p>
           <h2>Patient journeys.<br />Clinical operations. Leadership.</h2>
           <p>
-            Six evidence-led case studies spanning discovery, product strategy,
+            Seven evidence-led case studies spanning discovery, product strategy,
             enterprise systems and the operating model behind a design team.
           </p>
         </div>
@@ -144,6 +150,8 @@ export default function Home() {
                   <DotCareProjectPreview />
                 ) : project.id === "pharmacy-bi" ? (
                   <PharmacyBiProjectPreview />
+                ) : project.id === "daoud-tycoons" ? (
+                  <DaoudProjectPreview />
                 ) : (
                   <span className="project-image-window">
                     <img

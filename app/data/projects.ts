@@ -32,9 +32,9 @@ export type Project = {
   tags: string[];
   image?: string;
   thumbnail?: string;
-  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy";
-  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product";
+  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon";
+  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product" | "commerce-concept";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -293,6 +293,58 @@ export const projects: Project[] = ([
       { title: "Employee overview — private KPI performance", image: "/screens/kpi-performance/employee-overview.png", device: "desktop" },
       { title: "Manager drill-down — individual performance report", image: "/screens/kpi-performance/manager-employee-report.png", device: "desktop" },
       { title: "Employee sprint history — periodic performance context", image: "/screens/kpi-performance/employee-sprints.png", device: "desktop" },
+    ],
+  },
+  {
+    id: "daoud-tycoons",
+    slug: "daoud-tycoons-redesign",
+    number: "07",
+    title: "Daoud Tycoons Redesign",
+    type: "Luxury ecommerce concept",
+    year: "2026",
+    summary: "Reimagining a heritage multi-brand fashion retailer as a quieter, more editorial ecommerce experience across desktop, mobile and Arabic RTL.",
+    challenge: "Translate a fashion house established in Amman in 1979 into a contemporary digital identity while balancing editorial storytelling, multi-brand discovery and the practical path to purchase.",
+    outcome: "A portfolio redesign concept that connects seasonal merchandising, House-led discovery and the journey from product detail to checkout in one responsive multilingual system.",
+    role: "Product design · art direction · design system",
+    scope: "Discovery, commerce, responsive and localization",
+    platform: "Responsive ecommerce · English and Arabic RTL",
+    status: "Portfolio redesign concept · prototype in progress",
+    method: "Information architecture · ecommerce UX · responsive design · RTL localization · interaction strategy",
+    primaryUsers: [
+      "Fashion shoppers browsing seasonal edits and curated collections",
+      "Brand-led shoppers discovering products through the Houses",
+      "Mobile and Arabic-speaking customers moving from discovery to checkout",
+    ],
+    executiveSummary: {
+      problem: "A heritage multi-brand retailer needs to express a distinctive point of view without letting the breadth of Houses, categories and commerce controls become marketplace clutter.",
+      approach: "Build the experience around editorial merchandising, House-led discovery and a restrained commerce journey, then recompose the same hierarchy for mobile and native Arabic RTL.",
+      result: "A coherent concept system where storytelling and shopping reinforce one another across homepage, collection, product, bag and checkout.",
+    },
+    evidence: [
+      { value: "1979", label: "heritage as a design input", detail: "The Amman story shapes the tone, pacing and editorial character of the digital experience." },
+      { value: "2 languages", label: "English and Arabic RTL", detail: "Localization is treated as a composed product mode, with native type and mirrored direction where appropriate." },
+      { value: "2 breakpoints", label: "desktop and mobile systems", detail: "The approved concept spans 1440px desktop and 390px mobile frames without simply shrinking the interface." },
+      { value: "One journey", label: "editorial to transaction", detail: "Seasonal stories, Houses, collection filters, product choice, bag and checkout form one connected path." },
+    ],
+    chapters: [
+      { number: "01", title: "Let heritage set the tone", problem: "A contemporary fashion experience still needs to feel grounded in the retailer’s history and point of view.", response: "Use quiet pacing, warm material colour, editorial typography and selective storytelling to make heritage part of the experience rather than decorative copy." },
+      { number: "02", title: "Make Houses part of discovery", problem: "Multiple international brands need visibility without turning the storefront into an undifferentiated marketplace.", response: "Treat Houses as a primary discovery dimension alongside category navigation and seasonal merchandising." },
+      { number: "03", title: "Join editorial and transactional intent", problem: "Fashion imagery can create desire, but shoppers still need a clear route through collection, product options, bag and checkout.", response: "Connect editorial modules to structured product discovery, then keep commercial controls restrained and legible at each decision point." },
+      { number: "04", title: "Recompose for mobile", problem: "Desktop scale and whitespace cannot simply be reduced without weakening hierarchy, product visibility or navigation.", response: "Reframe imagery, simplify navigation and sequence commerce controls around a focused mobile reading and shopping rhythm." },
+      { number: "05", title: "Design RTL as a native mode", problem: "A word-for-word translation would not account for reading direction, Arabic typography or interaction flow.", response: "Mirror the composition and navigation logic where appropriate, use Arabic-specific type and preserve the same brand and product hierarchy." },
+    ],
+    tags: ["Ecommerce UX", "Responsive design", "Arabic RTL"],
+    thumbnail: "/projects/daoud-tycoons-cover.webp",
+    theme: "tycoon",
+    visual: "daoud",
+    caseStudyMode: "commerce-concept",
+    screens: [
+      { title: "Editorial homepage", image: "/screens/daoud-tycoons/hero-desktop.webp", fullImage: "/screens/daoud-tycoons/hero-desktop@2x.png", device: "desktop", highDensityInline: true },
+      { title: "New This Season", image: "/screens/daoud-tycoons/new-season-desktop.webp", fullImage: "/screens/daoud-tycoons/new-season-desktop@2x.png", device: "desktop" },
+      { title: "Collection and filtering", image: "/screens/daoud-tycoons/collection-desktop.webp", fullImage: "/screens/daoud-tycoons/collection-desktop@2x.png", device: "desktop" },
+      { title: "Product detail", image: "/screens/daoud-tycoons/pdp-desktop.webp", fullImage: "/screens/daoud-tycoons/pdp-desktop@2x.png", device: "desktop" },
+      { title: "Mobile collection", image: "/screens/daoud-tycoons/mobile-collection.webp", fullImage: "/screens/daoud-tycoons/mobile-collection@2x.png", device: "mobile" },
+      { title: "Arabic RTL collection", image: "/screens/daoud-tycoons/rtl-mobile-collection.webp", fullImage: "/screens/daoud-tycoons/rtl-mobile-collection@2x.png", device: "mobile" },
     ],
   },
   {
