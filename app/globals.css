@@ -162,8 +162,7 @@ button { font: inherit; }
   transition: transform 400ms cubic-bezier(.22,1,.36,1);
 }
 .daoud-mini { position: relative; width: 100%; height: 100%; display: block; overflow: hidden; background: #211a16; }
-.daoud-mini img:first-child { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center; }
-.daoud-mini img:last-child { position: absolute; z-index: 2; width: 29%; height: 72%; min-height: 0; right: 5%; bottom: -4%; object-fit: cover; object-position: top; border: 2px solid #17130f; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,.35); }
+.daoud-mini img { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center 18%; }
 .kpi-mini {
   width: 100%; height: 100%; position: relative; display: block; overflow: hidden;
   background: radial-gradient(circle at 82% 14%, rgba(255,220,197,.72), transparent 28%), linear-gradient(145deg, #f1c2a7, #bc593a);
@@ -674,15 +673,12 @@ button { font: inherit; }
 .daoud-editorial .editorial-preview-copy > i { color: #c8a881; }
 .daoud-editorial .editorial-preview-copy > b { font-size: clamp(28px, 3.55vw, 55px); }
 .daoud-editorial-rule { position: absolute; z-index: 2; inset: 0 45% 0 auto; width: 1px; background: linear-gradient(transparent, rgba(217,195,169,.24), transparent); }
-.daoud-browser-main { width: 63%; height: 74%; right: -2%; top: 13%; transform: rotate(1.5deg); border-radius: 2px; background: #211a16; }
-.daoud-browser-main img { height: 100%; object-fit: cover; object-position: top center; }
-.daoud-mobile { width: 13%; right: 4%; top: 27%; transform: rotate(3deg); border-color: #17130f; }
+.daoud-browser-main { width: 66%; height: auto; aspect-ratio: 4 / 3; right: -2%; top: 12%; transform: rotate(1.25deg); border-radius: 2px; background: #211a16; }
+.daoud-browser-main img { height: 100%; object-fit: cover; object-position: center 18%; }
 .daoud-editorial .editorial-flow { color: rgba(243,237,227,.62); }
 .daoud-editorial .editorial-flow em { color: #c8a881; }
 .project-visual:hover .daoud-browser-main,
 .project-visual:focus-visible .daoud-browser-main { transform: rotate(.5deg) translate(-1.5%, -1.5%); box-shadow: 0 42px 90px rgba(0,0,0,.52); }
-.project-visual:hover .daoud-mobile,
-.project-visual:focus-visible .daoud-mobile { transform: rotate(5deg) translate(2%, -2%); }
 .open-label {
   position: absolute;
   right: 26px;
@@ -1428,7 +1424,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .daoud-opening > .evidence-media,
 .daoud-media-stack,
 .daoud-discovery-grid,
-.daoud-paired-media,
+.daoud-commerce-sequence,
 .daoud-mobile-gallery,
 .daoud-rtl-grid,
 .daoud-system-grid { max-width: 1320px; margin-inline: auto; }
@@ -1450,9 +1446,19 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .daoud-discovery-grid .evidence-media { aspect-ratio: 7 / 9; }
 .daoud-discovery-grid .evidence-media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .daoud-commerce { background: #f1ece4; color: #211a16; }
-.daoud-paired-media { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 44px); }
+.daoud-commerce-sequence { display: grid; grid-template-columns: minmax(280px, .42fr) minmax(0, 1fr); gap: clamp(30px, 5vw, 72px); align-items: start; }
+.daoud-commerce-sequence h3 { margin: 0 0 22px; font-family: Georgia, serif; font-size: clamp(24px, 2.25vw, 36px); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; }
+.daoud-cart-proof { min-width: 0; }
+.daoud-cart-proof .evidence-media { max-width: 440px; margin-inline: auto; }
+.daoud-checkout-proof { min-width: 0; display: grid; gap: clamp(34px, 5vw, 68px); }
+.daoud-checkout-proof article { min-width: 0; }
+.daoud-walkthrough { background: #211813; }
+.daoud-prototype-walkthrough { border-color: rgba(200,168,129,.42); background: #2d211b; }
+.daoud-prototype-walkthrough video { aspect-ratio: 4 / 3; background: #0e0b09; }
+.daoud-prototype-walkthrough span { color: #c8a881; }
+.daoud-prototype-walkthrough p { color: #b7aaa0; }
 .daoud-responsive { background: #120f0d; }
-.daoud-mobile-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 5vw, 76px); align-items: end; }
+.daoud-mobile-gallery { width: min(100%, 880px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 6vw, 86px); align-items: end; }
 .daoud-phone-stage { min-width: 0; }
 .daoud-phone-stage > p { margin: 18px 0 0; color: #9f9187; font-size: 10px; letter-spacing: .13em; text-align: center; text-transform: uppercase; }
 .daoud-phone-stage > .evidence-media,
@@ -1524,6 +1530,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 }
 .lightbox-image.tablet { width: min(100%, 768px); }
 .lightbox-image.mobile { width: min(100%, 390px); background: #26342e; }
+.lightbox-image.drawer { width: min(100%, 440px); background: #ede6dc; }
 .lightbox-image img { display: block; width: 100%; height: auto; }
 .lightbox-navigation {
   position: fixed;
@@ -1670,8 +1677,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .pharmacy-bi-browser-main { width: 88%; height: 45%; right: 7%; top: 57%; }
   .daoud-editorial .editorial-preview-copy { width: calc(100% - 68px); }
   .daoud-editorial .editorial-preview-copy > b { font-size: clamp(27px, 8vw, 38px); }
-  .daoud-browser-main { width: 94%; height: 48%; right: -8%; top: 47%; }
-  .daoud-mobile { width: 23%; right: 2%; top: 59%; }
+  .daoud-browser-main { width: 94%; height: auto; right: -8%; top: 47%; }
   .kpi-editorial-metrics { top: 31%; }
   .kpi-browser-manager { width: 88%; height: 43%; right: -14%; top: 46%; }
   .kpi-browser-employee { width: 58%; height: 34%; right: 2%; top: 67%; }
@@ -1753,7 +1759,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .daoud-showcase { padding-inline: 20px; }
   .daoud-section-copy { margin-bottom: 48px; }
   .daoud-discovery-grid,
-  .daoud-paired-media,
+  .daoud-commerce-sequence,
   .daoud-rtl-grid { grid-template-columns: 1fr; gap: 48px; }
   .daoud-discovery-grid h3 { min-height: 0; }
   .daoud-discovery-grid .evidence-media { aspect-ratio: 4 / 5; }

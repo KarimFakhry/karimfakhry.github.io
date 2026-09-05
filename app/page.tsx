@@ -97,8 +97,7 @@ export default function Home() {
                     </span>
                   ) : project.id === "daoud-tycoons" ? (
                     <span className="daoud-mini">
-                      <img src="/screens/daoud-tycoons/hero-desktop.webp" alt="" />
-                      <img src="/screens/daoud-tycoons/mobile-pdp.webp" alt="" />
+                      <img src="/video/daoud-tycoons-video-poster.jpg" alt="" />
                     </span>
                   ) : (
                     <img src={project.thumbnail} alt="" decoding="async" />

@@ -124,10 +124,7 @@ export function DaoudProjectPreview() {
       </div>
       <span className="daoud-editorial-rule" />
       <span className="editorial-browser daoud-browser-main">
-        <img src="/screens/daoud-tycoons/hero-desktop.webp" alt="" />
-      </span>
-      <span className="editorial-mobile daoud-mobile">
-        <img src="/screens/daoud-tycoons/mobile-pdp.webp" alt="" />
+        <img src="/video/daoud-tycoons-video-poster.jpg" alt="" />
       </span>
       <span className="editorial-flow"><i>Discover</i><em>→</em><i>Select</i><em>→</em><i>Checkout</i></span>
     </div>

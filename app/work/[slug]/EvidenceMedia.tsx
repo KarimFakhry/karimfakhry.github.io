@@ -17,7 +17,7 @@ export default function EvidenceMedia({
   title: string;
   alt: string;
   label: "LIVE" | "REDESIGN" | "PRODUCT";
-  device?: "desktop" | "tablet" | "mobile";
+  device?: "desktop" | "tablet" | "mobile" | "drawer";
   highDensityInline?: boolean;
   eager?: boolean;
 }) {

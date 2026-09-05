@@ -6,16 +6,28 @@ type DaoudMediaProps = {
   file: string;
   title: string;
   alt: string;
-  device?: "desktop" | "mobile";
+  device?: "desktop" | "tablet" | "mobile" | "drawer";
   eager?: boolean;
   highDensityInline?: boolean;
+  finalAsset?: boolean;
 };
 
-function DaoudMedia({ file, title, alt, device = "desktop", eager, highDensityInline }: DaoudMediaProps) {
+function DaoudMedia({
+  file,
+  title,
+  alt,
+  device = "desktop",
+  eager,
+  highDensityInline,
+  finalAsset = false,
+}: DaoudMediaProps) {
+  const source = `${mediaRoot}/${file}.webp`;
+  const fullSource = finalAsset ? `${mediaRoot}/${file}.png` : `${mediaRoot}/${file}@2x.png`;
+
   return (
     <EvidenceMedia
-      src={`${mediaRoot}/${file}.webp`}
-      fullSrc={`${mediaRoot}/${file}@2x.png`}
+      src={source}
+      fullSrc={fullSource}
       title={title}
       alt={alt}
       label="REDESIGN"
@@ -96,9 +108,11 @@ export default function DaoudCaseStudy() {
           <article>
             <h3>Make the product the decision surface.</h3>
             <DaoudMedia
-              file="pdp-desktop"
-              title="Product detail and add-to-bag state"
-              alt="Daoud Tycoons product detail page with imagery, colour, size and add-to-bag controls"
+              file="pdp-blouson-selected"
+              title="DI LORENZO Blouson with size L selected"
+              alt="Daoud Tycoons product detail page for the DI LORENZO Blouson with canonical size L selected"
+              device="tablet"
+              finalAsset
             />
           </article>
         </div>
@@ -111,23 +125,78 @@ export default function DaoudCaseStudy() {
             <h2>Keep momentum from product choice to checkout.</h2>
           </div>
           <p>
-            The bag is an immediate continuation of the product decision, not a competing
-            destination. Checkout reduces the visual language to the essentials while keeping the
-            same typography, spacing and restrained tone as the storefront.
+            The state remains truthful from decision to confirmation. Size L is selected before
+            Add to Bag; the bag then moves from two to three items and carries the same 435 JOD
+            total through guest checkout, delivery, payment and confirmation.
           </p>
         </div>
-        <div className="daoud-paired-media">
-          <DaoudMedia
-            file="bag-desktop"
-            title="Shopping bag experience"
-            alt="Daoud Tycoons shopping bag overlay with selected fashion product and order summary"
-          />
-          <DaoudMedia
-            file="checkout-desktop"
-            title="Checkout experience"
-            alt="Daoud Tycoons checkout with delivery information, order summary and payment progression"
-          />
+        <div className="daoud-commerce-sequence">
+          <article className="daoud-cart-proof">
+            <h3>The product decision enters the bag intact.</h3>
+            <DaoudMedia
+              file="cart-blouson"
+              title="Bag with the DI LORENZO Blouson"
+              alt="Daoud Tycoons bag drawer showing three items including the DI LORENZO Blouson in size L and a 435 JOD subtotal"
+              device="drawer"
+              finalAsset
+            />
+          </article>
+          <div className="daoud-checkout-proof">
+            <article>
+              <h3>Guest checkout keeps the order visible.</h3>
+              <DaoudMedia
+                file="checkout-entry-blouson"
+                title="Blouson guest checkout entry"
+                alt="Daoud Tycoons checkout entry showing three products and a 435 JOD order total"
+                finalAsset
+              />
+            </article>
+            <article>
+              <h3>Confirmation closes the same journey.</h3>
+              <DaoudMedia
+                file="confirmation-blouson"
+                title="Blouson order confirmation"
+                alt="Daoud Tycoons order confirmation showing the completed three-item order and 435 JOD total"
+                finalAsset
+              />
+            </article>
+          </div>
         </div>
+      </section>
+
+      <section className="daoud-showcase daoud-walkthrough" id="prototype-walkthrough">
+        <div className="daoud-section-copy daoud-copy-pair">
+          <div>
+            <p className="eyebrow">Prototype walkthrough</p>
+            <h2>Discover. Select. Checkout.</h2>
+          </div>
+          <p>
+            The certified desktop prototype connects the editorial homepage to collection,
+            DI LORENZO Blouson selection and a consistent three-item guest checkout journey.
+          </p>
+        </div>
+        <figure className="prototype-walkthrough daoud-prototype-walkthrough">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster="/video/daoud-tycoons-video-poster.jpg"
+            aria-label="Daoud Tycoons prototype walkthrough from homepage to order confirmation"
+          >
+            <source src="/video/daoud-tycoons-prototype-walkthrough.mp4" type="video/mp4" />
+            <a href="/video/daoud-tycoons-prototype-walkthrough.mp4">
+              Open the Daoud Tycoons prototype walkthrough
+            </a>
+          </video>
+          <figcaption>
+            <span>Certified prototype · 75 seconds</span>
+            <strong>Homepage → Blouson L → Bag 3 → guest checkout → confirmation.</strong>
+            <p>
+              Recorded from the approved Figma Presentation flow; the order remains at three items
+              and 435 JOD from the bag through confirmation.
+            </p>
+          </figcaption>
+        </figure>
       </section>
 
       <section className="daoud-showcase daoud-responsive">
@@ -163,17 +232,6 @@ export default function DaoudCaseStudy() {
               />
             </div>
             <p>Focused discovery</p>
-          </article>
-          <article className="daoud-phone-stage">
-            <div className="daoud-phone-viewport">
-              <DaoudMedia
-                file="mobile-pdp"
-                title="Mobile product detail"
-                alt="Daoud Tycoons mobile product detail with imagery, options and commerce controls"
-                device="mobile"
-              />
-            </div>
-            <p>Product decision</p>
           </article>
         </div>
       </section>
