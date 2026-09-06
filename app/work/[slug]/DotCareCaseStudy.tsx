@@ -229,7 +229,7 @@ export default function DotCareCaseStudy() {
             <figcaption>
               <span>Golden-path walkthrough · 50 sec</span>
               <strong>Worklist → verify → resolve → fulfil → charge → dispense → trace.</strong>
-              <p>Cursor-guided walkthrough composed from the frozen finished prototype. This is redesign evidence—not deployed-product footage.</p>
+              <p>Cursor-guided walkthrough of the complete prototype. It demonstrates the redesign concept rather than deployed-product footage.</p>
             </figcaption>
           </figure>
         </div>

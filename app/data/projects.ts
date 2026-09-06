@@ -308,7 +308,7 @@ export const projects: Project[] = ([
     role: "Product design · art direction · design system",
     scope: "Discovery, commerce, responsive and localization",
     platform: "Responsive ecommerce · English and Arabic RTL",
-    status: "Portfolio redesign concept · certified interactive prototype",
+    status: "Portfolio redesign concept · interactive prototype",
     method: "Information architecture · ecommerce UX · responsive design · RTL localization · interaction strategy",
     primaryUsers: [
       "Fashion shoppers browsing seasonal edits and curated collections",
@@ -323,7 +323,7 @@ export const projects: Project[] = ([
     evidence: [
       { value: "1979", label: "heritage as a design input", detail: "The Amman story shapes the tone, pacing and editorial character of the digital experience." },
       { value: "2 languages", label: "English and Arabic RTL", detail: "Localization is treated as a composed product mode, with native type and mirrored direction where appropriate." },
-      { value: "2 breakpoints", label: "desktop and mobile systems", detail: "The approved concept spans 1440px desktop and 390px mobile frames without simply shrinking the interface." },
+      { value: "2 breakpoints", label: "desktop and mobile systems", detail: "The concept spans 1440px desktop and 390px mobile frames without simply shrinking the interface." },
       { value: "One journey", label: "editorial to transaction", detail: "Seasonal stories, Houses, collection filters, product choice, bag and checkout form one connected path." },
     ],
     chapters: [

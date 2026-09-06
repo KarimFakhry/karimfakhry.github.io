@@ -217,11 +217,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {project.image && (
             <section className="complete-section" id="original-presentation">
               <div>
-                <p className="eyebrow">Original editorial presentation</p>
-                <h2>The current case study, preserved.</h2>
+                <p className="eyebrow">Complete visual case study</p>
+                <h2>Explore the full visual narrative.</h2>
               </div>
               <p>
-                This long-form visual remains available for comparison and rollback. Its key narrative now also appears above as accessible web content.
+                The long-form presentation brings the audit, product decisions and responsive interface together in one continuous view.
               </p>
               <FullCaseStudy image={project.image} title={project.title} />
             </section>
@@ -235,7 +235,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p className="eyebrow">Source presentation</p>
             <h2>The complete 15-scene evidence set.</h2>
           </div>
-          <p>The web case study above adapts its strongest arguments for browser reading. The original long-form artefact remains available at full resolution.</p>
+          <p>The full-resolution presentation brings the live-product evidence, workflow model and redesign response together in one continuous view.</p>
           <FullCaseStudy image={project.image} title={project.title} />
         </section>
       )}

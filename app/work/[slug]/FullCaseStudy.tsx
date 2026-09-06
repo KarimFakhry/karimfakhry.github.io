@@ -29,7 +29,7 @@ export default function FullCaseStudy({
       </div>
       <img
         src={image}
-        alt={`${title} original editorial presentation. The case-study narrative and evidence are available as accessible text above.`}
+        alt={`${title} complete visual case study. The narrative and evidence are also presented as accessible text above.`}
         decoding="async"
       />
     </div>

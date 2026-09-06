@@ -171,7 +171,7 @@ export default function DaoudCaseStudy() {
             <h2>Discover. Select. Checkout.</h2>
           </div>
           <p>
-            The certified desktop prototype connects the editorial homepage to collection,
+            The desktop prototype connects the editorial homepage to collection,
             DI LORENZO Blouson selection and a consistent three-item guest checkout journey.
           </p>
         </div>
@@ -189,11 +189,11 @@ export default function DaoudCaseStudy() {
             </a>
           </video>
           <figcaption>
-            <span>Certified prototype · 75 seconds</span>
+            <span>Interactive prototype · 75 seconds</span>
             <strong>Homepage → Blouson L → Bag 3 → guest checkout → confirmation.</strong>
             <p>
-              Recorded from the approved Figma Presentation flow; the order remains at three items
-              and 435 JOD from the bag through confirmation.
+              The walkthrough carries the order at three items and 435 JOD from the bag through
+              confirmation.
             </p>
           </figcaption>
         </figure>
