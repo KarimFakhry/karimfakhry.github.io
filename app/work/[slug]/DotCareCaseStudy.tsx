@@ -262,6 +262,62 @@ export default function DotCareCaseStudy() {
         </ul>
         <blockquote>The redesign did not add a safety layer on top of DotCare Pharmacy. It made the pharmacist’s professional act part of the workflow itself.</blockquote>
       </div>
+
+      <article className="dotcare-patient-summary">
+        <header>
+          <p className="eyebrow">Extending the system · Patient Summary</p>
+          <h3>Clinical context, organised for the next decision.</h3>
+          <p>This concept carries the same state discipline beyond Pharmacy: identity, encounter, risk and recent care stay legible while deeper records remain one step away.</p>
+        </header>
+
+        <div className="dotcare-patient-summary-decisions">
+          <div>
+            <span>The information problem</span>
+            <h4>One patient record contains several timescales.</h4>
+            <p>Current care, safety-relevant context and longitudinal history need different emphasis. Giving them equal weight would turn the summary into another undifferentiated record.</p>
+          </div>
+          <div>
+            <span>The product decision</span>
+            <h4>Anchor the patient; vary the depth.</h4>
+            <p>A persistent context band establishes identity and encounter first. The overview then prioritises active care and attention states, with history and source detail progressively disclosed.</p>
+          </div>
+        </div>
+
+        <EvidenceMedia
+          src="/screens/dotcare-patient-summary/patient-overview@2x.png"
+          title="Patient Summary overview"
+          alt="Patient Summary overview with patient and encounter context, active problems, current care, attention states, recent activity and observations"
+          label="REDESIGN"
+        />
+
+        <div className="dotcare-patient-summary-evidence">
+          <div>
+            <h4>Dense activity becomes a set of traceable states.</h4>
+            <p>Care is grouped by clinical domain, then scanned through task, specimen and result state. Selection expands the relevant order without losing the surrounding workload.</p>
+          </div>
+          <div className="dotcare-patient-summary-media-grid">
+            <EvidenceMedia
+              src="/screens/dotcare-patient-summary/patient-care-activity-expanded.webp"
+              fullSrc="/screens/dotcare-patient-summary/patient-care-activity-expanded@2x.png"
+              title="Patient Summary care activity"
+              alt="Patient Summary laboratory care activity with domain navigation, task-state filters, expanded task details and selected-order context"
+              label="REDESIGN"
+            />
+            <EvidenceMedia
+              src="/screens/dotcare-patient-summary/patient-collection-details.webp"
+              fullSrc="/screens/dotcare-patient-summary/patient-collection-details@2x.png"
+              title="Collection details"
+              alt="Patient Summary collection details sheet showing order context, specimen status, recollection reason and recorded events"
+              label="REDESIGN"
+            />
+          </div>
+        </div>
+
+        <div className="dotcare-patient-summary-closing">
+          <h4>Two kinds of clinical complexity, one product system.</h4>
+          <p>Pharmacy makes medication-state accountability explicit. Patient Summary organises clinical context by priority, time and depth. Together, they show how DotCare can support distinct workflows without fragmenting the wider HMIS experience.</p>
+        </div>
+      </article>
     </section>
   );
 }
