@@ -675,10 +675,34 @@ button { font: inherit; }
 .daoud-editorial-rule { position: absolute; z-index: 2; inset: 0 45% 0 auto; width: 1px; background: linear-gradient(transparent, rgba(217,195,169,.24), transparent); }
 .daoud-browser-main { width: 66%; height: auto; aspect-ratio: 4 / 3; right: -2%; top: 12%; transform: rotate(1.25deg); border-radius: 2px; background: #211a16; }
 .daoud-browser-main img { height: 100%; object-fit: cover; object-position: center 18%; }
+.daoud-mobile-preview {
+  position: absolute;
+  z-index: 6;
+  right: 2.5%;
+  top: 29%;
+  width: 15%;
+  aspect-ratio: 390 / 844;
+  overflow: hidden;
+  border: clamp(3px, .4vw, 6px) solid #17130f;
+  border-radius: clamp(14px, 1.6vw, 24px);
+  background: #f3ede3;
+  box-shadow: 0 30px 64px rgba(0,0,0,.44);
+  transform: rotate(-2.5deg);
+  transition: transform 520ms cubic-bezier(.22,1,.36,1), box-shadow 520ms ease;
+}
+.daoud-mobile-preview img {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .daoud-editorial .editorial-flow { color: rgba(243,237,227,.62); }
 .daoud-editorial .editorial-flow em { color: #c8a881; }
 .project-visual:hover .daoud-browser-main,
 .project-visual:focus-visible .daoud-browser-main { transform: rotate(.5deg) translate(-1.5%, -1.5%); box-shadow: 0 42px 90px rgba(0,0,0,.52); }
+.project-visual:hover .daoud-mobile-preview,
+.project-visual:focus-visible .daoud-mobile-preview { transform: rotate(-1deg) translate(2%, -2%); box-shadow: 0 38px 78px rgba(0,0,0,.5); }
 .open-label {
   position: absolute;
   right: 26px;
@@ -1678,6 +1702,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .daoud-editorial .editorial-preview-copy { width: calc(100% - 68px); }
   .daoud-editorial .editorial-preview-copy > b { font-size: clamp(27px, 8vw, 38px); }
   .daoud-browser-main { width: 94%; height: auto; right: -8%; top: 47%; }
+  .daoud-mobile-preview { width: 20%; right: 2%; top: 58%; }
   .kpi-editorial-metrics { top: 31%; }
   .kpi-browser-manager { width: 88%; height: 43%; right: -14%; top: 46%; }
   .kpi-browser-employee { width: 58%; height: 34%; right: 2%; top: 67%; }

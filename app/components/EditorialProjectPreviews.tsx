@@ -126,6 +126,16 @@ export function DaoudProjectPreview() {
       <span className="editorial-browser daoud-browser-main">
         <img src="/video/daoud-tycoons-video-poster.jpg" alt="" />
       </span>
+      <span className="daoud-mobile-preview">
+        <img
+          src="/screens/daoud-tycoons/mobile-collection.webp"
+          srcSet="/screens/daoud-tycoons/mobile-collection.webp 390w, /screens/daoud-tycoons/mobile-collection@2x.png 780w"
+          sizes="(max-width: 720px) 96px, 210px"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </span>
       <span className="editorial-flow"><i>Discover</i><em>→</em><i>Select</i><em>→</em><i>Checkout</i></span>
     </div>
   );
