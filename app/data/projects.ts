@@ -256,7 +256,7 @@ export const projects: Project[] = ([
     title: "DotCare ESS",
     type: "Employee self-service product",
     year: "2026",
-    summary: "Redesigning employee self-service around one state-driven attendance action, clear request continuity and contextual manager work.",
+    summary: "Redesigning employee self-service around clearer attendance, request tracking and manager approvals.",
     challenge: "Employees need to understand whether they can check in, what changed in a request and what needs correction; managers need approval work without leaving their employee context.",
     outcome: "An end-to-end mobile redesign where attendance, leaves, requests and manager decisions share one role-aware system and production-realistic state model.",
     role: "Product design · UX audit · interaction · design system",
@@ -271,14 +271,14 @@ export const projects: Project[] = ([
     ],
     executiveSummary: {
       problem: "The existing experience gave equal weight to competing attendance actions, buried operational exceptions and separated manager responsibilities from everyday employee work.",
-      approach: "Reorganise the product around current state and attention: one attendance action, contextual exceptions, unified requests and manager decisions inside the same role-aware architecture.",
-      result: "A 41-screen high-fidelity prototype covering employee and manager journeys, realistic edge states and a reusable mobile design system—without claiming deployment outcomes.",
+      approach: "Make the current attendance state obvious, surface exceptions early and keep employee and manager workflows inside one product.",
+      result: "A high-fidelity prototype covering employee and manager journeys, realistic edge states and a reusable mobile design system—without claiming deployment outcomes.",
     },
     evidence: [
       { value: "One action", label: "attendance follows state", detail: "Check In and Check Out never compete; the available action reflects the employee’s current status and location context." },
       { value: "2 roles", label: "one coherent product", detail: "Managers remain employees while approvals, Team Leaves and attention states appear only when responsibility requires them." },
       { value: "41", label: "production-realistic screens", detail: "Employee, manager, form, decision and exception states are connected in one high-fidelity prototype." },
-      { value: "102", label: "component nodes", detail: "Reusable navigation, attendance, request and approval patterns support consistent state communication." },
+      { value: "44px", label: "minimum touch target", detail: "Primary actions and interactive controls remain dependable across attendance, requests and approvals." },
     ],
     chapters: [
       { number: "01", title: "Make attendance unambiguous", problem: "Check In and Check Out competed simultaneously, leaving the employee to interpret what the system expected next.", response: "Use one state-driven attendance card that carries time, duration, location verification and the single available action." },

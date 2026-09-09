@@ -78,7 +78,7 @@ export default function ScreenGallery({
           role="dialog"
           aria-modal="true"
           aria-label={`${activeScreen.title} enlarged screen`}
-          onMouseDown={(event) => {
+          onClick={(event) => {
             if (event.target === event.currentTarget) setActiveIndex(null);
           }}
         >

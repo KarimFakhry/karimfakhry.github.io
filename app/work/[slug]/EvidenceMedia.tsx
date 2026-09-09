@@ -63,7 +63,7 @@ export default function EvidenceMedia({
           role="dialog"
           aria-modal="true"
           aria-label={`${title} enlarged screen`}
-          onMouseDown={(event) => {
+          onClick={(event) => {
             if (event.target === event.currentTarget) setIsOpen(false);
           }}
         >

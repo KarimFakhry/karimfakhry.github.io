@@ -1,4 +1,4 @@
-type WalkthroughProject = "academy" | "health-web" | "health-app" | "kpi-hub" | "pharmacy-bi";
+type WalkthroughProject = "academy" | "health-web" | "health-app" | "kpi-hub" | "pharmacy-bi" | "dotcare-ess";
 
 const walkthroughs: Record<WalkthroughProject, {
   heading: string;
@@ -65,6 +65,17 @@ const walkthroughs: Record<WalkthroughProject, {
     path: "See the signal → inspect the trend → prioritise risk → drill down → switch context.",
     note: "The walkthrough uses the prototype’s connected states and representative demo data. It demonstrates the designed product experience without claiming deployed business outcomes.",
     className: "pharmacy-bi-prototype-walkthrough",
+  },
+  "dotcare-ess": {
+    heading: "One working day, from sign-in to completed attendance.",
+    intro: "A cursor-guided walkthrough of the finished prototype, following the attendance state from sign-in through check-out and the completed daily record.",
+    video: "/video/dotcare-ess-golden-path.mp4",
+    poster: "/video/dotcare-ess-golden-path-poster.jpg",
+    ariaLabel: "DotCare ESS golden-path walkthrough from sign-in and check-in through check-out, day completion and today's attendance log",
+    duration: "35 seconds",
+    path: "Sign in → Check in → Working → Check out → Day complete → Today’s log.",
+    note: "The walkthrough follows the completed attendance journey in the high-fidelity redesign prototype. It does not represent a deployed-product recording.",
+    className: "dotcare-ess-prototype-walkthrough",
   },
 };
 

@@ -1503,6 +1503,11 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .pharmacy-bi-prototype-walkthrough video { aspect-ratio: 1920 / 1080; background: #07131f; }
 .pharmacy-bi-prototype-walkthrough span { color: #73c2ea; }
 .pharmacy-bi-prototype-walkthrough p { color: #a9bdca; }
+.dotcare-ess-prototype-walkthrough { border-color: rgba(114,227,237,.42); background: #082b5d; }
+.dotcare-ess-prototype-walkthrough video { aspect-ratio: 16 / 9; background: #000; }
+.dotcare-ess-prototype-walkthrough span { color: #72e3ed; }
+.dotcare-ess-prototype-walkthrough p { color: #b4c9df; }
+.ess-case-study .health-app-walkthrough-section { background: #071a38; }
 .pharmacy-bi-themes { background: #07131f; }
 .pharmacy-bi-themes blockquote {
   max-width: 1020px; margin: clamp(64px, 8vw, 110px) auto 0;
@@ -1607,7 +1612,6 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .ess-architecture > ol,
 .ess-context-row,
 .ess-phone-grid,
-.ess-system-facts,
 .ess-system-media { max-width: 1320px; margin-inline: auto; }
 .ess-section-copy { margin-bottom: clamp(52px, 7vw, 96px); }
 .ess-section-copy .eyebrow { margin-bottom: 24px; color: #72e3ed; }
@@ -1652,11 +1656,6 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .ess-requests .ess-phone-card figcaption,
 .ess-system .ess-phone-card figcaption { color: #62738a; }
 .ess-manager .ess-phone-grid-four .ess-phone-card:nth-child(even) { margin-top: clamp(42px, 6vw, 88px); }
-.ess-system-facts { margin-bottom: clamp(70px, 9vw, 120px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #b9cadc; }
-.ess-system-facts div { min-height: 170px; padding: 26px 24px 24px 0; }
-.ess-system-facts div + div { padding-left: 24px; border-left: 1px solid #b9cadc; }
-.ess-system-facts dt { font-family: Georgia, serif; font-size: clamp(38px, 4vw, 60px); letter-spacing: -.05em; }
-.ess-system-facts dd { margin: 18px 0 0; color: #53647a; font-size: 12px; line-height: 1.5; }
 .ess-system-media { display: grid; gap: clamp(44px, 7vw, 96px); }
 .ess-system-media article { min-width: 0; }
 .ess-system-media h3 { max-width: 800px; margin: 0 0 24px; font-family: Georgia, serif; font-size: clamp(26px, 3vw, 42px); font-weight: 400; letter-spacing: -.03em; }
@@ -1673,7 +1672,9 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   inset: 0;
   padding: 84px clamp(12px, 4vw, 60px) 92px;
   background: rgba(10,10,9,.97);
-  overflow: auto;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   overscroll-behavior: contain;
 }
 .lightbox-toolbar {
@@ -1710,13 +1711,28 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .lightbox-image {
   width: min(100%, 1440px);
   margin: 0 auto;
-  background: #f4f2eb;
-  box-shadow: 0 36px 100px rgba(0,0,0,.55);
+  max-height: calc(100svh - 176px);
+  max-height: calc(100dvh - 176px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .lightbox-image.tablet { width: min(100%, 768px); }
-.lightbox-image.mobile { width: min(100%, 390px); background: #26342e; }
-.lightbox-image.drawer { width: min(100%, 440px); background: #ede6dc; }
-.lightbox-image img { display: block; width: 100%; height: auto; }
+.lightbox-image.mobile { width: min(100%, 390px); }
+.lightbox-image.drawer { width: min(100%, 440px); }
+.lightbox-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100svh - 176px);
+  max-height: calc(100dvh - 176px);
+  object-fit: contain;
+  box-shadow: 0 36px 100px rgba(0,0,0,.55);
+}
+.legacy-screen-lightbox { display: block; overflow: auto; }
+.legacy-screen-lightbox .legacy-lightbox-image { max-height: none; display: block; background: #f4f2eb; box-shadow: 0 36px 100px rgba(0,0,0,.55); }
+.legacy-screen-lightbox .legacy-lightbox-image img { width: 100%; max-height: none; box-shadow: none; }
 .lightbox-navigation {
   position: fixed;
   z-index: 2;
@@ -1985,10 +2001,6 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .ess-phone-grid-three, .ess-phone-grid-two, .ess-phone-grid-four { grid-template-columns: 1fr; gap: 54px; }
   .ess-phone-grid .ess-phone-card { width: min(78vw, 330px); margin-inline: auto; }
   .ess-manager .ess-phone-grid-four .ess-phone-card:nth-child(even) { margin-top: 0; }
-  .ess-system-facts { grid-template-columns: 1fr 1fr; }
-  .ess-system-facts div { min-height: 140px; }
-  .ess-system-facts div:nth-child(3) { padding-left: 0; border-top: 1px solid #b9cadc; border-left: 0; }
-  .ess-system-facts div:nth-child(4) { border-top: 1px solid #b9cadc; }
   .ess-system-media article:last-child { width: 100%; }
   .ess-reflection { text-align: left; }
   .journey-map-head { display: none; }

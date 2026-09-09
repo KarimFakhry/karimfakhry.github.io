@@ -1,4 +1,5 @@
 import EvidenceMedia from "./EvidenceMedia";
+import HealthAppWalkthrough from "./HealthAppWalkthrough";
 
 type EssScreenProps = {
   file: string;
@@ -27,14 +28,37 @@ function EssScreen({ file, title, alt, className = "" }: EssScreenProps) {
 export default function DotCareEssCaseStudy() {
   return (
     <div className="ess-case-study">
+      <section className="ess-architecture" id="information-architecture">
+        <div className="ess-section-copy">
+          <p className="eyebrow">Information architecture</p>
+          <h2>Four stable destinations. Responsibility appears in context.</h2>
+          <p>
+            Home, Attendance, Leaves and More anchor both roles. Requests, Approvals,
+            Notifications, Profile and Upcoming remain reachable from the moment that gives them
+            meaning instead of competing for permanent navigation space.
+          </p>
+        </div>
+        <ol aria-label="DotCare ESS information architecture">
+          <li><span>01</span><strong>Home</strong><small>Current state and attention</small></li>
+          <li><span>02</span><strong>Attendance</strong><small>Daily record and corrections</small></li>
+          <li><span>03</span><strong>Leaves</strong><small>Balances and new requests</small></li>
+          <li><span>04</span><strong>More</strong><small>Profile and work settings</small></li>
+        </ol>
+        <div className="ess-context-row" aria-label="Contextual product areas">
+          <span>Requests</span><span>Approvals</span><span>Notifications</span><span>Upcoming</span><span>Profile</span>
+        </div>
+      </section>
+
+      <HealthAppWalkthrough projectId="dotcare-ess" />
+
       <section className="ess-opening" id="product-model">
         <div className="ess-section-copy">
           <p className="eyebrow">The product model</p>
           <h2>Attendance is not two buttons. It is one current state.</h2>
           <p>
-            DotCare ESS turns the start of a working day into a legible status: what the employee
-            has done, where they are, how long they have worked and the one action available next.
-            Manager responsibilities enter the same Home experience only when they need attention.
+            DotCare ESS turns the working day into a clear status: what the employee has done,
+            where they are, how long they have worked and the one action available next. Manager
+            responsibilities enter the same Home experience only when they need attention.
           </p>
         </div>
         <div className="ess-home-stage" aria-label="Employee and manager Home states">
@@ -59,31 +83,10 @@ export default function DotCareEssCaseStudy() {
         </div>
       </section>
 
-      <section className="ess-architecture" id="information-architecture">
-        <div className="ess-section-copy">
-          <p className="eyebrow">Information architecture</p>
-          <h2>Four stable destinations. Responsibility appears in context.</h2>
-          <p>
-            Home, Attendance, Leaves and More anchor both roles. Requests, Approvals,
-            Notifications, Profile and Upcoming remain reachable from the moment that gives them
-            meaning instead of competing for permanent navigation space.
-          </p>
-        </div>
-        <ol aria-label="DotCare ESS information architecture">
-          <li><span>01</span><strong>Home</strong><small>Current state and attention</small></li>
-          <li><span>02</span><strong>Attendance</strong><small>Daily record and corrections</small></li>
-          <li><span>03</span><strong>Leaves</strong><small>Balances and new requests</small></li>
-          <li><span>04</span><strong>More</strong><small>Profile and work settings</small></li>
-        </ol>
-        <div className="ess-context-row" aria-label="Contextual product areas">
-          <span>Requests</span><span>Approvals</span><span>Notifications</span><span>Upcoming</span><span>Profile</span>
-        </div>
-      </section>
-
       <section className="ess-story ess-attendance" id="attendance">
         <div className="ess-section-copy">
           <p className="eyebrow">Attendance</p>
-          <h2>Make the exception as complete as the happy path.</h2>
+          <h2>Exceptions lead directly to correction.</h2>
           <p>
             The overview establishes the day’s record. A missing check-out becomes an explicit
             exception, then carries its date, time and reason into a correction request rather than
@@ -113,7 +116,7 @@ export default function DotCareEssCaseStudy() {
         <div className="ess-section-copy ess-copy-pair">
           <div>
             <p className="eyebrow">Leaves and requests</p>
-            <h2>One request language from balance to decision.</h2>
+            <h2>Balances, requests and decisions stay connected.</h2>
           </div>
           <p>
             Leave balances answer availability before a form opens. Submitted requests keep dates,
@@ -138,7 +141,7 @@ export default function DotCareEssCaseStudy() {
       <section className="ess-story ess-manager" id="manager-experience">
         <div className="ess-section-copy">
           <p className="eyebrow">Manager experience</p>
-          <h2>Managers remain employees. Decisions gain the extra context they require.</h2>
+          <h2>Managers keep their employee context while decisions gain detail.</h2>
           <p>
             The approval view brings the employee, dates and request facts to the decision point.
             Rejection requires a reason, the queue preserves the completed outcome, and Team Leaves
@@ -173,7 +176,7 @@ export default function DotCareEssCaseStudy() {
         <div className="ess-section-copy ess-copy-pair">
           <div>
             <p className="eyebrow">Role awareness</p>
-            <h2>One notification component. Two truthful priorities.</h2>
+            <h2>Notifications reflect each role’s responsibilities.</h2>
           </div>
           <p>
             Employee notifications focus on personal attendance and request progress. Manager
@@ -198,19 +201,13 @@ export default function DotCareEssCaseStudy() {
       <section className="ess-system" id="design-system">
         <div className="ess-section-copy">
           <p className="eyebrow">Design system</p>
-          <h2>States are components, not one-off screens.</h2>
+          <h2>Reusable states keep operational meaning consistent.</h2>
           <p>
-            The system uses semantic status, explicit action language and reusable employee/manager
-            patterns. The selected component sets show the operational range without exposing an
-            unfinished component-library canvas.
+            Across 26 component sets, shared attendance, request and approval patterns use semantic
+            status, explicit action language and consistent touch targets across employee and
+            manager workflows.
           </p>
         </div>
-        <dl className="ess-system-facts">
-          <div><dt>121</dt><dd>variables across two collections</dd></div>
-          <div><dt>94</dt><dd>variants across 26 component sets</dd></div>
-          <div><dt>19</dt><dd>text styles and five effect styles</dd></div>
-          <div><dt>44px</dt><dd>minimum touch-target baseline</dd></div>
-        </dl>
         <div className="ess-system-media">
           <article>
             <h3>Attendance states carry their own next action.</h3>
@@ -235,7 +232,7 @@ export default function DotCareEssCaseStudy() {
 
       <section className="ess-reflection">
         <p className="eyebrow">Design outcome</p>
-        <h2>A complete employee-service model, not a collection of mobile screens.</h2>
+        <h2>Attendance, requests and approvals now share one product model.</h2>
         <p>
           The prototype connects attendance, leave, permissions, requests, notifications and manager
           decisions through one information architecture and one reusable state language. It is a

@@ -119,10 +119,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </article>
           ))}
         </div>
-        <div className="user-context">
-          <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : isPharmacyRedesign ? "People in the workflow" : isBiProduct ? "Decision makers" : isCommerceConcept ? "Shopping contexts" : isEssRedesign ? "Employee-service contexts" : "Key journeys"}</p>
-          <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
-        </div>
+        {!isEssRedesign && (
+          <div className="user-context">
+            <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : isPharmacyRedesign ? "People in the workflow" : isBiProduct ? "Decision makers" : isCommerceConcept ? "Shopping contexts" : "Key journeys"}</p>
+            <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
+          </div>
+        )}
       </section>
 
       {project.journey && (

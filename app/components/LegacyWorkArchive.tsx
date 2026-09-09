@@ -42,7 +42,7 @@ export default function LegacyWorkArchive() {
       </div>
 
       {active && activeIndex !== null ? (
-        <div className="screen-lightbox" role="dialog" aria-modal="true" aria-label={`${active.title} full-page design`} onMouseDown={(event) => { if (event.target === event.currentTarget) setActiveIndex(null); }}>
+        <div className="screen-lightbox legacy-screen-lightbox" role="dialog" aria-modal="true" aria-label={`${active.title} full-page design`} onClick={(event) => { if (event.target === event.currentTarget) setActiveIndex(null); }}>
           <div className="lightbox-toolbar">
             <div><strong>{active.title}</strong><span>{active.meta}</span></div>
             <div className="lightbox-actions">
