@@ -32,9 +32,9 @@ export type Project = {
   tags: string[];
   image?: string;
   thumbnail?: string;
-  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon";
-  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product" | "commerce-concept";
+  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess";
+  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -250,9 +250,61 @@ export const projects: Project[] = ([
     ],
   },
   {
+    id: "dotcare-ess",
+    slug: "dotcare-ess",
+    number: "06",
+    title: "DotCare ESS",
+    type: "Employee self-service product",
+    year: "2026",
+    summary: "Redesigning employee self-service around one state-driven attendance action, clear request continuity and contextual manager work.",
+    challenge: "Employees need to understand whether they can check in, what changed in a request and what needs correction; managers need approval work without leaving their employee context.",
+    outcome: "An end-to-end mobile redesign where attendance, leaves, requests and manager decisions share one role-aware system and production-realistic state model.",
+    role: "Product design · UX audit · interaction · design system",
+    scope: "Attendance, leave, requests and manager workflows",
+    platform: "Mobile application · Employee and Manager",
+    status: "Redesign prototype · not deployed",
+    method: "Product audit · information architecture · state modelling · accessibility · interactive prototype",
+    primaryUsers: [
+      "Employees managing attendance, leave, permissions and requests",
+      "Managers reviewing approvals while retaining their employee context",
+      "Employees tracking the ownership and outcome of submitted requests",
+    ],
+    executiveSummary: {
+      problem: "The existing experience gave equal weight to competing attendance actions, buried operational exceptions and separated manager responsibilities from everyday employee work.",
+      approach: "Reorganise the product around current state and attention: one attendance action, contextual exceptions, unified requests and manager decisions inside the same role-aware architecture.",
+      result: "A 41-screen high-fidelity prototype covering employee and manager journeys, realistic edge states and a reusable mobile design system—without claiming deployment outcomes.",
+    },
+    evidence: [
+      { value: "One action", label: "attendance follows state", detail: "Check In and Check Out never compete; the available action reflects the employee’s current status and location context." },
+      { value: "2 roles", label: "one coherent product", detail: "Managers remain employees while approvals, Team Leaves and attention states appear only when responsibility requires them." },
+      { value: "41", label: "production-realistic screens", detail: "Employee, manager, form, decision and exception states are connected in one high-fidelity prototype." },
+      { value: "102", label: "component nodes", detail: "Reusable navigation, attendance, request and approval patterns support consistent state communication." },
+    ],
+    chapters: [
+      { number: "01", title: "Make attendance unambiguous", problem: "Check In and Check Out competed simultaneously, leaving the employee to interpret what the system expected next.", response: "Use one state-driven attendance card that carries time, duration, location verification and the single available action." },
+      { number: "02", title: "Design the exception, not only the happy path", problem: "Missing check-outs, unavailable location and correction needs can interrupt payroll-relevant attendance without a clear route to resolution.", response: "Connect each exception to an explicit explanation, correction request and traceable request state." },
+      { number: "03", title: "Keep requests in one approval cycle", problem: "Leave and permission requests need more than a submitted state; employees and managers must understand who owns the next action.", response: "Reuse one request architecture across pending, approved and rejected states, preserving dates, reasons and decision ownership." },
+      { number: "04", title: "Keep managers inside the employee product", problem: "A separate manager application would fragment attendance and personal requests from the responsibilities managers handle for their teams.", response: "Reveal approvals, Team Leaves and manager notifications contextually while retaining the same navigation and personal employee model." },
+      { number: "05", title: "Communicate state beyond colour", problem: "Status-heavy enterprise workflows become fragile when meaning depends on colour or small labels alone.", response: "Pair semantic colour with icons, text, action language and at least 44px touch targets across attendance, requests and approvals." },
+    ],
+    tags: ["Enterprise UX", "Mobile product", "Design systems"],
+    thumbnail: "/screens/dotcare-ess/home-checked-in.png",
+    theme: "ess",
+    visual: "ess",
+    caseStudyMode: "ess-redesign",
+    screens: [
+      { title: "Employee Home", image: "/screens/dotcare-ess/home-employee.png", fullImage: "/screens/dotcare-ess/home-employee@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Checked In", image: "/screens/dotcare-ess/home-checked-in.png", fullImage: "/screens/dotcare-ess/home-checked-in@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Manager Home", image: "/screens/dotcare-ess/home-manager.png", fullImage: "/screens/dotcare-ess/home-manager@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Attendance exception", image: "/screens/dotcare-ess/attendance-missing-checkout.png", fullImage: "/screens/dotcare-ess/attendance-missing-checkout@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Approval decision", image: "/screens/dotcare-ess/manager-approval-detail.png", fullImage: "/screens/dotcare-ess/manager-approval-detail@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Team Leaves", image: "/screens/dotcare-ess/team-leaves.png", fullImage: "/screens/dotcare-ess/team-leaves@2x.png", device: "mobile", highDensityInline: true },
+    ],
+  },
+  {
     id: "kpi-hub",
     slug: "kpi-performance-hub",
-    number: "06",
+    number: "07",
     title: "KPI Performance Hub",
     type: "Performance management product",
     year: "2026",
@@ -298,7 +350,7 @@ export const projects: Project[] = ([
   {
     id: "daoud-tycoons",
     slug: "daoud-tycoons-redesign",
-    number: "07",
+    number: "08",
     title: "Daoud Tycoons Redesign",
     type: "Luxury ecommerce concept",
     year: "2026",

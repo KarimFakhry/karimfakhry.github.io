@@ -3,6 +3,7 @@ import HealthAppProjectPreview from "./components/HealthAppProjectPreview";
 import {
   AcademyProjectPreview,
   DaoudProjectPreview,
+  DotCareEssProjectPreview,
   DotCareProjectPreview,
   HealthWebsiteProjectPreview,
   KpiEditorialPreview,
@@ -95,6 +96,11 @@ export default function Home() {
                       <img src="/screens/pharmacy-bi/overview.png" alt="" />
                       <img src="/screens/pharmacy-bi/overview-dark.png" alt="" />
                     </span>
+                  ) : project.id === "dotcare-ess" ? (
+                    <span className="ess-mini">
+                      <img src="/screens/dotcare-ess/home-checked-in.png" alt="" />
+                      <img src="/screens/dotcare-ess/home-manager.png" alt="" />
+                    </span>
                   ) : project.id === "daoud-tycoons" ? (
                     <span className="daoud-mini">
                       <img src="/video/daoud-tycoons-video-poster.jpg" alt="" />
@@ -124,7 +130,7 @@ export default function Home() {
           <p className="eyebrow">Selected work · 2026</p>
           <h2>Patient journeys.<br />Clinical operations. Leadership.</h2>
           <p>
-            Seven evidence-led case studies spanning discovery, product strategy,
+            Eight evidence-led case studies spanning discovery, product strategy,
             enterprise systems and the operating model behind a design team.
           </p>
         </div>
@@ -149,6 +155,8 @@ export default function Home() {
                   <DotCareProjectPreview />
                 ) : project.id === "pharmacy-bi" ? (
                   <PharmacyBiProjectPreview />
+                ) : project.id === "dotcare-ess" ? (
+                  <DotCareEssProjectPreview />
                 ) : project.id === "daoud-tycoons" ? (
                   <DaoudProjectPreview />
                 ) : (

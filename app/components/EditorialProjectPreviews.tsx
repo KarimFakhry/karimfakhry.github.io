@@ -115,6 +115,28 @@ export function DotCareProjectPreview() {
   );
 }
 
+export function DotCareEssProjectPreview() {
+  return (
+    <div className="editorial-project-preview ess-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Employee self-service · Mobile product</i>
+        <b>Attendance,<br />made explicit.</b>
+      </div>
+      <span className="ess-editorial-grid" />
+      <span className="ess-phone ess-phone-employee">
+        <img src="/screens/dotcare-ess/home-employee.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="ess-phone ess-phone-primary">
+        <img src="/screens/dotcare-ess/home-checked-in.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="ess-phone ess-phone-manager">
+        <img src="/screens/dotcare-ess/home-manager.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="editorial-flow"><i>Attend</i><em>→</em><i>Request</i><em>→</em><i>Approve</i></span>
+    </div>
+  );
+}
+
 export function DaoudProjectPreview() {
   return (
     <div className="editorial-project-preview daoud-editorial" aria-hidden="true">
