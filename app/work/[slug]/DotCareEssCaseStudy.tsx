@@ -19,6 +19,7 @@ function EssScreen({ file, title, alt, className = "" }: EssScreenProps) {
         label="REDESIGN"
         device="mobile"
         highDensityInline
+        lightboxClassName="ess-screen-lightbox"
       />
       <figcaption>{title}</figcaption>
     </figure>
@@ -216,6 +217,7 @@ export default function DotCareEssCaseStudy() {
               title="Attendance card states"
               alt="DotCare ESS Attendance Card component states for check in, working, complete, location unavailable and holiday"
               label="REDESIGN"
+              lightboxClassName="ess-screen-lightbox"
             />
           </article>
           <article>
@@ -225,6 +227,7 @@ export default function DotCareEssCaseStudy() {
               title="Approval step states"
               alt="DotCare ESS Approval Step components showing pending, approved and rejected states"
               label="REDESIGN"
+              lightboxClassName="ess-screen-lightbox"
             />
           </article>
         </div>

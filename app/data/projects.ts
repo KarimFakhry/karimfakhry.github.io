@@ -277,7 +277,7 @@ export const projects: Project[] = ([
     evidence: [
       { value: "One action", label: "attendance follows state", detail: "Check In and Check Out never compete; the available action reflects the employee’s current status and location context." },
       { value: "2 roles", label: "one coherent product", detail: "Managers remain employees while approvals, Team Leaves and attention states appear only when responsibility requires them." },
-      { value: "41", label: "production-realistic screens", detail: "Employee, manager, form, decision and exception states are connected in one high-fidelity prototype." },
+      { value: "51", label: "production-realistic screens", detail: "Employee, manager, form, decision and exception states are connected in one high-fidelity prototype." },
       { value: "44px", label: "minimum touch target", detail: "Primary actions and interactive controls remain dependable across attendance, requests and approvals." },
     ],
     chapters: [

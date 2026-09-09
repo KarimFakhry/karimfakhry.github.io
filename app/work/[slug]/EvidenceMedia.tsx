@@ -11,6 +11,7 @@ export default function EvidenceMedia({
   device = "desktop",
   highDensityInline = false,
   eager = false,
+  lightboxClassName = "",
 }: {
   src: string;
   fullSrc?: string;
@@ -20,6 +21,7 @@ export default function EvidenceMedia({
   device?: "desktop" | "tablet" | "mobile" | "drawer";
   highDensityInline?: boolean;
   eager?: boolean;
+  lightboxClassName?: string;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const enlargedSrc = fullSrc ?? src;
@@ -59,7 +61,7 @@ export default function EvidenceMedia({
 
       {isOpen ? (
         <div
-          className="screen-lightbox"
+          className={`screen-lightbox ${lightboxClassName}`.trim()}
           role="dialog"
           aria-modal="true"
           aria-label={`${title} enlarged screen`}
@@ -76,7 +78,12 @@ export default function EvidenceMedia({
               </button>
             </div>
           </div>
-          <div className={`lightbox-image ${device}`}>
+          <div
+            className={`lightbox-image ${device}`}
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setIsOpen(false);
+            }}
+          >
             <img src={enlargedSrc} alt={`${alt} — enlarged`} />
           </div>
         </div>
