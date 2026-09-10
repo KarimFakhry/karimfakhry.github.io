@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 export default function EvidenceMedia({
   src,
@@ -59,7 +60,7 @@ export default function EvidenceMedia({
         <span className="evidence-media-action" aria-hidden="true">Enlarge ↗</span>
       </button>
 
-      {isOpen ? (
+      {isOpen ? createPortal(
         <div
           className={`screen-lightbox ${lightboxClassName}`.trim()}
           role="dialog"
@@ -86,7 +87,8 @@ export default function EvidenceMedia({
           >
             <img src={enlargedSrc} alt={`${alt} — enlarged`} />
           </div>
-        </div>
+        </div>,
+        document.body,
       ) : null}
     </>
   );
