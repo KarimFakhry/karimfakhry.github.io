@@ -1,4 +1,19 @@
+import IntroductoryFilm from "./IntroductoryFilm";
+
 type WalkthroughProject = "academy" | "health-web" | "health-app" | "kpi-hub" | "pharmacy-bi" | "dotcare-ess";
+
+const introductoryFilms = {
+  "health-app": {
+    src: "/video/andalusia-health-app-film.mp4",
+    poster: "/video/andalusia-health-app-film-poster.jpg",
+    label: "Andalusia Health App introductory film",
+  },
+  "dotcare-ess": {
+    src: "/video/dotcare-ess-promotional-film.mp4",
+    poster: "/video/dotcare-ess-promotional-film-poster.jpg",
+    label: "DotCare ESS introductory film",
+  },
+};
 
 const walkthroughs: Record<WalkthroughProject, {
   heading: string;
@@ -79,8 +94,17 @@ const walkthroughs: Record<WalkthroughProject, {
   },
 };
 
-export default function HealthAppWalkthrough({ projectId = "health-app" }: { projectId?: WalkthroughProject }) {
+type WalkthroughProps =
+  | { projectId?: WalkthroughProject; presentation?: "walkthrough" }
+  | { projectId: keyof typeof introductoryFilms; presentation: "intro" };
+
+export default function HealthAppWalkthrough(props: WalkthroughProps) {
+  const projectId = props.projectId ?? "health-app";
   const walkthrough = walkthroughs[projectId];
+
+  if (props.presentation === "intro") {
+    return <IntroductoryFilm {...introductoryFilms[props.projectId]} className={walkthrough.className} />;
+  }
 
   return (
     <section className="screen-section health-app-walkthrough-section" id="prototype-walkthrough">

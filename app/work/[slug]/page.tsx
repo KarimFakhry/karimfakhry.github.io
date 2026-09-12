@@ -91,6 +91,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
+      {(project.id === "dotcare-ess" || project.id === "health-app") && (
+        <HealthAppWalkthrough projectId={project.id} presentation="intro" />
+      )}
+
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">Executive summary</p>

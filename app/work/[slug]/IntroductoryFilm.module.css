@@ -1,0 +1,15 @@
+.insertion {
+  padding: clamp(36px, 5vw, 64px) clamp(24px, 7vw, 110px) 0;
+}
+
+.insertion .frame {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+}
+
+.frame .video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
