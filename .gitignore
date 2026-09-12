@@ -17,6 +17,25 @@
 /.next/
 /out/
 
+# legacy root-level Next.js static export output
+/_next/
+/_not-found/
+/404/
+/404.html
+/index.html
+/index.txt
+/__next.*.txt
+/.nojekyll
+
+# public assets copied into the root by the legacy export
+/projects/
+/screens/
+/favicon.svg
+/file.svg
+/globe.svg
+/og.png
+/window.svg
+
 # misc
 .DS_Store
 *.pem
@@ -35,6 +54,7 @@ yarn-error.log*
 
 # typescript
 next-env.d.ts
+*.tsbuildinfo
 /dist/
 /.wrangler/
 /.sites-runtime/
