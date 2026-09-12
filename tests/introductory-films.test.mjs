@@ -4,18 +4,7 @@ import { runInNewContext } from "node:vm";
 import test from "node:test";
 import ts from "typescript";
 
-function mountFilm(reducedMotion = false) {
-  let effect, intersection, preferenceChange, disconnected = false;
-  const video = {
-    autoplay: false, ended: false, paused: true, plays: 0,
-    play() { this.paused = false; this.plays++; return Promise.resolve(); },
-    pause() { this.paused = true; },
-  };
-  const motion = {
-    matches: reducedMotion,
-    addEventListener(_, callback) { preferenceChange = callback; },
-    removeEventListener() { preferenceChange = undefined; },
-  };
+function renderFilm() {
   const output = ts.transpileModule(readFileSync("app/work/[slug]/IntroductoryFilm.tsx", "utf8"), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
   }).outputText;
@@ -23,54 +12,17 @@ function mountFilm(reducedMotion = false) {
   runInNewContext(output, {
     exports,
     require(name) {
-      if (name === "react") return { useRef: () => ({ current: video }), useEffect: fn => { effect = fn; } };
       if (name === "react/jsx-runtime") return { jsx: (type, props) => ({ type, props }), jsxs: (type, props) => ({ type, props }) };
       return { default: {} };
     },
-    window: { matchMedia: () => motion },
-    IntersectionObserver: class {
-      constructor(callback) { intersection = callback; }
-      observe() {}
-      disconnect() { disconnected = true; }
-    },
   });
-  const tree = exports.default({ src: "/film.mp4", poster: "/poster.jpg", label: "Film", className: "" });
-  const cleanup = effect();
-  return {
-    video, tree, cleanup,
-    enter: () => intersection([{ isIntersecting: true }]),
-    leave: () => intersection([{ isIntersecting: false }]),
-    reduce: value => { motion.matches = value; preferenceChange(); },
-    disconnected: () => disconnected,
-  };
+  return exports.default({ src: "/film.mp4", poster: "/poster.jpg", label: "Film", className: "" });
 }
 
-test("films play only in view, pause offscreen, and never restart the final frame", () => {
-  const film = mountFilm();
-  assert.equal(film.video.plays, 0);
-  film.enter();
-  assert.equal(film.video.autoplay, true);
-  assert.equal(film.video.paused, false);
-  film.leave();
-  assert.equal(film.video.paused, true);
-  film.video.ended = true;
-  film.enter();
-  assert.equal(film.video.plays, 1);
-  assert.equal(film.video.autoplay, false);
-  film.cleanup();
-  assert.equal(film.disconnected(), true);
-});
-
-test("reduced motion retains the poster without autoplay, including preference changes", () => {
-  const film = mountFilm(true);
-  film.enter();
-  assert.equal(film.video.plays, 0);
-  assert.equal(film.video.paused, true);
-  film.reduce(false);
-  assert.equal(film.video.paused, false);
-  film.reduce(true);
-  assert.equal(film.video.paused, true);
-  const props = film.tree.props.children.props.children.props;
+test("introductory films require explicit user playback and do not autoplay or loop", () => {
+  const tree = renderFilm();
+  const props = tree.props.children.props.children.props;
+  assert.equal(props.autoPlay, undefined);
   assert.equal(props.poster, "/poster.jpg");
   assert.equal(props.preload, "none");
   assert.equal(props.muted, true);
@@ -78,7 +30,6 @@ test("reduced motion retains the poster without autoplay, including preference c
   assert.equal(props.controls, true);
   assert.equal(props.loop, undefined);
   assert.equal(props.width / props.height, 16 / 9);
-  film.cleanup();
 });
 
 test("built routes insert only their own film before the executive summary; Golden Paths remain", () => {
