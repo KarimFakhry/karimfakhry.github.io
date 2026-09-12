@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./IntroductoryFilm.module.css";
 
 export default function IntroductoryFilm({ src, poster, label, className }: {
