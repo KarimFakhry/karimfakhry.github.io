@@ -13,6 +13,7 @@ export default function EvidenceMedia({
   highDensityInline = false,
   eager = false,
   lightboxClassName = "",
+  showLabel = true,
 }: {
   src: string;
   fullSrc?: string;
@@ -23,6 +24,7 @@ export default function EvidenceMedia({
   highDensityInline?: boolean;
   eager?: boolean;
   lightboxClassName?: string;
+  showLabel?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const enlargedSrc = fullSrc ?? src;
@@ -50,7 +52,7 @@ export default function EvidenceMedia({
         onClick={() => setIsOpen(true)}
         aria-label={`Enlarge ${title}`}
       >
-        <span className={`evidence-media-label ${label.toLowerCase()}`}>{label}</span>
+        {showLabel && <span className={`evidence-media-label ${label.toLowerCase()}`}>{label}</span>}
         <img
           src={inlineSrc}
           alt={alt}
@@ -71,7 +73,7 @@ export default function EvidenceMedia({
           }}
         >
           <div className="lightbox-toolbar">
-            <div><strong>{title}</strong><span>{label}</span></div>
+            <div><strong>{title}</strong>{showLabel && <span>{label}</span>}</div>
             <div className="lightbox-actions">
               <a href={enlargedSrc} target="_blank" rel="noreferrer">Original size ↗</a>
               <button type="button" onClick={() => setIsOpen(false)} autoFocus>

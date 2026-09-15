@@ -137,6 +137,29 @@ export function DotCareEssProjectPreview() {
   );
 }
 
+export function EmsProjectPreview() {
+  return (
+    <div className="editorial-project-preview ems-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Executive management system · 2026</i>
+        <b>Complex work,<br />made legible.</b>
+      </div>
+      <span className="ems-editorial-grid" />
+      <span className="editorial-browser ems-browser-main">
+        <span className="browser-chrome"><i /><i /><i /></span>
+        <img src="/screens/ems/dashboard-desktop.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="ems-preview-tablet">
+        <img src="/screens/ems/dashboard-tablet@2x.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="ems-preview-mobile">
+        <img src="/screens/ems/dashboard-mobile@2x.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="editorial-flow"><i>Prioritise</i><em>→</em><i>Coordinate</i><em>→</em><i>Govern</i></span>
+    </div>
+  );
+}
+
 export function DaoudProjectPreview() {
   return (
     <div className="editorial-project-preview daoud-editorial" aria-hidden="true">

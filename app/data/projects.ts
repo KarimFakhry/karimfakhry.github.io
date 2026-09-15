@@ -2,7 +2,7 @@ export type ProjectScreen = {
   title: string;
   image: string;
   fullImage?: string;
-  device: "desktop" | "mobile";
+  device: "desktop" | "tablet" | "mobile";
   highDensityInline?: boolean;
 };
 export type ProjectEvidence = { value: string; label: string; detail: string };
@@ -32,9 +32,9 @@ export type Project = {
   tags: string[];
   image?: string;
   thumbnail?: string;
-  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess";
-  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign";
+  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess" | "ems";
+  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess" | "ems";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -348,9 +348,64 @@ export const projects: Project[] = ([
     ],
   },
   {
+    id: "andalusia-ems",
+    slug: "andalusia-executive-management-system",
+    number: "08",
+    title: "Andalusia EMS",
+    type: "Executive management system",
+    year: "2026",
+    summary: "Redesigning a complex executive management system so tasks, issues, meetings and administration share one clear, responsive operating model.",
+    challenge: "Executive work spans dense records, decisions and permissions. The product needed a stronger hierarchy and a consistent way to move from portfolio-level signals into accountable detail.",
+    outcome: "A responsive product system that gives tasks, issues, meetings and administration one coherent operating model.",
+    role: "Product design · information architecture · design system",
+    scope: "Tasks, issues, meetings and administration",
+    platform: "Responsive enterprise web · Desktop, Tablet, Mobile",
+    status: "Product redesign · Design system · Responsive experience",
+    method: "One shared record model connects executive workflows across Desktop, Tablet and Mobile.",
+    primaryUsers: [
+      "Executives monitoring priorities, ownership and follow-up",
+      "Managers coordinating tasks, issues and meeting outcomes",
+      "Administrators managing access across business units",
+    ],
+    executiveSummary: {
+      problem: "Tasks, issues, meetings and administration each carry dense operational detail, but they still need to behave as one executive management product.",
+      approach: "Define a shared information architecture and interaction grammar, then adapt its density and navigation across Desktop, Tablet and Mobile.",
+      result: "A coherent system for executive work, built from reusable record, status, action and permission patterns.",
+    },
+    evidence: [
+      { value: "4", label: "core workflows", detail: "Tasks, issues, meetings and administration use one consistent record and action model." },
+      { value: "3", label: "responsive contexts", detail: "Desktop, Tablet and Mobile adapt navigation and density while preserving the same workflow logic." },
+    ],
+    chapters: [
+      { number: "01", title: "Establish the executive signal", problem: "Leaders need a fast view of priorities without losing the records behind each signal.", response: "Combine focused measures, an attention-led worklist and calendar context in one dashboard." },
+      { number: "02", title: "Standardize operational records", problem: "Tasks and issues share ownership and status logic, but each still needs domain-specific detail.", response: "Use one search, filtering and record grammar while allowing the fields and actions to follow the object." },
+      { number: "03", title: "Connect meetings to action", problem: "Meeting plans and minutes become another silo when they are separated from the work they produce.", response: "Keep plans, agenda items, decisions and follow-up connected inside the same management system." },
+      { number: "04", title: "Make administration explicit", problem: "Enterprise permissions need clarity because one change can affect access across business units.", response: "Use dedicated permission views, named scope and deliberate confirmation for sensitive changes." },
+      { number: "05", title: "Scale the system, not the screen", problem: "Dense desktop tables cannot simply be reduced for smaller devices.", response: "Recompose navigation, controls and content priority for Tablet and Mobile while preserving the operating model." },
+    ],
+    tags: ["Enterprise UX", "Information architecture", "Design systems"],
+    thumbnail: "/screens/ems/dashboard-desktop.png",
+    theme: "ems",
+    visual: "ems",
+    caseStudyMode: "ems-redesign",
+    screens: [
+      { title: "Executive dashboard", image: "/screens/ems/dashboard-desktop.png", fullImage: "/screens/ems/dashboard-desktop@2x.png", device: "desktop" },
+      { title: "EMS portfolio dashboard", image: "/screens/ems/ems-dashboard-desktop.png", fullImage: "/screens/ems/ems-dashboard-desktop@2x.png", device: "desktop" },
+      { title: "Tasks — search and results", image: "/screens/ems/tasks-desktop.png", fullImage: "/screens/ems/tasks-desktop@2x.png", device: "desktop" },
+      { title: "Task details", image: "/screens/ems/task-detail-desktop.png", fullImage: "/screens/ems/task-detail-desktop@2x.png", device: "desktop" },
+      { title: "Issues — search and results", image: "/screens/ems/issues-desktop.png", fullImage: "/screens/ems/issues-desktop@2x.png", device: "desktop" },
+      { title: "Meetings", image: "/screens/ems/meetings-desktop.png", fullImage: "/screens/ems/meetings-desktop@2x.png", device: "desktop" },
+      { title: "Meeting minutes", image: "/screens/ems/meeting-minutes-desktop.png", fullImage: "/screens/ems/meeting-minutes-desktop@2x.png", device: "desktop" },
+      { title: "Administration permissions", image: "/screens/ems/admin-permission-desktop.png", fullImage: "/screens/ems/admin-permission-desktop@2x.png", device: "desktop" },
+      { title: "Tablet dashboard", image: "/screens/ems/dashboard-tablet.png", fullImage: "/screens/ems/dashboard-tablet@2x.png", device: "tablet", highDensityInline: true },
+      { title: "Mobile dashboard", image: "/screens/ems/dashboard-mobile.png", fullImage: "/screens/ems/dashboard-mobile@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Design-system data display", image: "/screens/ems/design-system-data-display.png", fullImage: "/screens/ems/design-system-data-display@2x.png", device: "desktop" },
+    ],
+  },
+  {
     id: "daoud-tycoons",
     slug: "daoud-tycoons-redesign",
-    number: "08",
+    number: "09",
     title: "Daoud Tycoons Redesign",
     type: "Luxury ecommerce concept",
     year: "2026",

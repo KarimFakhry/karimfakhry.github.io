@@ -10,6 +10,7 @@ import HealthAppWalkthrough from "./HealthAppWalkthrough";
 import PharmacyBiCaseStudy from "./PharmacyBiCaseStudy";
 import DaoudCaseStudy from "./DaoudCaseStudy";
 import DotCareEssCaseStudy from "./DotCareEssCaseStudy";
+import EmsCaseStudy from "./EmsCaseStudy";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -56,6 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const isBiProduct = project.caseStudyMode === "bi-product";
   const isCommerceConcept = project.caseStudyMode === "commerce-concept";
   const isEssRedesign = project.caseStudyMode === "ess-redesign";
+  const isEmsRedesign = project.caseStudyMode === "ems-redesign";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -87,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div><span>Role</span><strong>{project.role}</strong></div>
           <div><span>Scope</span><strong>{project.scope}</strong></div>
           <div><span>Platform</span><strong>{project.platform}</strong></div>
-          <div><span>Status</span><strong>{project.status}</strong></div>
+          <div><span>{isEmsRedesign ? "Deliverables" : "Status"}</span><strong>{project.status}</strong></div>
         </div>
       </section>
 
@@ -97,22 +99,29 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
-          <p className="eyebrow">Executive summary</p>
-          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : "The project in three points."}</h2>
+          <p className="eyebrow">{isEmsRedesign ? "The project" : "Executive summary"}</p>
+          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "The executive system in brief." : "The project in three points."}</h2>
           <p>{project.method}</p>
         </div>
-        <div className="executive-grid">
-          <article><span>01</span><h3>Problem</h3><p>{project.executiveSummary.problem}</p></article>
-          <article><span>02</span><h3>Approach</h3><p>{project.executiveSummary.approach}</p></article>
-          <article><span>03</span><h3>{isManagerialSolution ? "Managerial outcome" : isBiProduct ? "Product system" : isCommerceConcept ? "Concept system" : isEssRedesign ? "System delivered" : "Design outcome"}</h3><p>{project.executiveSummary.result}</p></article>
-        </div>
+        {isEmsRedesign ? (
+          <div className="executive-grid ems-project-intro-grid">
+            <article><h3>Challenge</h3><p>{project.executiveSummary.problem}</p></article>
+            <article><h3>Response</h3><p>{project.executiveSummary.approach}</p></article>
+          </div>
+        ) : (
+          <div className="executive-grid">
+            <article><span>01</span><h3>Problem</h3><p>{project.executiveSummary.problem}</p></article>
+            <article><span>02</span><h3>Approach</h3><p>{project.executiveSummary.approach}</p></article>
+            <article><span>03</span><h3>{isManagerialSolution ? "Managerial outcome" : isBiProduct ? "Product system" : isCommerceConcept ? "Concept system" : isEssRedesign ? "System delivered" : "Design outcome"}</h3><p>{project.executiveSummary.result}</p></article>
+          </div>
+        )}
       </section>
 
       <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : "What I found"}</p>
-          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : "The signals that shaped the redesign."}</h2>
-          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : isCommerceConcept ? "The design dimensions represented in the portfolio concept, without claiming commissioned or production outcomes." : isEssRedesign ? "The state model, role architecture and system scope represented in the completed high-fidelity prototype." : "Key facts from the live product, its content and the working team process."}</p>
+          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "System scope" : "What I found"}</p>
+          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "One operating model across executive work." : "The signals that shaped the redesign."}</h2>
+          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : isCommerceConcept ? "The design dimensions represented in the portfolio concept, without claiming commissioned or production outcomes." : isEssRedesign ? "The state model, role architecture and system scope represented in the completed high-fidelity prototype." : isEmsRedesign ? "Four core workflows share the same record logic across Desktop, Tablet and Mobile." : "Key facts from the live product, its content and the working team process."}</p>
         </div>
         <div className="evidence-grid">
           {project.evidence.map((item) => (
@@ -123,7 +132,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </article>
           ))}
         </div>
-        {!isEssRedesign && (
+        {!isEssRedesign && !isEmsRedesign && (
           <div className="user-context">
             <p className="eyebrow">{isOriginalProduct ? "People doing the work" : isManagerialSolution ? "Who the solution supports" : isPharmacyRedesign ? "People in the workflow" : isBiProduct ? "Decision makers" : isCommerceConcept ? "Shopping contexts" : "Key journeys"}</p>
             <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
@@ -151,7 +160,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {!isPharmacyRedesign && !isBiProduct && !isEssRedesign && (
+      {!isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && (
         <section className="decision-section" id="decisions">
           <div className="case-study-intro">
             <p className="eyebrow">Key product decisions</p>
@@ -182,6 +191,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {isEssRedesign && <DotCareEssCaseStudy />}
 
+      {isEmsRedesign && <EmsCaseStudy />}
+
       {project.visual === "kpi" ? (
         <section className="kpi-showcase" id="product">
           <div className="case-study-intro">
@@ -208,7 +219,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </article>
           </div>
         </section>
-      ) : !isPharmacyRedesign && !isBiProduct && !isCommerceConcept && !isEssRedesign ? (
+      ) : !isPharmacyRedesign && !isBiProduct && !isCommerceConcept && !isEssRedesign && !isEmsRedesign ? (
         <>
           <section className="screen-section" id="redesign-screens">
             <div className="screen-heading">
