@@ -37,6 +37,28 @@ function EmsMedia({
 export default function EmsCaseStudy() {
   return (
     <div className="ems-case-study">
+      <section className="ems-story ems-motion" id="prototype-walkthrough">
+        <div className="ems-section-copy">
+          <p className="eyebrow">Product in motion</p>
+          <h2>From signal to follow-up, in one connected flow.</h2>
+        </div>
+        <figure className="prototype-walkthrough ems-prototype-walkthrough">
+          <video
+            width={1920}
+            height={1080}
+            controls
+            playsInline
+            preload="metadata"
+            poster="/video/ems-golden-path-poster.jpg"
+            aria-label="Andalusia EMS Golden Path walkthrough"
+          >
+            <source src="/video/ems-golden-path.mp4" type="video/mp4" />
+            Your browser does not support embedded video.{" "}
+            <a href="/video/ems-golden-path.mp4">Open the walkthrough video.</a>
+          </video>
+        </figure>
+      </section>
+
       <section className="ems-story ems-opening" id="executive-view">
         <div className="ems-section-copy ems-copy-pair">
           <div>
