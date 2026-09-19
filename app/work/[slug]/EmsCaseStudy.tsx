@@ -40,7 +40,7 @@ export default function EmsCaseStudy() {
       <section className="ems-story ems-motion" id="prototype-walkthrough">
         <div className="ems-section-copy">
           <p className="eyebrow">Product in motion</p>
-          <h2>From signal to follow-up, in one connected flow.</h2>
+          <h2>See EMS in action across dashboards, tasks, meetings and follow-up.</h2>
         </div>
         <figure className="prototype-walkthrough ems-prototype-walkthrough">
           <video
@@ -62,13 +62,13 @@ export default function EmsCaseStudy() {
       <section className="ems-story ems-opening" id="executive-view">
         <div className="ems-section-copy ems-copy-pair">
           <div>
-            <p className="eyebrow">Executive hierarchy</p>
-            <h2>Start with the signal. Keep the work behind it close.</h2>
+            <p className="eyebrow">Executive dashboards</p>
+            <h2>Monitor priorities, progress and upcoming work in one view.</h2>
           </div>
           <p>
-            The dashboard balances portfolio-level measures with the tasks, issues, meetings and
-            dates that need attention now. Leaders can scan the state of work without turning the
-            first view into a wall of operational detail.
+            The Main Dashboard shows each executive&apos;s current workload, completion signals,
+            calendar and priority watchlist. The EMS Dashboard adds portfolio-level status,
+            progress and a daily agenda, with records ready to open for detail.
           </p>
         </div>
         <div className="ems-dashboard-stack">
@@ -80,10 +80,10 @@ export default function EmsCaseStudy() {
           />
           <div className="ems-dashboard-followup">
             <div>
-              <h3>From personal attention to portfolio health.</h3>
+              <h3>Review portfolio status and the daily agenda.</h3>
               <p>
-                The EMS Dashboard keeps the same records and status language, then shifts the
-                emphasis to distribution, progress and the day&apos;s operational agenda.
+                The EMS Dashboard organizes tasks, issues and meetings by status, progress and
+                date, while keeping the day&apos;s records alongside the summary.
               </p>
             </div>
             <EmsMedia
@@ -97,17 +97,17 @@ export default function EmsCaseStudy() {
 
       <section className="ems-story ems-workflows" id="workflow-architecture">
         <div className="ems-section-copy">
-          <p className="eyebrow">Workflow architecture</p>
-          <h2>A shared structure for tasks and issues.</h2>
+          <p className="eyebrow">Tasks &amp; issues</p>
+          <h2>Manage ownership, priority, status and progress.</h2>
           <p>
-            Tasks and issues share a predictable structure for search, filtering, ownership,
-            status, priority and progress. Their detail views then make room for the fields,
-            attachments and decisions each object actually needs.
+            Tasks and issues use the same search, filters and record structure. Users can narrow
+            results, scan ownership and due dates, and open a task or issue for its complete
+            information and available actions.
           </p>
         </div>
         <div className="ems-workflow-grid">
           <article>
-            <h3>Tasks make ownership and progress scannable.</h3>
+            <h3>Review task ownership and delivery progress.</h3>
             <EmsMedia
               file="tasks-desktop"
               title="EMS tasks search and results"
@@ -115,7 +115,7 @@ export default function EmsCaseStudy() {
             />
           </article>
           <article>
-            <h3>Issues use the same grammar without becoming the same object.</h3>
+            <h3>Track issues from assignment through resolution.</h3>
             <EmsMedia
               file="issues-desktop"
               title="EMS issues search and results"
@@ -125,10 +125,10 @@ export default function EmsCaseStudy() {
         </div>
         <div className="ems-detail-feature">
           <div>
-            <h3>Task details without the clutter.</h3>
+            <h3>Open the complete record without losing context.</h3>
             <p>
-              Metadata, description, assignment and attachments are grouped by decision value,
-              so a record can carry enterprise depth without losing its reading order.
+              Metadata, description, assignment, progress and attachments are kept together so
+              the full task can be reviewed without returning to the list.
             </p>
           </div>
           <EmsMedia
@@ -142,13 +142,12 @@ export default function EmsCaseStudy() {
       <section className="ems-story ems-meetings" id="meeting-continuity">
         <div className="ems-section-copy ems-copy-pair">
           <div>
-            <p className="eyebrow">Meeting continuity</p>
-            <h2>Connecting meetings to follow-up work.</h2>
+            <p className="eyebrow">Meetings</p>
+            <h2>Plan meetings, capture minutes and carry actions into follow-up.</h2>
           </div>
           <p>
-            Plans, attendees, agenda items and minutes remain connected rather than forming a
-            separate documentation layer. The list keeps the meeting plan visible; the minutes
-            view gives outcomes enough structure to become accountable follow-up.
+            Meeting plans keep attendees, agendas and schedules together. Minutes capture the
+            outcomes and keep the resulting actions connected to follow-up work inside EMS.
           </p>
         </div>
         <div className="ems-meeting-grid">
@@ -168,13 +167,13 @@ export default function EmsCaseStudy() {
       <section className="ems-story ems-governance" id="administration">
         <div className="ems-section-copy ems-copy-pair">
           <div>
-            <p className="eyebrow">Enterprise governance</p>
-            <h2>Making sensitive actions explicit.</h2>
+            <p className="eyebrow">Administration</p>
+            <h2>Manage permissions and access across business units.</h2>
           </div>
           <p>
-            Administration separates people, scope and available actions so access remains
-            explicit across business units. Sensitive changes use deliberate confirmation rather
-            than hiding risk inside a generic settings table.
+            Administration provides dedicated views for employee access, business-unit
+            permissions, delegated actions and dashboard roles. Scope and confirmation remain
+            visible before sensitive changes are applied.
           </p>
         </div>
         <EmsMedia
@@ -187,13 +186,13 @@ export default function EmsCaseStudy() {
       <section className="ems-story ems-responsive" id="responsive-system">
         <div className="ems-section-copy ems-copy-pair">
           <div>
-            <p className="eyebrow">Responsive system</p>
-            <h2>Density changes. The operating model does not.</h2>
+            <p className="eyebrow">Responsive experience</p>
+            <h2>The same EMS workflows across Desktop, Tablet and Mobile.</h2>
           </div>
           <p>
-            Desktop keeps the full navigation and analytical canvas. Tablet compresses the shell
-            and reorganizes modules around a narrower reading path. Mobile prioritizes the current
-            signal and turns the same system into a focused single-column review.
+            Desktop provides the complete navigation and highest-density workspace. Tablet
+            reorganizes the same modules inside a compact shell, while Mobile presents the same
+            records and actions in a focused single-column layout.
           </p>
         </div>
         <div className="ems-responsive-stage" aria-label="EMS dashboard across Desktop, Tablet and Mobile">
@@ -231,10 +230,11 @@ export default function EmsCaseStudy() {
       <section className="ems-story ems-system" id="design-system">
         <div className="ems-section-copy">
           <p className="eyebrow">Design system</p>
-          <h2>One system, reused across every workflow.</h2>
+          <h2>A shared component system for the complete EMS interface.</h2>
           <p>
-            A shared component system keeps tasks, issues, meetings and administration visually
-            consistent while allowing each workflow to keep its own structure.
+            Shared navigation, filters, status and priority treatments, tables, record layouts,
+            forms and actions keep dashboards, tasks, issues, meetings and administration
+            consistent across the product.
           </p>
         </div>
         <div className="ems-system-media">
@@ -247,10 +247,10 @@ export default function EmsCaseStudy() {
       </section>
 
       <section className="ems-reflection">
-        <h2>Complex executive work, shaped as one product.</h2>
+        <h2>One platform for executive oversight and operational follow-up.</h2>
         <p>
-          Dashboard signals, operational records, meeting outcomes and permissions now share one
-          responsive structure—giving each workflow room to work without fragmenting the system.
+          EMS brings dashboard monitoring, operational records, meeting outcomes and
+          administrative access together across Desktop, Tablet and Mobile.
         </p>
       </section>
     </div>

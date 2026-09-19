@@ -89,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div><span>Role</span><strong>{project.role}</strong></div>
           <div><span>Scope</span><strong>{project.scope}</strong></div>
           <div><span>Platform</span><strong>{project.platform}</strong></div>
-          <div><span>{isEmsRedesign ? "Deliverables" : "Status"}</span><strong>{project.status}</strong></div>
+          <div><span>{isEmsRedesign ? "Product state" : "Status"}</span><strong>{project.status}</strong></div>
         </div>
       </section>
 
@@ -99,14 +99,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
-          <p className="eyebrow">{isEmsRedesign ? "The project" : "Executive summary"}</p>
-          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "The executive system in brief." : "The project in three points."}</h2>
+          <p className="eyebrow">{isEmsRedesign ? "The product" : "Executive summary"}</p>
+          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "The platform in brief." : "The project in three points."}</h2>
           <p>{project.method}</p>
         </div>
         {isEmsRedesign ? (
           <div className="executive-grid ems-project-intro-grid">
-            <article><h3>Challenge</h3><p>{project.executiveSummary.problem}</p></article>
-            <article><h3>Response</h3><p>{project.executiveSummary.approach}</p></article>
+            <article><h3>What it covers</h3><p>{project.executiveSummary.problem}</p></article>
+            <article><h3>How it works</h3><p>{project.executiveSummary.approach}</p></article>
           </div>
         ) : (
           <div className="executive-grid">
@@ -119,9 +119,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "System scope" : "What I found"}</p>
-          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "One operating model across executive work." : "The signals that shaped the redesign."}</h2>
-          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : isCommerceConcept ? "The design dimensions represented in the portfolio concept, without claiming commissioned or production outcomes." : isEssRedesign ? "The state model, role architecture and system scope represented in the completed high-fidelity prototype." : isEmsRedesign ? "Four core workflows share the same record logic across Desktop, Tablet and Mobile." : "Key facts from the live product, its content and the working team process."}</p>
+          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "Product scope" : "What I found"}</p>
+          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "Dashboards, records, meetings and administration in one platform." : "The signals that shaped the redesign."}</h2>
+          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : isCommerceConcept ? "The design dimensions represented in the portfolio concept, without claiming commissioned or production outcomes." : isEssRedesign ? "The state model, role architecture and system scope represented in the completed high-fidelity prototype." : isEmsRedesign ? "The same EMS workflows and record structure are available across Desktop, Tablet and Mobile." : "Key facts from the live product, its content and the working team process."}</p>
         </div>
         <div className="evidence-grid">
           {project.evidence.map((item) => (
