@@ -34,7 +34,7 @@ export type Project = {
   thumbnail?: string;
   theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess" | "ems";
   visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess" | "ems";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "kpi-product" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -308,19 +308,19 @@ export const projects: Project[] = ([
     title: "KPI Performance Hub",
     type: "Performance management product",
     year: "2026",
-    summary: "Created a managerial solution that helps managers monitor team performance, identify where support is needed and give every employee a private view of their own progress.",
-    challenge: "The KPI model worked in Google Sheets, but monitoring the team was still manual and employees had no direct way to follow their own performance.",
-    outcome: "One shared performance system: managers can monitor the team and act on patterns, while employees can privately follow their KPIs and progress over time.",
-    role: "Product owner & design manager",
-    scope: "Team performance monitoring and development",
-    platform: "Secure responsive web app",
+    summary: "A performance-management workspace that turns daily team inputs into clear Sprint reports, KPI trends and private employee performance views.",
+    challenge: "A spreadsheet-heavy process separated daily inputs from Sprint review, team visibility and each employee's own performance history.",
+    outcome: "One role-aware product connects daily evidence, Sprint reporting, KPI context and private employee progress.",
+    role: "Product strategy · UX/UI · design system",
+    scope: "Daily inputs, Sprint review and performance reporting",
+    platform: "Responsive internal web product",
     status: "Live internal product",
-    method: "Management workflow mapping · role design · product prototyping · iterative implementation",
-    primaryUsers: ["Managers monitoring performance and identifying where support is needed", "Employees following their own KPIs, feedback and progress", "Leadership reviewing team patterns over time"],
+    method: "Daily performance inputs become Sprint reports, KPI trends and role-private employee views.",
+    primaryUsers: ["Managers monitoring team performance and recording daily inputs", "Employees following their own KPIs and Sprint history"],
     executiveSummary: {
-      problem: "The spreadsheet could calculate performance, but it did not support the management work around it. Monitoring, follow-up and employee visibility still depended on manual effort.",
-      approach: "Build the solution around two complementary roles: a manager workspace for monitoring the team and guiding improvement, and a private employee workspace for self-awareness and follow-up.",
-      result: "Daily evidence, sprint evaluation, team monitoring and individual history now work as one continuous performance-management loop.",
+      problem: "Daily inputs, Sprint review and employee performance history were held together through a spreadsheet-heavy process.",
+      approach: "Use one performance model with distinct Manager and Employee experiences.",
+      result: "Daily evidence, Sprint reporting, KPI context and private employee history work as one continuous performance loop.",
     },
     evidence: [
       { value: "Daily", label: "evidence in context", detail: "Attendance and delivery are captured during the sprint instead of reconstructed at the end." },
@@ -338,7 +338,7 @@ export const projects: Project[] = ([
     tags: ["Performance management", "Product strategy", "Design leadership"],
     theme: "copper",
     visual: "kpi",
-    caseStudyMode: "managerial",
+    caseStudyMode: "kpi-product",
     thumbnail: "/screens/kpi-performance/manager-overview.png",
     screens: [
       { title: "Manager overview — team performance and attention areas", image: "/screens/kpi-performance/manager-overview.png", device: "desktop" },

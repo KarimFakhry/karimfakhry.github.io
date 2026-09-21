@@ -12,6 +12,10 @@ export default function EvidenceMedia({
   device = "desktop",
   highDensityInline = false,
   eager = false,
+  srcSet,
+  sizes,
+  width,
+  height,
   lightboxClassName = "",
   showLabel = true,
 }: {
@@ -23,6 +27,10 @@ export default function EvidenceMedia({
   device?: "desktop" | "tablet" | "mobile" | "drawer";
   highDensityInline?: boolean;
   eager?: boolean;
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
   lightboxClassName?: string;
   showLabel?: boolean;
 }) {
@@ -55,9 +63,14 @@ export default function EvidenceMedia({
         {showLabel && <span className={`evidence-media-label ${label.toLowerCase()}`}>{label}</span>}
         <img
           src={inlineSrc}
+          srcSet={srcSet}
+          sizes={sizes}
+          width={width}
+          height={height}
           alt={alt}
           loading={eager ? "eager" : "lazy"}
           decoding="async"
+          fetchPriority={eager ? "high" : "auto"}
         />
         <span className="evidence-media-action" aria-hidden="true">Enlarge ↗</span>
       </button>
@@ -87,7 +100,7 @@ export default function EvidenceMedia({
               if (event.target === event.currentTarget) setIsOpen(false);
             }}
           >
-            <img src={enlargedSrc} alt={`${alt} — enlarged`} />
+            <img src={enlargedSrc} alt={`${alt} — enlarged`} decoding="async" />
           </div>
         </div>,
         document.body,

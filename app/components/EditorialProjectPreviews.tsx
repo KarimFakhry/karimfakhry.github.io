@@ -61,11 +61,11 @@ export function KpiEditorialPreview() {
       <span className="kpi-grid-lines" />
       <span className="editorial-browser kpi-browser-manager">
         <span className="browser-chrome"><i /><i /><i /></span>
-        <img src="/screens/kpi-performance/manager-overview.png" alt="" />
+        <img src="/screens/kpi-performance/manager-overview.webp?v=20260921" alt="" loading="lazy" decoding="async" />
       </span>
       <span className="editorial-browser kpi-browser-employee">
         <span className="browser-chrome"><i /><i /><i /></span>
-        <img src="/screens/kpi-performance/employee-overview.png" alt="" />
+        <img src="/screens/kpi-performance/employee-overview.webp?v=20260921" alt="" loading="lazy" decoding="async" />
       </span>
       <span className="editorial-flow"><i>Daily input</i><em>→</em><i>Sprint review</i><em>→</em><i>Private report</i></span>
     </div>

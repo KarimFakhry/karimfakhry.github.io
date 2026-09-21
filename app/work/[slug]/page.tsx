@@ -11,6 +11,7 @@ import PharmacyBiCaseStudy from "./PharmacyBiCaseStudy";
 import DaoudCaseStudy from "./DaoudCaseStudy";
 import DotCareEssCaseStudy from "./DotCareEssCaseStudy";
 import EmsCaseStudy from "./EmsCaseStudy";
+import KpiCaseStudy from "./KpiCaseStudy";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -53,11 +54,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const nextProject = projects[(projectIndex + 1) % projects.length];
   const isOriginalProduct = project.caseStudyMode === "product";
   const isManagerialSolution = project.caseStudyMode === "managerial";
+  const isKpiProduct = project.caseStudyMode === "kpi-product";
   const isPharmacyRedesign = project.caseStudyMode === "pharmacy-redesign";
   const isBiProduct = project.caseStudyMode === "bi-product";
   const isCommerceConcept = project.caseStudyMode === "commerce-concept";
   const isEssRedesign = project.caseStudyMode === "ess-redesign";
   const isEmsRedesign = project.caseStudyMode === "ems-redesign";
+  const caseStudyAnchor = isKpiProduct ? "#prototype-walkthrough" : "#executive-summary";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -66,7 +69,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           KF<span>.</span>
         </Link>
         <nav className="project-header-nav" aria-label="Project navigation">
-          <a className="case-study-header-link" href="#executive-summary">Case study ↓</a>
+          <a className="case-study-header-link" href={caseStudyAnchor}>Case study ↓</a>
           <Link className="back-link" href="/#work">← All projects</Link>
         </nav>
       </header>
@@ -77,7 +80,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <h1>{project.title}</h1>
           <p className="project-summary-lead">{project.summary}</p>
           <div className="project-actions">
-            <a className="project-primary-action" href="#executive-summary">
+            <a className="project-primary-action" href={caseStudyAnchor}>
               Read the case study <span aria-hidden="true">↓</span>
             </a>
             {project.liveUrl && (
@@ -97,7 +100,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <HealthAppWalkthrough projectId={project.id} presentation="intro" />
       )}
 
-      <section className="executive-section" id="executive-summary">
+      {!isKpiProduct && <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">{isEmsRedesign ? "The product" : "Executive summary"}</p>
           <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "The platform in brief." : "The project in three points."}</h2>
@@ -115,9 +118,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <article><span>03</span><h3>{isManagerialSolution ? "Managerial outcome" : isBiProduct ? "Product system" : isCommerceConcept ? "Concept system" : isEssRedesign ? "System delivered" : "Design outcome"}</h3><p>{project.executiveSummary.result}</p></article>
           </div>
         )}
-      </section>
+      </section>}
 
-      <section className="evidence-section" id="evidence">
+      {!isKpiProduct && <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
           <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "Product scope" : "What I found"}</p>
           <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "Dashboards, records, meetings and administration in one platform." : "The signals that shaped the redesign."}</h2>
@@ -138,7 +141,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <ul>{project.primaryUsers.map((user) => <li key={user}>{user}</li>)}</ul>
           </div>
         )}
-      </section>
+      </section>}
 
       {project.journey && (
         <section className="journey-section" id="journey-map">
@@ -160,7 +163,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {!isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && (
+      {!isKpiProduct && !isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && (
         <section className="decision-section" id="decisions">
           <div className="case-study-intro">
             <p className="eyebrow">Key product decisions</p>
@@ -193,7 +196,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {isEmsRedesign && <EmsCaseStudy />}
 
-      {project.visual === "kpi" ? (
+      {isKpiProduct ? (
+        <KpiCaseStudy />
+      ) : project.visual === "kpi" ? (
         <section className="kpi-showcase" id="product">
           <div className="case-study-intro">
             <p className="eyebrow">The role-based product</p>

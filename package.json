@@ -7,7 +7,9 @@
   },
   "scripts": {
     "install:ci": "bash scripts/install-ci.sh",
+    "predev": "bash scripts/check-dev-root.sh",
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vite",
+    "dev:fresh": "bash scripts/dev-fresh.sh",
     "build": "bash scripts/build-verified.sh",
     "build:github": "GITHUB_PAGES=true NEXT_PUBLIC_SITE_URL=https://karimfakhry.github.io next build",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
