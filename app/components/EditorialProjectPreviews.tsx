@@ -137,6 +137,28 @@ export function DotCareEssProjectPreview() {
   );
 }
 
+export function DotCareWomenProjectPreview() {
+  return (
+    <div className="editorial-project-preview women-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Women’s health · Mobile redesign</i>
+        <b>Your health,<br />in context.</b>
+      </div>
+      <span className="women-editorial-glow" />
+      <span className="women-phone women-phone-pattern">
+        <img src="/screens/dotcare-women/pattern-detail.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="women-phone women-phone-home">
+        <img src="/screens/dotcare-women/home.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="women-phone women-phone-visit">
+        <img src="/screens/dotcare-women/visit-summary.png" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="editorial-flow"><i>Log</i><em>→</em><i>Understand</i><em>→</em><i>Prepare</i><em>→</em><i>Get care</i></span>
+    </div>
+  );
+}
+
 export function EmsProjectPreview() {
   return (
     <div className="editorial-project-preview ems-editorial" aria-hidden="true">

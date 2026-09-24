@@ -12,6 +12,7 @@ import DaoudCaseStudy from "./DaoudCaseStudy";
 import DotCareEssCaseStudy from "./DotCareEssCaseStudy";
 import EmsCaseStudy from "./EmsCaseStudy";
 import KpiCaseStudy from "./KpiCaseStudy";
+import DotCareWomenCaseStudy from "./DotCareWomenCaseStudy";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -27,19 +28,22 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   if (!project) return {};
 
   const title = `${project.title} — Karim Fakhry`;
+  const description = project.id === "andalusia-ems"
+    ? "An executive management platform designed to prioritise attention, preserve accountability and carry decisions into follow-up across responsive enterprise workflows."
+    : project.summary;
   const socialImage = project.screens[0]?.image ?? project.thumbnail;
   return {
     title,
-    description: project.summary,
+    description,
     openGraph: {
       title,
-      description: project.summary,
+      description,
       ...(socialImage ? { images: [{ url: socialImage, alt: `${project.title} case study` }] } : { images: [] }),
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: project.summary,
+      description,
       ...(socialImage ? { images: [socialImage] } : { images: [] }),
     },
   };
@@ -60,7 +64,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const isCommerceConcept = project.caseStudyMode === "commerce-concept";
   const isEssRedesign = project.caseStudyMode === "ess-redesign";
   const isEmsRedesign = project.caseStudyMode === "ems-redesign";
-  const caseStudyAnchor = isKpiProduct ? "#prototype-walkthrough" : "#executive-summary";
+  const isWomenRedesign = project.caseStudyMode === "women-redesign";
+  const projectSummary = isEmsRedesign
+    ? "A responsive executive workspace that helps leaders see what needs attention, follow decisions into accountable work and manage sensitive access with clarity."
+    : project.summary;
+  const projectMethod = isEmsRedesign
+    ? "EMS brings executive dashboards, operational records, meeting follow-up and permissions into one responsive workspace. The design challenge was deciding what leaders need first, what can wait and how context survives the move from signal to record to action."
+    : project.method;
+  const caseStudyAnchor = isKpiProduct ? "#prototype-walkthrough" : isWomenRedesign ? "#women-story" : "#executive-summary";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -78,7 +89,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="project-hero-title">
           <p className="eyebrow">{project.number} · {project.type} · {project.year}</p>
           <h1>{project.title}</h1>
-          <p className="project-summary-lead">{project.summary}</p>
+          <p className="project-summary-lead">{projectSummary}</p>
           <div className="project-actions">
             <a className="project-primary-action" href={caseStudyAnchor}>
               Read the case study <span aria-hidden="true">↓</span>
@@ -100,16 +111,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <HealthAppWalkthrough projectId={project.id} presentation="intro" />
       )}
 
-      {!isKpiProduct && <section className="executive-section" id="executive-summary">
+      {!isKpiProduct && !isWomenRedesign && <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">{isEmsRedesign ? "The product" : "Executive summary"}</p>
-          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "The platform in brief." : "The project in three points."}</h2>
-          <p>{project.method}</p>
+          <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "Designing for attention, consequence and follow-up." : "The project in three points."}</h2>
+          <p>{projectMethod}</p>
         </div>
         {isEmsRedesign ? (
           <div className="executive-grid ems-project-intro-grid">
-            <article><h3>What it covers</h3><p>{project.executiveSummary.problem}</p></article>
-            <article><h3>How it works</h3><p>{project.executiveSummary.approach}</p></article>
+            <article>
+              <h3>The design challenge</h3>
+              <p>Tasks, issues, meetings and access controls carry different consequences, yet all compete for executive attention. The interface needed to make the next decision legible without flattening those workflows into the same object.</p>
+            </article>
+            <article>
+              <h3>The product response</h3>
+              <p>A shared interaction language keeps ownership, priority, status and scope familiar. Each workflow then emphasises what changes the decision: progress for tasks, resolution for issues, accountable follow-up for meetings and consequence before permission changes.</p>
+            </article>
           </div>
         ) : (
           <div className="executive-grid">
@@ -120,14 +137,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         )}
       </section>}
 
-      {!isKpiProduct && <section className="evidence-section" id="evidence">
+      {!isKpiProduct && !isWomenRedesign && <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
-          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "Product scope" : "What I found"}</p>
-          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "Dashboards, records, meetings and administration in one platform." : "The signals that shaped the redesign."}</h2>
-          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : isCommerceConcept ? "The design dimensions represented in the portfolio concept, without claiming commissioned or production outcomes." : isEssRedesign ? "The state model, role architecture and system scope represented in the completed high-fidelity prototype." : isEmsRedesign ? "The same EMS workflows and record structure are available across Desktop, Tablet and Mobile." : "Key facts from the live product, its content and the working team process."}</p>
+          <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "Decision architecture" : "What I found"}</p>
+          <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "Give each management moment the context it needs." : "The signals that shaped the redesign."}</h2>
+          <p>{isOriginalProduct ? "The most important operational challenges visible in the OPD and Pharmacy work." : isManagerialSolution ? "The management moments the product brings into one connected workflow." : isPharmacyRedesign ? "Live product evidence remains distinct from redesign artefacts, and no deployment outcomes are claimed." : isBiProduct ? "The system’s analytical range, access model and theme architecture—without turning demo metrics into business claims." : isCommerceConcept ? "The design dimensions represented in the portfolio concept, without claiming commissioned or production outcomes." : isEssRedesign ? "The state model, role architecture and system scope represented in the completed high-fidelity prototype." : isEmsRedesign ? "Consistency reduces relearning across EMS while each record keeps the behaviour its decision requires. Navigation, status and ownership stay familiar; meaning and consequence remain specific to the workflow." : "Key facts from the live product, its content and the working team process."}</p>
         </div>
         <div className="evidence-grid">
-          {project.evidence.map((item) => (
+          {isEmsRedesign ? (
+            <>
+              <article>
+                <strong>Attention</strong>
+                <h3>Surface the signal before the record</h3>
+                <p>Dashboards help executives identify where review is needed, then keep the underlying records available when the signal needs deeper context.</p>
+              </article>
+              <article>
+                <strong>Continuity</strong>
+                <h3>Carry decisions into accountable follow-up</h3>
+                <p>Familiar ownership, priority and status patterns support the move from overview to action without asking people to rebuild context at each step.</p>
+              </article>
+            </>
+          ) : project.evidence.map((item) => (
             <article key={item.label}>
               <strong>{item.value}</strong>
               <h3>{item.label}</h3>
@@ -163,7 +193,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {!isKpiProduct && !isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && (
+      {!isKpiProduct && !isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && !isWomenRedesign && (
         <section className="decision-section" id="decisions">
           <div className="case-study-intro">
             <p className="eyebrow">Key product decisions</p>
@@ -196,6 +226,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {isEmsRedesign && <EmsCaseStudy />}
 
+      {isWomenRedesign && <DotCareWomenCaseStudy />}
+
       {isKpiProduct ? (
         <KpiCaseStudy />
       ) : project.visual === "kpi" ? (
@@ -224,7 +256,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </article>
           </div>
         </section>
-      ) : !isPharmacyRedesign && !isBiProduct && !isCommerceConcept && !isEssRedesign && !isEmsRedesign ? (
+      ) : !isPharmacyRedesign && !isBiProduct && !isCommerceConcept && !isEssRedesign && !isEmsRedesign && !isWomenRedesign ? (
         <>
           <section className="screen-section" id="redesign-screens">
             <div className="screen-heading">

@@ -32,9 +32,9 @@ export type Project = {
   tags: string[];
   image?: string;
   thumbnail?: string;
-  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess" | "ems";
-  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess" | "ems";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "kpi-product" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign";
+  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess" | "ems" | "women";
+  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess" | "ems" | "women";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "kpi-product" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign" | "women-redesign";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -348,9 +348,46 @@ export const projects: Project[] = ([
     ],
   },
   {
+    id: "dotcare-women",
+    slug: "dotcare-women",
+    number: "08",
+    title: "DotCare Women",
+    type: "Mobile healthcare product",
+    year: "2026",
+    summary: "A women’s-health redesign connecting everyday tracking, personal insights and access to care.",
+    challenge: "Explore how existing care, tracking and educational capabilities can work as one connected health journey.",
+    outcome: "A high-fidelity portfolio prototype connecting logging, understanding, visit preparation and care access.",
+    role: "Product design · interaction design · design system",
+    scope: "Tracking, insights, visit preparation and care",
+    platform: "iOS mobile app",
+    status: "Portfolio redesign · high-fidelity prototype",
+    method: "Log → Understand → Prepare → Get care",
+    primaryUsers: ["People tracking personal health", "People preparing for a healthcare visit"],
+    executiveSummary: {
+      problem: "Care, tracking and educational capabilities can be more useful when their context travels across the journey.",
+      approach: "Connect personal entries to inspectable patterns, reviewable visit preparation and access to care.",
+      result: "A portfolio redesign prototype; no production or business outcome is claimed.",
+    },
+    evidence: [],
+    chapters: [],
+    tags: ["Mobile healthcare", "Product design", "Design systems"],
+    thumbnail: "/screens/dotcare-women/home.png",
+    theme: "women",
+    visual: "women",
+    caseStudyMode: "women-redesign",
+    liveUrl: "https://apps.apple.com/se/app/dotcare-women/id1590728047",
+    liveLabel: "View existing app on the App Store",
+    screens: [
+      { title: "Home", image: "/screens/dotcare-women/home.png", fullImage: "/screens/dotcare-women/home@2x.png", device: "mobile", highDensityInline: true },
+      { title: "Review suggested entries", image: "/screens/dotcare-women/review-entries.png", fullImage: "/screens/dotcare-women/review-entries@2x.png", device: "mobile" },
+      { title: "Pattern detail", image: "/screens/dotcare-women/pattern-detail.png", fullImage: "/screens/dotcare-women/pattern-detail@2x.png", device: "mobile" },
+      { title: "Visit summary", image: "/screens/dotcare-women/visit-summary.png", fullImage: "/screens/dotcare-women/visit-summary@2x.png", device: "mobile" },
+    ],
+  },
+  {
     id: "andalusia-ems",
     slug: "andalusia-executive-management-system",
-    number: "08",
+    number: "09",
     title: "Andalusia EMS",
     type: "Executive management platform",
     year: "2026",
@@ -405,7 +442,7 @@ export const projects: Project[] = ([
   {
     id: "daoud-tycoons",
     slug: "daoud-tycoons-redesign",
-    number: "09",
+    number: "10",
     title: "Daoud Tycoons Redesign",
     type: "Luxury ecommerce concept",
     year: "2026",

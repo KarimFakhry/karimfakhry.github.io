@@ -77,7 +77,7 @@ const responsiveMedia = [
     alt: "KPI Performance Hub Manager overview recomposed for Tablet",
     device: "tablet" as const,
     label: "Tablet",
-    detail: "A compact rail and reflowed performance modules preserve team context.",
+    detail: "The current result and comparison stay in the first reading sequence.",
   },
   {
     file: "manager-overview-mobile",
@@ -85,7 +85,7 @@ const responsiveMedia = [
     alt: "KPI Performance Hub Manager overview adapted to a focused Mobile card layout",
     device: "mobile" as const,
     label: "Manager · Mobile",
-    detail: "Priority signals become a focused sequence for quick team review.",
+    detail: "Team attention is sequenced around the next useful action.",
   },
   {
     file: "employee-overview-mobile",
@@ -93,46 +93,26 @@ const responsiveMedia = [
     alt: "KPI Performance Hub private Employee overview adapted for Mobile",
     device: "mobile" as const,
     label: "Employee · Mobile",
-    detail: "Personal results, trends and KPI context remain private and easy to scan.",
+    detail: "Personal context stays private as supporting detail moves deeper.",
   },
 ] as const;
 
 export default function KpiCaseStudy() {
   return (
     <div className="kpi-case-study">
-      <section className="kpi-story kpi-product-model" id="product-model">
-        <div className="kpi-section-copy kpi-copy-pair">
-          <div>
-            <p className="eyebrow">The product</p>
-            <h2>Daily inputs become Sprint-level understanding.</h2>
-          </div>
-          <p>
-            KPI Performance Hub replaces a spreadsheet-heavy process with one workspace for
-            recording daily activity, reviewing Sprint performance and understanding longer-term
-            KPI patterns. The product keeps the evidence close to the moment it happens, then
-            turns it into context for managers and employees.
-          </p>
-        </div>
-        <ol className="kpi-product-loop" aria-label="KPI Performance Hub product model">
-          <li><span>Daily</span><strong>Record the working signal</strong><small>Work mode, standup attendance, TFS score and completion</small></li>
-          <li><span>Sprint</span><strong>Review performance in context</strong><small>Team result, qualitative measures and attention areas</small></li>
-          <li><span>History</span><strong>Understand change over time</strong><small>Reports, KPI trends and individual performance context</small></li>
-        </ol>
-      </section>
-
       <section className="kpi-story kpi-roles" id="role-experiences">
         <div className="kpi-section-copy">
-          <p className="eyebrow">Two roles, one system</p>
-          <h2>Team visibility for managers. Private progress for employees.</h2>
+          <p className="eyebrow">Responsibility &amp; privacy</p>
+          <h2>Different responsibilities need different views of performance.</h2>
           <p>
-            Both roles work from the same performance model, but the interface changes with the
-            responsibility. Managers monitor the team and follow up on patterns; employees see
-            only their own progress, history and KPI breakdown.
+            Managers need comparison, team visibility and attention signals. Employees need a
+            private view of their own progress. The product shares scoring logic without sharing
+            inappropriate context or reducing the Employee experience to a restricted dashboard.
           </p>
         </div>
         <div className="kpi-role-stage">
           <article>
-            <div><span>Manager</span><h3>See what is happening across the team.</h3><p>Current Sprint performance, trends, KPI health and the person needing attention stay in one decision view.</p></div>
+            <div><span>Manager</span><h3>Direct attention without exposing every detail at once.</h3><p>The overview prioritises current Sprint health, trends and the person needing review. It supports a move from team signal to individual context rather than treating the dashboard as the decision itself.</p></div>
             <KpiMedia
               file="manager-overview"
               title="Manager performance overview"
@@ -142,7 +122,7 @@ export default function KpiCaseStudy() {
             />
           </article>
           <article>
-            <div><span>Employee</span><h3>Understand personal performance without exposing the team.</h3><p>The private workspace combines the latest Sprint, annual context, personal trend and KPI strengths in one focused view.</p></div>
+            <div><span>Employee</span><h3>Understand personal performance without exposing the team.</h3><p>The Employee view removes team operations and comparison between colleagues. Personal results, trend and KPI context stay together without revealing information outside the Employee&apos;s responsibility.</p></div>
             <KpiMedia
               file="employee-overview"
               title="Private Employee performance overview"
@@ -156,13 +136,14 @@ export default function KpiCaseStudy() {
       <section className="kpi-story kpi-daily-entry" id="daily-entry">
         <div className="kpi-section-copy kpi-copy-pair">
           <div>
-            <p className="eyebrow">Daily entry</p>
+            <p className="eyebrow">Evidence capture</p>
             <h2>A lightweight daily action, not another end-of-Sprint reconstruction.</h2>
           </div>
           <p>
-            Managers record the operational signals that change day by day: Work Mode, Standup
-            Attendance, TFS score and completion. Qualitative measures stay at Sprint level, where
-            they can be considered with the complete cycle in view instead of being repeated daily.
+            Daily Entry asks only for signals that genuinely change day by day: Work Mode,
+            Standup Attendance, TFS score and completion. Keeping the action brief captures
+            evidence while context is fresh and reduces reconstruction at Sprint end. Qualitative
+            measures remain at Sprint level because they need the full cycle, not another daily rating.
           </p>
         </div>
         <KpiMedia
@@ -174,17 +155,17 @@ export default function KpiCaseStudy() {
 
       <section className="kpi-story kpi-people" id="employee-reports">
         <div className="kpi-section-copy">
-          <p className="eyebrow">People &amp; reports</p>
-          <h2>Move from the team roster into one employee&apos;s performance story.</h2>
+          <p className="eyebrow">From signal to person</p>
+          <h2>Follow a team signal into the context behind it.</h2>
           <p>
-            The directory gives managers a quick read on role, latest Sprint and annual average.
-            Opening an employee report brings the latest result, team context, historical trend
-            and KPI breakdown together without losing the person behind the numbers.
+            The directory supports scanning; the report supports judgement. Opening an employee
+            keeps the current result close to historical and team context so a Manager can
+            understand whether a change is isolated, sustained or needs follow-up.
           </p>
         </div>
         <div className="kpi-people-grid">
           <article>
-            <h3>Scan the active team before opening detail.</h3>
+            <h3>Find the person behind the signal.</h3>
             <KpiMedia
               file="employees"
               title="Employee directory"
@@ -193,7 +174,7 @@ export default function KpiCaseStudy() {
             />
           </article>
           <article>
-            <h3>Read personal performance with team context.</h3>
+            <h3>Keep the comparison close to the conversation.</h3>
             <KpiMedia
               file="manager-employee-report"
               title="Manager Employee Report"
@@ -207,18 +188,18 @@ export default function KpiCaseStudy() {
       <section className="kpi-story kpi-history" id="performance-history">
         <div className="kpi-section-copy kpi-copy-pair">
           <div>
-            <p className="eyebrow">Sprint &amp; KPI context</p>
-            <h2>Move from the current result into the history behind it.</h2>
+            <p className="eyebrow">Interpreting performance</p>
+            <h2>A score needs context before it can guide action.</h2>
           </div>
           <p>
-            Sprint Detail keeps the team result, annual average, previous Sprint and individual
-            contributions together. KPI Detail then explains a single measure through its current
-            result, target, weight, annual context, trend and scoring definition.
+            Sprint and KPI views keep the relevant comparison close to the result: what changed,
+            what it is being compared with, how much the measure contributes and whether the
+            pattern deserves attention. History explains movement rather than simply accumulating rows.
           </p>
         </div>
         <div className="kpi-context-grid">
           <article>
-            <h3>Review one Sprint without losing the year around it.</h3>
+            <h3>Review the Sprint as part of a longer pattern.</h3>
             <KpiMedia
               file="manager-sprint-detail"
               title="Manager Sprint Detail"
@@ -241,13 +222,13 @@ export default function KpiCaseStudy() {
       <section className="kpi-story kpi-employee-history" id="employee-experience">
         <div className="kpi-section-copy kpi-copy-pair">
           <div>
-            <p className="eyebrow">Employee experience</p>
+            <p className="eyebrow">Private reflection</p>
             <h2>A personal workspace, not a reduced Manager dashboard.</h2>
           </div>
           <p>
-            The Employee experience removes team operations and keeps the information needed for
-            self-understanding: personal results, KPI patterns and private Sprint history. Each
-            report remains easy to revisit without opening access to another employee&apos;s data.
+            The Employee experience keeps personal results, KPI patterns and Sprint history private.
+            History supports reflection across periods while the current result remains the starting
+            point; team operations and colleague-level comparisons stay outside the Employee view.
           </p>
         </div>
         <KpiMedia
@@ -260,13 +241,13 @@ export default function KpiCaseStudy() {
       <section className="kpi-story kpi-responsive" id="responsive-experience">
         <div className="kpi-section-copy kpi-copy-pair">
           <div>
-            <p className="eyebrow">Responsive experience</p>
-            <h2>The hierarchy adapts when the workspace gets smaller.</h2>
+            <p className="eyebrow">Responsive priority</p>
+            <h2>Keep the decision visible as space narrows.</h2>
           </div>
           <p>
-            Tablet and Mobile replace the dense desktop canvas with more focused card and list
-            patterns. Role, Sprint context and the next useful signal remain visible while
-            navigation and supporting detail move into layouts suited to the available space.
+            Smaller screens preserve the current result, comparison, identity, status and next
+            meaningful action. Supporting detail moves deeper and dense desktop relationships are
+            resequenced instead of shrinking every element into the available space.
           </p>
         </div>
         <div className="kpi-responsive-stage">
@@ -289,19 +270,19 @@ export default function KpiCaseStudy() {
 
       <section className="kpi-story kpi-system" id="design-system">
         <div className="kpi-section-copy">
-          <p className="eyebrow">Design system</p>
-          <h2>Shared patterns keep performance states clear across both roles.</h2>
+          <p className="eyebrow">System principles</p>
+          <h2>Shared semantics reduce relearning across the product.</h2>
           <p>
-            Navigation, semantic status, metric cards, charts, progress, controls and responsive
-            patterns use one visual language. The system gives dense performance information a
-            consistent hierarchy without making every workflow look identical.
+            Scores, statuses and progress retain their meaning for Managers and Employees.
+            Interaction rules remain predictable, while composition can change with responsibility
+            and available space instead of forcing every workflow into the same arrangement.
           </p>
         </div>
         <div className="kpi-system-grid">
           <article className="kpi-system-band kpi-system-foundations">
             <div className="kpi-system-band-copy">
-              <h3>Foundations establish the reading order.</h3>
-              <p>Semantic color separates status from decoration, while the type scale keeps operational labels, page headings and performance values distinct at a glance.</p>
+              <h3>Keep performance meaning stable when responsibility changes.</h3>
+              <p>Colour and type create a consistent hierarchy for score, status, comparison and supporting context, whether the reader is monitoring a team or reviewing personal performance.</p>
             </div>
             <div className="kpi-system-foundation-media">
               <KpiMedia
@@ -321,36 +302,8 @@ export default function KpiCaseStudy() {
 
           <article className="kpi-system-band">
             <div className="kpi-system-band-copy">
-              <h3>One application shell adapts by role and breakpoint.</h3>
-              <p>Manager and Employee headers share identity and account patterns. On Tablet and Mobile, role-specific navigation moves into compact drawers while preserving location, active state and today cues.</p>
-            </div>
-            <div className="kpi-system-shell-media">
-              <KpiMedia
-                file="ds-shell-topbar"
-                title="Responsive application topbars"
-                alt="KPI Performance Hub Manager and Employee topbars across desktop and compact breakpoints"
-              />
-              <div className="kpi-system-media-split">
-                <KpiMedia
-                  file="ds-responsive-tablet-nav"
-                  title="Tablet Manager navigation states"
-                  alt="KPI Performance Hub Tablet Manager navigation drawer states for Overview, Daily Entry, Employees, Sprints and Settings"
-                  sizes="(max-width: 1100px) calc(100vw - 80px), 50vw"
-                />
-                <KpiMedia
-                  file="ds-responsive-mobile-nav"
-                  title="Mobile Manager navigation states"
-                  alt="KPI Performance Hub Mobile Manager navigation drawer states for Overview, Daily Entry, Employees, Sprints and Settings"
-                  sizes="(max-width: 1100px) calc(100vw - 80px), 50vw"
-                />
-              </div>
-            </div>
-          </article>
-
-          <article className="kpi-system-band">
-            <div className="kpi-system-band-copy">
-              <h3>Controls communicate state before submission.</h3>
-              <p>Buttons, fields and attendance controls expose default, focus, error, disabled and selected states without changing the interaction model from one workflow to the next.</p>
+              <h3>Make routine actions predictable.</h3>
+              <p>Daily Entry and Settings use the same interaction rules for selection, focus, validation and submission, so a familiar action does not need to be relearned in each workflow.</p>
             </div>
             <div className="kpi-system-control-media">
               <KpiMedia
@@ -373,8 +326,8 @@ export default function KpiCaseStudy() {
 
           <article className="kpi-system-band">
             <div className="kpi-system-band-copy">
-              <h3>Performance data uses repeatable comparison patterns.</h3>
-              <p>Metric cards, target progress and archive rows keep value, comparison, period and status in predictable positions so the same data remains scannable across dashboards and reports.</p>
+              <h3>Carry the same meaning into a different composition.</h3>
+              <p>Metric cards, progress and history rows keep value, comparison and state in a familiar order, then reflow when space changes instead of compressing the desktop arrangement.</p>
             </div>
             <div className="kpi-system-data-media">
               <KpiMedia
@@ -395,37 +348,15 @@ export default function KpiCaseStudy() {
             </div>
           </article>
 
-          <article className="kpi-system-band">
-            <div className="kpi-system-band-copy">
-              <h3>Status and identity remain legible from summary to detail.</h3>
-              <p>Text labels, avatar identity and interaction states accompany color. The same language carries from employee records into the Sprint summary that anchors the Manager overview.</p>
-            </div>
-            <div className="kpi-system-state-media">
-              <KpiMedia
-                file="ds-status-states"
-                title="Performance status badges"
-                alt="KPI Performance Hub status badges for Finalized, In progress, Active and Archived"
-              />
-              <KpiMedia
-                file="ds-employee-card-states"
-                title="Employee summary card states"
-                alt="KPI Performance Hub employee summary card in default, hover and pressed states"
-              />
-              <KpiMedia
-                file="ds-sprint-banner"
-                title="Sprint summary pattern"
-                alt="KPI Performance Hub finalized Sprint summary banner with period, reporting status and team score"
-              />
-            </div>
-          </article>
         </div>
       </section>
 
       <section className="kpi-reflection">
-        <h2>One performance model, shaped around the responsibility of each role.</h2>
+        <h2>Make performance easier to understand without making it harder to record.</h2>
         <p>
-          KPI Performance Hub connects daily evidence, Sprint review and historical context so
-          managers can guide the team while employees can understand their own progress privately.
+          KPI Performance Hub connects lightweight daily evidence to Sprint review, KPI
+          interpretation and private reflection. Managers can follow a team signal into context;
+          Employees can understand their own progress without inheriting the Manager view.
         </p>
       </section>
     </div>

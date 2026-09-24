@@ -60,14 +60,14 @@ const walkthroughs: Record<WalkthroughProject, {
     className: "health-app-prototype-walkthrough",
   },
   "kpi-hub": {
-    heading: "One performance system, seen from both roles.",
-    intro: "A cursor-guided walkthrough of the current Manager and Employee workspaces, from team oversight and Daily Entry to Sprint history and private performance context.",
+    heading: "See how daily evidence becomes performance context.",
+    intro: "The walkthrough moves through Manager oversight, Daily Entry, individual reporting, Sprint history and the private Employee experience. Each transition shows how responsibility changes what the product reveals and what action comes next.",
     video: "/video/kpi-performance-hub-golden-path-v2.mp4",
     poster: "/video/kpi-performance-hub-golden-path-v2-poster.jpg",
     ariaLabel: "KPI Performance Hub walkthrough from role selection through Manager overview, Daily Entry, employee reporting, Sprint and KPI detail, and the private Employee experience",
     duration: "1 minute 53 seconds",
-    path: "Choose a role → monitor → record → review → drill down → self-monitor.",
-    note: "The walkthrough uses the current role-based prototype and representative performance data to explain the product flow.",
+    path: "Choose a role → review a signal → record evidence → interpret performance → reflect over time.",
+    note: "Representative performance data is used to demonstrate the current live product workflow.",
     className: "kpi-prototype-walkthrough",
   },
   "pharmacy-bi": {
@@ -101,35 +101,61 @@ type WalkthroughProps =
 export default function HealthAppWalkthrough(props: WalkthroughProps) {
   const projectId = props.projectId ?? "health-app";
   const walkthrough = walkthroughs[projectId];
+  const isKpiWalkthrough = projectId === "kpi-hub";
 
   if (props.presentation === "intro") {
     return <IntroductoryFilm {...introductoryFilms[props.projectId]} className={walkthrough.className} />;
   }
 
   return (
-    <section className="screen-section health-app-walkthrough-section" id="prototype-walkthrough">
-      <div className="screen-heading">
-        <p className="eyebrow">Golden-path walkthrough</p>
-        <h2>{walkthrough.heading}</h2>
-        <p>{walkthrough.intro}</p>
-      </div>
-      <figure className={`prototype-walkthrough ${walkthrough.className}`}>
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          poster={walkthrough.poster}
-          aria-label={walkthrough.ariaLabel}
-        >
-          <source src={walkthrough.video} type="video/mp4" />
-          Your browser does not support embedded video. <a href={walkthrough.video}>Open the walkthrough video.</a>
-        </video>
-        <figcaption>
-          <span>Interactive prototype · {walkthrough.duration}</span>
-          <strong>{walkthrough.path}</strong>
-          <p>{walkthrough.note}</p>
-        </figcaption>
-      </figure>
-    </section>
+    <>
+      {isKpiWalkthrough && (
+        <section className="kpi-case-study kpi-story kpi-product-model" id="prototype-walkthrough">
+          <div className="kpi-section-copy kpi-copy-pair">
+            <div>
+              <p className="eyebrow">The product</p>
+              <h2>Capture evidence without adding another reporting burden.</h2>
+            </div>
+            <p>
+              KPI Performance Hub is a live internal performance-management product that replaced
+              a spreadsheet-heavy process. It turns daily evidence into Sprint and KPI context for
+              Managers who need team visibility and Employees who need a private view of their own
+              results—without treating those responsibilities as interchangeable or exposing
+              inappropriate team information.
+            </p>
+          </div>
+          <ol className="kpi-product-loop" aria-label="KPI Performance Hub product model">
+            <li><span>Daily</span><strong>Capture what belongs to the day</strong><small>Work mode, standup, TFS and completion are recorded while context is fresh.</small></li>
+            <li><span>Sprint</span><strong>Judge qualitative performance with the full cycle in view</strong><small>Quality, collaboration and contribution stay at Sprint level, where the decision has enough context.</small></li>
+            <li><span>History</span><strong>Keep change connected to its context</strong><small>Current results remain tied to the periods and comparisons that make them interpretable.</small></li>
+          </ol>
+        </section>
+      )}
+
+      <section className="screen-section health-app-walkthrough-section" id={isKpiWalkthrough ? "product-walkthrough" : "prototype-walkthrough"}>
+        <div className="screen-heading">
+          <p className="eyebrow">{isKpiWalkthrough ? "Product walkthrough" : "Golden-path walkthrough"}</p>
+          <h2>{walkthrough.heading}</h2>
+          <p>{walkthrough.intro}</p>
+        </div>
+        <figure className={`prototype-walkthrough ${walkthrough.className}`}>
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={walkthrough.poster}
+            aria-label={walkthrough.ariaLabel}
+          >
+            <source src={walkthrough.video} type="video/mp4" />
+            Your browser does not support embedded video. <a href={walkthrough.video}>Open the walkthrough video.</a>
+          </video>
+          <figcaption>
+            <span>{isKpiWalkthrough ? "Live product walkthrough" : "Interactive prototype"} · {walkthrough.duration}</span>
+            <strong>{walkthrough.path}</strong>
+            <p>{walkthrough.note}</p>
+          </figcaption>
+        </figure>
+      </section>
+    </>
   );
 }

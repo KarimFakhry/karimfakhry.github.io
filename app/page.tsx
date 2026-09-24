@@ -4,6 +4,7 @@ import {
   AcademyProjectPreview,
   DaoudProjectPreview,
   DotCareEssProjectPreview,
+  DotCareWomenProjectPreview,
   DotCareProjectPreview,
   EmsProjectPreview,
   HealthWebsiteProjectPreview,
@@ -102,6 +103,11 @@ export default function Home() {
                       <img src="/screens/dotcare-ess/home-checked-in.png" alt="" />
                       <img src="/screens/dotcare-ess/home-manager.png" alt="" />
                     </span>
+                  ) : project.id === "dotcare-women" ? (
+                    <span className="women-mini">
+                      <img src="/screens/dotcare-women/home.png" alt="" />
+                      <img src="/screens/dotcare-women/pattern-detail.png" alt="" />
+                    </span>
                   ) : project.id === "andalusia-ems" ? (
                     <span className="ems-mini">
                       <img src="/screens/ems/dashboard-desktop.png" alt="" />
@@ -136,7 +142,7 @@ export default function Home() {
           <p className="eyebrow">Selected work · 2026</p>
           <h2>Patient journeys.<br />Clinical operations. Leadership.</h2>
           <p>
-            Nine evidence-led case studies spanning discovery, product strategy,
+            Ten evidence-led case studies spanning discovery, product strategy,
             enterprise systems and the operating model behind a design team.
           </p>
         </div>
@@ -163,6 +169,8 @@ export default function Home() {
                   <PharmacyBiProjectPreview />
                 ) : project.id === "dotcare-ess" ? (
                   <DotCareEssProjectPreview />
+                ) : project.id === "dotcare-women" ? (
+                  <DotCareWomenProjectPreview />
                 ) : project.id === "andalusia-ems" ? (
                   <EmsProjectPreview />
                 ) : project.id === "daoud-tycoons" ? (
