@@ -48,7 +48,7 @@
 .film { background: #263d45; color: #fff; }
 .film .eyebrow { color: #e0a9b9; }
 .film .chapterText > p:last-child { color: #d0dbde; }
-.film video { display: block; width: 100%; height: auto; aspect-ratio: 3456 / 2234; background: #090d0e; box-shadow: 0 30px 90px rgba(0,0,0,.3); }
+.film video { display: block; width: min(100%, 420px); height: auto; margin-inline: auto; aspect-ratio: 393 / 852; background: #fff; box-shadow: 0 30px 90px rgba(0,0,0,.3); }
 .close { background: #f2e7ed; }
 .close small { display: block; max-width: 720px; margin-top: 52px; color: #6c7074; font-size: 12px; line-height: 1.5; }
 @media (max-width: 900px) {

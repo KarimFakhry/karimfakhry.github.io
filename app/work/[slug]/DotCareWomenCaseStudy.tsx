@@ -148,7 +148,7 @@ export default function DotCareWomenCaseStudy() {
           <h2>See the connected journey in motion.</h2>
           <p>The prototype walkthrough follows the product beyond isolated screens, from everyday context into logging, insight and care.</p>
         </div>
-        <video controls playsInline preload="metadata" poster="/video/dotcare-women-golden-path-poster.jpg" width="3456" height="2234" aria-label="DotCare Women Golden Path prototype walkthrough">
+        <video controls playsInline preload="metadata" poster="/video/dotcare-women-golden-path-poster.jpg" width="786" height="1704" aria-label="DotCare Women Golden Path prototype walkthrough">
           <source src="/video/dotcare-women-golden-path.mp4" type="video/mp4" />
           Your browser does not support video playback.
         </video>
