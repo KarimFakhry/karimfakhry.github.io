@@ -160,6 +160,7 @@ button { font: inherit; }
 .hero-project.navy .hero-project-image { background: #142a43; }
 .hero-project.ess .hero-project-image { background: #0f4ea6; }
 .hero-project.women .hero-project-image { background: #e8cdd6; }
+.hero-project.physicians .hero-project-image { background: #dcece9; }
 .hero-project.ems .hero-project-image { background: #102b35; }
 .hero-project.tycoon .hero-project-image { background: #2b211b; }
 .hero-project-image img {
@@ -259,6 +260,10 @@ button { font: inherit; }
 .hero-project-image .women-mini img { position: absolute; width: 32%; height: auto; min-height: 0; border: 2px solid #fff; border-radius: 9px; box-shadow: 0 8px 20px rgba(91,52,67,.25); }
 .hero-project-image .women-mini img:first-child { left: 14%; top: 10%; z-index: 2; }
 .hero-project-image .women-mini img:last-child { right: 12%; top: 23%; }
+.hero-project-image .physicians-mini { position: relative; width: 100%; height: 100%; display: block; overflow: hidden; }
+.hero-project-image .physicians-mini img { position: absolute; width: 32%; height: auto; min-height: 0; border: 2px solid #fff; border-radius: 9px; box-shadow: 0 8px 20px rgba(20,58,68,.22); }
+.hero-project-image .physicians-mini img:first-child { left: 14%; top: 9%; z-index: 2; }
+.hero-project-image .physicians-mini img:last-child { right: 12%; top: 22%; }
 .ems-mini {
   position: relative; width: 100%; height: 100%; display: block; overflow: hidden;
   background: radial-gradient(circle at 76% 18%, rgba(57,199,213,.28), transparent 36%), #102832;
@@ -335,6 +340,7 @@ button { font: inherit; }
 .project-card.navy .project-visual { background: #142a43; }
 .project-card.ess .project-visual { background: #0f4ea6; }
 .project-card.women .project-visual { background: #e8cdd6; }
+.project-card.physicians .project-visual { background: #dcece9; }
 .project-card.ems .project-visual { background: #102b35; }
 .project-image-window {
   display: block;
@@ -748,6 +754,19 @@ button { font: inherit; }
 .project-visual:hover .women-phone-pattern, .project-visual:focus-visible .women-phone-pattern { transform: rotate(-5deg) translateY(-2%); }
 .project-visual:hover .women-phone-home, .project-visual:focus-visible .women-phone-home { transform: rotate(0) translateY(-2%); }
 .project-visual:hover .women-phone-visit, .project-visual:focus-visible .women-phone-visit { transform: rotate(5deg) translateY(-2%); }
+.physicians-editorial { background: #dcece9; color: #18363e; }
+.physicians-editorial::after { border-color: rgba(24,54,62,.2); }
+.physicians-editorial .editorial-preview-copy { width: min(43%, 520px); }
+.physicians-editorial .editorial-preview-copy > i { color: #246c78; }
+.physicians-editorial .editorial-preview-copy > b { font-size: clamp(29px, 3.6vw, 56px); }
+.physicians-preview-phone { position: absolute; z-index: 4; display: block; width: 20%; aspect-ratio: 393 / 852; overflow: hidden; border: clamp(4px, .48vw, 7px) solid #fff; border-radius: clamp(16px, 1.8vw, 28px); background: #fff; box-shadow: 0 30px 70px rgba(18,65,74,.28); transition: transform 520ms cubic-bezier(.22,1,.36,1); }
+.physicians-preview-phone img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.physicians-preview-patient { right: 27%; top: 20%; transform: rotate(-6deg); }
+.physicians-preview-worklist { z-index: 5; right: 10%; top: 10%; transform: rotate(4deg); }
+.physicians-editorial .editorial-flow { color: #25505a; }
+.physicians-editorial .editorial-flow em { color: #137a8d; }
+.project-visual:hover .physicians-preview-patient, .project-visual:focus-visible .physicians-preview-patient { transform: rotate(-4deg) translateY(-2%); }
+.project-visual:hover .physicians-preview-worklist, .project-visual:focus-visible .physicians-preview-worklist { transform: rotate(2deg) translateY(-2%); }
 .ems-editorial {
   background: radial-gradient(circle at 78% 16%, rgba(58,203,216,.2), transparent 27%), linear-gradient(135deg, #173844 0%, #0d2731 52%, #071a22 100%);
   color: #f3fbfc;
@@ -912,6 +931,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.navy { --project-bg: #142a43; }
 .project-page.ess { --project-bg: #0b3f8a; }
 .project-page.women { --project-bg: #ead1da; }
+.project-page.physicians { --project-bg: #dcece9; }
 .project-page.ems { --project-bg: #0d2a34; }
 .project-page.tycoon { --project-bg: #211915; }
 .project-header {
@@ -930,6 +950,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.navy .project-header { color: #f5f9fc; }
 .project-page.ess .project-header { color: #f5fbff; }
 .project-page.women .project-header { color: #3a2d3b; }
+.project-page.physicians .project-header { color: #17323a; }
 .project-page.ems .project-header { color: #f3fbfc; }
 .project-page.tycoon .project-header { color: #f3ede3; }
 .project-header-nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 38px); }
@@ -950,6 +971,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .project-page.navy .case-study-header-link { background: #73c2ea; color: #081725; }
 .project-page.ess .case-study-header-link { background: #72e3ed; color: #062653; }
 .project-page.women .case-study-header-link { background: #763b57; color: #fff; }
+.project-page.physicians .case-study-header-link { background: #173c47; color: #fff; }
 .project-page.ems .case-study-header-link { background: #73dce4; color: #071a22; }
 .project-page.tycoon .case-study-header-link { background: #d0b18d; color: #17120f; }
 .project-hero {
@@ -1968,6 +1990,7 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .ess-reflection > p:last-child { margin-inline: auto; }
 .ess-reflection > p:last-child { max-width: 65ch; }
 .screen-lightbox {
+  --lightbox-vertical-space: 176px;
   position: fixed;
   z-index: 100;
   inset: 0;
@@ -2012,13 +2035,17 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
 .lightbox-image {
   width: min(100%, 1440px);
   margin: 0 auto;
-  max-height: calc(100svh - 176px);
-  max-height: calc(100dvh - 176px);
+  max-height: calc(100svh - var(--lightbox-vertical-space));
+  max-height: calc(100dvh - var(--lightbox-vertical-space));
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.lightbox-image.tablet { width: min(100%, 768px); }
+.lightbox-image.tablet { width: 100%; }
+.screen-lightbox:has(> .lightbox-image.tablet):not(:has(.lightbox-navigation)) {
+  --lightbox-vertical-space: 104px;
+  padding-bottom: 20px;
+}
 .lightbox-image.mobile { width: min(100%, 390px); }
 .lightbox-image.drawer { width: min(100%, 440px); }
 .lightbox-image img {
@@ -2026,8 +2053,8 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: calc(100svh - 176px);
-  max-height: calc(100dvh - 176px);
+  max-height: calc(100svh - var(--lightbox-vertical-space));
+  max-height: calc(100dvh - var(--lightbox-vertical-space));
   object-fit: contain;
   box-shadow: 0 36px 100px rgba(0,0,0,.55);
 }
@@ -2244,6 +2271,10 @@ footer div > p:last-child, footer a { margin-top: 13px; color: var(--muted); fon
   .women-phone-pattern { width: 27%; right: 48%; top: 48%; }
   .women-phone-home { width: 35%; right: 22%; top: 39%; }
   .women-phone-visit { width: 26%; right: -2%; top: 52%; }
+  .physicians-editorial .editorial-preview-copy { width: calc(100% - 68px); }
+  .physicians-editorial .editorial-preview-copy > b { font-size: clamp(27px, 8vw, 38px); }
+  .physicians-preview-patient { width: 29%; right: 47%; top: 48%; }
+  .physicians-preview-worklist { width: 38%; right: 16%; top: 39%; }
   .ems-editorial .editorial-preview-copy { width: calc(100% - 68px); }
   .ems-editorial .editorial-preview-copy > b { font-size: clamp(27px, 8vw, 38px); }
   .ems-browser-main { width: 96%; height: 42%; right: -11%; top: 48%; }

@@ -32,9 +32,9 @@ export type Project = {
   tags: string[];
   image?: string;
   thumbnail?: string;
-  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess" | "ems" | "women";
-  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess" | "ems" | "women";
-  caseStudyMode?: "redesign" | "product" | "managerial" | "kpi-product" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign" | "women-redesign";
+  theme: "sand" | "mint" | "forest" | "copper" | "signal" | "navy" | "tycoon" | "ess" | "ems" | "women" | "physicians";
+  visual?: "image" | "kpi" | "dotcare" | "pharmacy-bi" | "daoud" | "ess" | "ems" | "women" | "physicians";
+  caseStudyMode?: "redesign" | "product" | "managerial" | "kpi-product" | "pharmacy-redesign" | "bi-product" | "commerce-concept" | "ess-redesign" | "ems-redesign" | "women-redesign" | "physicians-product";
   liveUrl?: string;
   liveLabel?: string;
   screens: ProjectScreen[];
@@ -308,13 +308,13 @@ export const projects: Project[] = ([
     title: "KPI Performance Hub",
     type: "Performance management product",
     year: "2026",
-    summary: "A performance-management workspace that turns daily team inputs into clear Sprint reports, KPI trends and private employee performance views.",
+    summary: "One performance ecosystem across a deeper web platform and a native mobile companion for daily action, growth and follow-up.",
     challenge: "A spreadsheet-heavy process separated daily inputs from Sprint review, team visibility and each employee's own performance history.",
-    outcome: "One role-aware product connects daily evidence, Sprint reporting, KPI context and private employee progress.",
+    outcome: "Web and mobile carry the same performance model through evidence, Sprint evaluation, insight and private progress.",
     role: "Product strategy · UX/UI · design system",
-    scope: "Daily inputs, Sprint review and performance reporting",
-    platform: "Responsive internal web product",
-    status: "Live internal product",
+    scope: "Daily evidence, Sprint evaluation, Insights, Focus and Check-ins",
+    platform: "Web platform + native mobile companion",
+    status: "Live internal web product · mobile companion design",
     method: "Daily performance inputs become Sprint reports, KPI trends and role-private employee views.",
     primaryUsers: ["Managers monitoring team performance and recording daily inputs", "Employees following their own KPIs and Sprint history"],
     executiveSummary: {
@@ -339,12 +339,12 @@ export const projects: Project[] = ([
     theme: "copper",
     visual: "kpi",
     caseStudyMode: "kpi-product",
-    thumbnail: "/screens/kpi-performance/manager-overview.png",
+    thumbnail: "/screens/kpi-performance/final-manager.webp",
     screens: [
-      { title: "Manager overview — team performance and attention areas", image: "/screens/kpi-performance/manager-overview.png", device: "desktop" },
-      { title: "Employee overview — private KPI performance", image: "/screens/kpi-performance/employee-overview.png", device: "desktop" },
-      { title: "Manager drill-down — individual performance report", image: "/screens/kpi-performance/manager-employee-report.png", device: "desktop" },
-      { title: "Employee sprint history — periodic performance context", image: "/screens/kpi-performance/employee-sprints.png", device: "desktop" },
+      { title: "Final Manager Overview", image: "/screens/kpi-performance/final-manager.webp", fullImage: "/screens/kpi-performance/final-manager@2x.png", device: "desktop" },
+      { title: "Final Employee Overview", image: "/screens/kpi-performance/final-employee.webp", fullImage: "/screens/kpi-performance/final-employee@2x.png", device: "desktop" },
+      { title: "Employee mobile Home", image: "/screens/kpi-performance/final-mobile-employee-home.webp", fullImage: "/screens/kpi-performance/final-mobile-employee-home@2x.png", device: "mobile" },
+      { title: "Manager mobile Home", image: "/screens/kpi-performance/final-mobile-manager-home.webp", fullImage: "/screens/kpi-performance/final-mobile-manager-home@2x.png", device: "mobile" },
     ],
   },
   {
@@ -440,9 +440,43 @@ export const projects: Project[] = ([
     ],
   },
   {
+    id: "dotcare-physicians",
+    slug: "dotcare-for-physicians",
+    number: "10",
+    title: "DotCare for Physicians",
+    type: "Physician-facing clinical product",
+    year: "2026",
+    summary: "A mobile clinical workspace that helps physicians move from their worklist into patient context, results, orders and documentation.",
+    challenge: "Clinical decisions depend on relevant patient information remaining close to the action being taken.",
+    outcome: "A high-fidelity mobile and tablet design for connected physician workflows; no production or clinical outcome is claimed.",
+    role: "Product design · clinical workflow UX · design system",
+    scope: "Worklist, patient record, orders, medication, notes and discharge",
+    platform: "Mobile app + tablet adaptation",
+    status: "High-fidelity product design",
+    method: "Move from the worklist into patient context, clinical review and documented action.",
+    primaryUsers: ["Physicians reviewing patients and documenting care"],
+    executiveSummary: {
+      problem: "Physicians need to review clinical context while moving through different kinds of patient work.",
+      approach: "Keep patient identity and relevant information legible as the workflow moves from review to action.",
+      result: "A curated mobile and tablet product design; no outcome metrics are claimed.",
+    },
+    evidence: [],
+    chapters: [],
+    tags: ["Clinical workflow", "Mobile UX", "Product design"],
+    thumbnail: "/screens/dotcare-physicians/worklist.webp",
+    theme: "physicians",
+    visual: "physicians",
+    caseStudyMode: "physicians-product",
+    screens: [
+      { title: "Physician worklist", image: "/screens/dotcare-physicians/worklist.webp", fullImage: "/screens/dotcare-physicians/worklist@2x.png", device: "mobile" },
+      { title: "Patient overview", image: "/screens/dotcare-physicians/patient-overview.webp", fullImage: "/screens/dotcare-physicians/patient-overview@2x.png", device: "mobile" },
+      { title: "Tablet worklist", image: "/screens/dotcare-physicians/tablet-worklist.webp", fullImage: "/screens/dotcare-physicians/tablet-worklist@2x.png", device: "tablet" },
+    ],
+  },
+  {
     id: "daoud-tycoons",
     slug: "daoud-tycoons-redesign",
-    number: "10",
+    number: "11",
     title: "Daoud Tycoons Redesign",
     type: "Luxury ecommerce concept",
     year: "2026",

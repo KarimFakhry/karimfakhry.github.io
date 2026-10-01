@@ -60,14 +60,14 @@ const walkthroughs: Record<WalkthroughProject, {
     className: "health-app-prototype-walkthrough",
   },
   "kpi-hub": {
-    heading: "See how daily evidence becomes performance context.",
-    intro: "The walkthrough moves through Manager oversight, Daily Entry, individual reporting, Sprint history and the private Employee experience. Each transition shows how responsibility changes what the product reveals and what action comes next.",
-    video: "/video/kpi-performance-hub-golden-path-v2.mp4",
-    poster: "/video/kpi-performance-hub-golden-path-v2-poster.jpg",
-    ariaLabel: "KPI Performance Hub walkthrough from role selection through Manager overview, Daily Entry, employee reporting, Sprint and KPI detail, and the private Employee experience",
-    duration: "1 minute 53 seconds",
-    path: "Choose a role → review a signal → record evidence → interpret performance → reflect over time.",
-    note: "Representative performance data is used to demonstrate the current live product workflow.",
+    heading: "Watch the web experience move from evidence to understanding.",
+    intro: "The final web walkthrough follows role-specific performance, daily self-reporting and Manager verification, explainable insights, Sprint review and personal growth. The native mobile companion is shown later in the case study.",
+    video: "/video/kpi-performance-hub-final-walkthrough.mp4",
+    poster: "/video/kpi-performance-hub-final-walkthrough-poster.jpg",
+    ariaLabel: "KPI Performance Hub final web walkthrough covering sign-in, Manager and Employee workspaces, Daily Entry, Insights, Sprint reporting and personal growth",
+    duration: "2 minutes 26 seconds",
+    path: "Enter a role → record and verify evidence → explain change → review the Sprint → follow growth.",
+    note: "A recording of the final web experience with representative performance data; the mobile companion is presented separately below.",
     className: "kpi-prototype-walkthrough",
   },
   "pharmacy-bi": {
@@ -118,16 +118,16 @@ export default function HealthAppWalkthrough(props: WalkthroughProps) {
             </div>
             <p>
               KPI Performance Hub is a live internal performance-management product that replaced
-              a spreadsheet-heavy process. It turns daily evidence into Sprint and KPI context for
-              Managers who need team visibility and Employees who need a private view of their own
-              results—without treating those responsibilities as interchangeable or exposing
-              inappropriate team information.
+              a spreadsheet-heavy process. Its web platform supports Sprint evaluation and deeper
+              review; a native mobile companion brings short daily actions, insights and check-ins
+              into the working day. Managers see team context while Employees see their own
+              performance privately.
             </p>
           </div>
           <ol className="kpi-product-loop" aria-label="KPI Performance Hub product model">
-            <li><span>Daily</span><strong>Capture what belongs to the day</strong><small>Work mode, standup, TFS and completion are recorded while context is fresh.</small></li>
-            <li><span>Sprint</span><strong>Judge qualitative performance with the full cycle in view</strong><small>Quality, collaboration and contribution stay at Sprint level, where the decision has enough context.</small></li>
-            <li><span>History</span><strong>Keep change connected to its context</strong><small>Current results remain tied to the periods and comparisons that make them interpretable.</small></li>
+            <li><span>Daily</span><strong>Capture work while context is fresh</strong><small>Employees self-report; Managers verify and add their own assessment. Daily Entry does not calculate KPI scores.</small></li>
+            <li><span>Sprint</span><strong>Evaluate with the full cycle in view</strong><small>Manager-entered scores for the eight weighted KPIs remain separate from daily records.</small></li>
+            <li><span>Growth</span><strong>Explain change before acting on it</strong><small>Insights, Focus and Check-ins connect a result to evidence and a useful conversation.</small></li>
           </ol>
         </section>
       )}
@@ -150,7 +150,7 @@ export default function HealthAppWalkthrough(props: WalkthroughProps) {
             Your browser does not support embedded video. <a href={walkthrough.video}>Open the walkthrough video.</a>
           </video>
           <figcaption>
-            <span>{isKpiWalkthrough ? "Live product walkthrough" : "Interactive prototype"} · {walkthrough.duration}</span>
+            <span>{isKpiWalkthrough ? "Final web experience" : "Interactive prototype"} · {walkthrough.duration}</span>
             <strong>{walkthrough.path}</strong>
             <p>{walkthrough.note}</p>
           </figcaption>

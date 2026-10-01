@@ -1,0 +1,77 @@
+.story { overflow: clip; }
+.inner { width: min(100%, 1320px); margin-inline: auto; }
+.intro { max-width: 960px; margin-bottom: clamp(52px, 7vw, 96px); }
+.intro :global(.eyebrow),
+.close :global(.eyebrow) { color: #9d5737; }
+.intro h2,
+.close h2 {
+  margin: 22px 0 0;
+  font: 400 clamp(43px, 6vw, 82px)/1.03 Georgia, "Times New Roman", serif;
+  letter-spacing: -.05em;
+}
+.intro > p:last-child,
+.close > .inner > p:last-child {
+  max-width: 68ch;
+  margin: 28px 0 0;
+  color: #5d6963;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.75;
+}
+.architecture { background: #e8e2d8; color: #17211d; }
+.roleGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 80px); }
+.roleGrid article { padding-top: 22px; border-top: 1px solid #aeb9b0; }
+.roleGrid span,
+.groupHeading span { color: #9d5737; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.roleGrid h3,
+.groupHeading h3 { max-width: 18ch; margin: 20px 0; font: 400 clamp(29px, 3vw, 43px)/1.08 Georgia, serif; letter-spacing: -.035em; }
+.roleGrid p { max-width: 55ch; margin: 0; color: #5d6963; font-size: 14px; line-height: 1.75; }
+.web { background: #f1ede6; color: #17211d; }
+.webGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(54px, 6vw, 100px) clamp(24px, 3vw, 48px); margin-block: clamp(60px, 8vw, 112px); }
+.web figure,
+.mobile figure,
+.system figure { min-width: 0; margin: 0; }
+.wideFigure { margin: 0; }
+.web figcaption,
+.mobile figcaption,
+.system figcaption {
+  max-width: 60ch;
+  margin-top: 17px;
+  color: #627068;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.web figcaption strong { display: block; margin-bottom: 4px; color: #9d5737; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.mobile { background: #081a16; color: #f6f1e9; }
+.mobile .intro :global(.eyebrow) { color: #70cad7; }
+.mobile .intro > p:last-child { color: #aabdb7; }
+.mobileGroup + .mobileGroup { margin-top: clamp(100px, 10vw, 160px); }
+.groupHeading { margin-bottom: 44px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.24); }
+.groupHeading span { color: #70cad7; }
+.groupHeading h3 { max-width: 24ch; color: #f6f1e9; }
+.phoneGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(52px, 5vw, 84px) clamp(26px, 4vw, 58px); align-items: start; }
+.phoneGrid figure { width: min(100%, 290px); }
+.phoneGrid figcaption { color: #aabdb7; font-size: 12px; }
+.phoneGrid :global(.evidence-media) { max-width: 290px; }
+.system { background: #dce7e3; color: #13221d; }
+.systemGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(52px, 6vw, 90px) clamp(24px, 4vw, 60px); align-items: start; }
+.systemGrid figure:first-child { grid-column: 1 / -1; }
+.systemGrid figcaption { color: #5d6963; }
+.close { background: #102820; }
+.close :global(.eyebrow) { color: #70cad7; }
+.close h2 { max-width: 1040px; color: #f6f1e9; }
+.close > .inner > p:last-child { color: #aabdb7; }
+@media (max-width: 900px) {
+  .phoneGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .phoneGrid figure { justify-self: center; }
+}
+@media (max-width: 700px) {
+  .roleGrid,
+  .webGrid,
+  .systemGrid { grid-template-columns: 1fr; }
+  .systemGrid figure:first-child { grid-column: 1; }
+  .roleGrid { gap: 58px; }
+  .webGrid { gap: 68px; margin-block: 72px; }
+  .phoneGrid { grid-template-columns: 1fr; gap: 68px; }
+  .phoneGrid figure { width: min(72vw, 300px); }
+  .groupHeading { margin-bottom: 36px; }
+}

@@ -61,11 +61,11 @@ export function KpiEditorialPreview() {
       <span className="kpi-grid-lines" />
       <span className="editorial-browser kpi-browser-manager">
         <span className="browser-chrome"><i /><i /><i /></span>
-        <img src="/screens/kpi-performance/manager-overview.webp?v=20260921" alt="" loading="lazy" decoding="async" />
+        <img src="/screens/kpi-performance/final-manager.webp" alt="" loading="lazy" decoding="async" />
       </span>
       <span className="editorial-browser kpi-browser-employee">
         <span className="browser-chrome"><i /><i /><i /></span>
-        <img src="/screens/kpi-performance/employee-overview.webp?v=20260921" alt="" loading="lazy" decoding="async" />
+        <img src="/screens/kpi-performance/final-employee.webp" alt="" loading="lazy" decoding="async" />
       </span>
       <span className="editorial-flow"><i>Daily input</i><em>→</em><i>Sprint review</i><em>→</em><i>Private report</i></span>
     </div>
@@ -155,6 +155,24 @@ export function DotCareWomenProjectPreview() {
         <img src="/screens/dotcare-women/visit-summary.png" alt="" loading="lazy" decoding="async" />
       </span>
       <span className="editorial-flow"><i>Log</i><em>→</em><i>Understand</i><em>→</em><i>Prepare</i><em>→</em><i>Get care</i></span>
+    </div>
+  );
+}
+
+export function DotCarePhysiciansProjectPreview() {
+  return (
+    <div className="editorial-project-preview physicians-editorial" aria-hidden="true">
+      <div className="editorial-preview-copy">
+        <i>Physician-facing clinical product · 2026</i>
+        <b>Care context,<br />within reach.</b>
+      </div>
+      <span className="physicians-preview-phone physicians-preview-patient">
+        <img src="/screens/dotcare-physicians/patient-overview.webp" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="physicians-preview-phone physicians-preview-worklist">
+        <img src="/screens/dotcare-physicians/worklist.webp" alt="" loading="lazy" decoding="async" />
+      </span>
+      <span className="editorial-flow"><i>Worklist</i><em>→</em><i>Review</i><em>→</em><i>Document</i></span>
     </div>
   );
 }

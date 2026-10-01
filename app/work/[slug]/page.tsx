@@ -13,6 +13,7 @@ import DotCareEssCaseStudy from "./DotCareEssCaseStudy";
 import EmsCaseStudy from "./EmsCaseStudy";
 import KpiCaseStudy from "./KpiCaseStudy";
 import DotCareWomenCaseStudy from "./DotCareWomenCaseStudy";
+import DotCarePhysiciansCaseStudy from "./DotCarePhysiciansCaseStudy";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -65,13 +66,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const isEssRedesign = project.caseStudyMode === "ess-redesign";
   const isEmsRedesign = project.caseStudyMode === "ems-redesign";
   const isWomenRedesign = project.caseStudyMode === "women-redesign";
+  const isPhysiciansProduct = project.caseStudyMode === "physicians-product";
   const projectSummary = isEmsRedesign
     ? "A responsive executive workspace that helps leaders see what needs attention, follow decisions into accountable work and manage sensitive access with clarity."
     : project.summary;
   const projectMethod = isEmsRedesign
     ? "EMS brings executive dashboards, operational records, meeting follow-up and permissions into one responsive workspace. The design challenge was deciding what leaders need first, what can wait and how context survives the move from signal to record to action."
     : project.method;
-  const caseStudyAnchor = isKpiProduct ? "#prototype-walkthrough" : isWomenRedesign ? "#women-story" : "#executive-summary";
+  const caseStudyAnchor = isKpiProduct ? "#prototype-walkthrough" : isWomenRedesign ? "#women-story" : isPhysiciansProduct ? "#physicians-story" : "#executive-summary";
 
   return (
     <main className={`project-page ${project.theme}`}>
@@ -111,7 +113,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <HealthAppWalkthrough projectId={project.id} presentation="intro" />
       )}
 
-      {!isKpiProduct && !isWomenRedesign && <section className="executive-section" id="executive-summary">
+      {!isKpiProduct && !isWomenRedesign && !isPhysiciansProduct && <section className="executive-section" id="executive-summary">
         <div className="case-study-intro">
           <p className="eyebrow">{isEmsRedesign ? "The product" : "Executive summary"}</p>
           <h2>{isOriginalProduct ? "The product in brief." : isManagerialSolution ? "The managerial solution in brief." : isPharmacyRedesign ? "The Pharmacy redesign in brief." : isBiProduct ? "The Pharmacy BI product in brief." : isCommerceConcept ? "The ecommerce concept in brief." : isEssRedesign ? "The employee-service redesign in brief." : isEmsRedesign ? "Designing for attention, consequence and follow-up." : "The project in three points."}</h2>
@@ -137,7 +139,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         )}
       </section>}
 
-      {!isKpiProduct && !isWomenRedesign && <section className="evidence-section" id="evidence">
+      {!isKpiProduct && !isWomenRedesign && !isPhysiciansProduct && <section className="evidence-section" id="evidence">
         <div className="case-study-intro evidence-intro">
           <p className="eyebrow">{isOriginalProduct ? "Product evidence" : isManagerialSolution ? "How the solution helps" : isPharmacyRedesign ? "Evidence and scope" : isBiProduct ? "Product depth" : isCommerceConcept ? "Concept scope" : isEssRedesign ? "Product depth" : isEmsRedesign ? "Decision architecture" : "What I found"}</p>
           <h2>{isOriginalProduct ? "What the work had to handle." : isManagerialSolution ? "A clearer way to monitor and improve performance." : isPharmacyRedesign ? "A real product problem. A prototype response." : isBiProduct ? "A connected system for pharmacy decisions." : isCommerceConcept ? "A fashion experience shaped as one system." : isEssRedesign ? "A role-aware system for the working day." : isEmsRedesign ? "Give each management moment the context it needs." : "The signals that shaped the redesign."}</h2>
@@ -193,7 +195,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       )}
 
-      {!isKpiProduct && !isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && !isWomenRedesign && (
+      {!isKpiProduct && !isPharmacyRedesign && !isBiProduct && !isEssRedesign && !isEmsRedesign && !isWomenRedesign && !isPhysiciansProduct && (
         <section className="decision-section" id="decisions">
           <div className="case-study-intro">
             <p className="eyebrow">Key product decisions</p>
@@ -228,6 +230,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {isWomenRedesign && <DotCareWomenCaseStudy />}
 
+      {isPhysiciansProduct && <DotCarePhysiciansCaseStudy />}
+
       {isKpiProduct ? (
         <KpiCaseStudy />
       ) : project.visual === "kpi" ? (
@@ -256,7 +260,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </article>
           </div>
         </section>
-      ) : !isPharmacyRedesign && !isBiProduct && !isCommerceConcept && !isEssRedesign && !isEmsRedesign && !isWomenRedesign ? (
+      ) : !isPharmacyRedesign && !isBiProduct && !isCommerceConcept && !isEssRedesign && !isEmsRedesign && !isWomenRedesign && !isPhysiciansProduct ? (
         <>
           <section className="screen-section" id="redesign-screens">
             <div className="screen-heading">
